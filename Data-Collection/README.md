@@ -1,6 +1,6 @@
 # Script and Subtitle Scraper for Movies
 
-A Python-based tool to scrape movie scripts and subtitles from multiple online sources, process large datasets in chunks, and filter results for analysis. This project is designed for researchers, movie enthusiasts, and anyone interested in analyzing movie scripts or subtitles.
+A Python-based tool to scrape movie scripts and subtitles from multiple online sources, process large datasets in chunks, and filter results for analysis. 
 
 ---
 
@@ -25,38 +25,21 @@ Store the retrieved scripts and subtitles in separate CSV files for easy access 
 
 ---
 
-## How It Works
+## Expected Outcome
 
-### 1. **Script Scraping**
-- Scripts are fetched using web scraping techniques from the target sources.
-- Results are saved with information on availability or any errors encountered.
+The tool processes movie titles, scrapes scripts and subtitles, and saves the results in a structured format. Below is an example of the expected output:
 
-### 2. **Subtitle Scraping**
-- Subtitles are searched, downloaded, and processed from OpenSubtitles or YTS.
-- Subtitles are extracted from `.zip` files (if applicable) and saved in `.srt` format.
+| **Column Name**          | **Description**                                                                                     | **Example**                 |
+|---------------------------|-----------------------------------------------------------------------------------------------------|-----------------------------|
+| `Movie Name`              | The title of the movie provided in the input CSV file.                                             | `The Godfather`             |
+| `Script_IMSDB`            | The script retrieved from IMSDB. Returns "Unavailable" if not found.                               | `"I'm gonna make him an offer he can't refuse..."` |
+| `Script_Springfield`      | The script retrieved from Springfield Springfield. Returns "Unavailable" if not found.             | `"Look how they massacred my boy."` |
+| `Subtitle`                | The subtitle text downloaded from OpenSubtitles. Returns "Unavailable" if not found or processed.  | `"English subtitles file"` |
+| `Availability`            | Categorized as "Available" or "Not Available" based on script and subtitle presence.               | `Available` or `Not Available` |
 
-### 3. **Chunk Processing**
-- The input list of movie titles (e.g., `movies_names.csv`) is processed in chunks of 10,000 titles to avoid memory issues.
-- Each chunk is saved into separate CSV files for better management.
-
-### 4. **Filtering and Analysis**
-- Results are categorized into "Available" or "Not Available" based on specific markers (e.g., "not available", "Failed to download").
-- Filtered data is saved into new CSV files for further use.
-
----
-
-## Requirements
-
-- Python 3.7+
-- Libraries:
-  - `requests`
-  - `beautifulsoup4`
-  - `pandas`
-  - `zipfile`
-  - `io`
-
-Install the required libraries using:
-
-```bash
-pip install requests beautifulsoup4 pandas
-
+### Sample Output (Chunk File: `chunk_1.csv`)
+```csv
+Movie Name,Script_IMSDB,Script_Springfield,Subtitle,Availability
+The Godfather,"<Script text>","Unavailable","<Subtitle text>",Available
+Inception,"<Script text>","<Script text>","Unavailable",Available
+Pulp Fiction,"Unavailable","<Script text>","<Subtitle text>",Available
