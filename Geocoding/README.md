@@ -108,11 +108,3 @@ The analysis uses multiple input and output datasets:
 ## Contributing
 Contributions are welcome! Please feel free to submit pull requests or open issues for improvements or bug fixes.
 
-## License
-This project is licensed under the MIT License. See the `LICENSE` file for more details.
-
-## Acknowledgments
-- Hugging Face's `transformers` library for NER.
-- The `geopy` library for geocoding.
-- The Python community for tools like Pandas and Numpy.
-
