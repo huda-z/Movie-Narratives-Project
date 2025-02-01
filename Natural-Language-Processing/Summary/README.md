@@ -125,11 +125,6 @@ python analyze_summaries.py
 
 ---
 
-## 📜 License  
-This project is licensed under the **MIT License**.  
-
----
-
 ## 🤝 Contributing  
 
 Contributions are welcome! To contribute:  
