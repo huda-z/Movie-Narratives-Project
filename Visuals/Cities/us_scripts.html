@@ -1,0 +1,1223 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_0c1d9fcfdc742329654ea28716a9ae5a {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+<div style="
+    position: fixed;
+    bottom: 50px; left: 50px; width: 250px; height: auto; 
+    background-color: white; border: 2px solid grey; z-index:9999; font-size:14px;
+    padding: 10px; border-radius: 10px; box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+">
+<b>Legend</b><br>
+<span style='color:blue;'>&#9679;</span> Religious<br><span style='color:green;'>&#9679;</span> Recovery<br><span style='color:red;'>&#9679;</span> Love<br><span style='color:purple;'>&#9679;</span> Tourism<br><span style='color:orange;'>&#9679;</span> Crime<br><span style='color:pink;'>&#9679;</span> Family<br><span style='color:yellow;'>&#9679;</span> Politics<br><span style='color:cyan;'>&#9679;</span> Friendship<br><span style='color:magenta;'>&#9679;</span> Sex & Nudity<br><span style='color:teal;'>&#9679;</span> Science<br><span style='color:brown;'>&#9679;</span> History<br><span style='color:forestgreen;'>&#9679;</span> Nature<br>
+</div>
+    
+            <div class="folium-map" id="map_0c1d9fcfdc742329654ea28716a9ae5a" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_0c1d9fcfdc742329654ea28716a9ae5a = L.map(
+                "map_0c1d9fcfdc742329654ea28716a9ae5a",
+                {
+                    center: [39.8283, -98.5795],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 5,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_cf8a8e456d7d4c7a217779c98050b813 = L.tileLayer(
+                "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 20,
+  "maxNativeZoom": 20,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"https://carto.com/attributions\"\u003eCARTO\u003c/a\u003e",
+  "subdomains": "abcd",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_cf8a8e456d7d4c7a217779c98050b813.addTo(map_0c1d9fcfdc742329654ea28716a9ae5a);
+        
+    
+            var circle_marker_31d4af844b67f7f38b4c448a2ab20d29 = L.circleMarker(
+                [35.0841, -106.6504],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_0c1d9fcfdc742329654ea28716a9ae5a);
+        
+    
+        var popup_1254c30d7c9fda0032ea47f65a37a290 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_7487a14012f0fc99c23550b37f2ddd5b = $(`<div id="html_7487a14012f0fc99c23550b37f2ddd5b" style="width: 100.0%; height: 100.0%;"><b>Albuquerque</b><br>Themes:<br><span style='color:blue;'><b>Religious</b></span>: god, soul, sacred<br><span style='color:green;'><b>Recovery</b></span>: hope, fire, overcome<br><span style='color:red;'><b>Love</b></span>: couple, kiss, heart<br></div>`)[0];
+                popup_1254c30d7c9fda0032ea47f65a37a290.setContent(html_7487a14012f0fc99c23550b37f2ddd5b);
+            
+        
+
+        circle_marker_31d4af844b67f7f38b4c448a2ab20d29.bindPopup(popup_1254c30d7c9fda0032ea47f65a37a290)
+        ;
+
+        
+    
+    
+            var circle_marker_0bb51756dd30064576e16b95ae96850a = L.circleMarker(
+                [38.8816, -77.091],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_0c1d9fcfdc742329654ea28716a9ae5a);
+        
+    
+        var popup_321747d93470740e3f7f6cc67f3e6a41 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_de9e0fd369587c91f463ff03fb3cc1f0 = $(`<div id="html_de9e0fd369587c91f463ff03fb3cc1f0" style="width: 100.0%; height: 100.0%;"><b>Arlington</b><br>Themes:<br><span style='color:blue;'><b>Religious</b></span>: faith, saint, god<br><span style='color:green;'><b>Recovery</b></span>: hope, comeback<br><span style='color:purple;'><b>Tourism</b></span>: beach<br></div>`)[0];
+                popup_321747d93470740e3f7f6cc67f3e6a41.setContent(html_de9e0fd369587c91f463ff03fb3cc1f0);
+            
+        
+
+        circle_marker_0bb51756dd30064576e16b95ae96850a.bindPopup(popup_321747d93470740e3f7f6cc67f3e6a41)
+        ;
+
+        
+    
+    
+            var circle_marker_a79fcda1cf689b98cd0558180bf3debe = L.circleMarker(
+                [33.749, -84.388],
+                {"bubblingMouseEvents": true, "color": "yellow", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "yellow", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_0c1d9fcfdc742329654ea28716a9ae5a);
+        
+    
+        var popup_0950cccec588b9a19b9ad7f2c36d56f5 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_76b49519db4374fe59cbc85f96bd434c = $(`<div id="html_76b49519db4374fe59cbc85f96bd434c" style="width: 100.0%; height: 100.0%;"><b>Atlanta</b><br>Themes:<br><span style='color:yellow;'><b>Politics</b></span>: law, rights, president<br><span style='color:blue;'><b>Religious</b></span>: god, church, holy<br><span style='color:green;'><b>Recovery</b></span>: hope, fire, survive<br></div>`)[0];
+                popup_0950cccec588b9a19b9ad7f2c36d56f5.setContent(html_76b49519db4374fe59cbc85f96bd434c);
+            
+        
+
+        circle_marker_a79fcda1cf689b98cd0558180bf3debe.bindPopup(popup_0950cccec588b9a19b9ad7f2c36d56f5)
+        ;
+
+        
+    
+    
+            var circle_marker_86a71a12c9435ac3f7b30168e57e69aa = L.circleMarker(
+                [30.2672, -97.7431],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_0c1d9fcfdc742329654ea28716a9ae5a);
+        
+    
+        var popup_6fbba6f04164efe2493c8cf56f980130 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_b753034c00aeed2e2353d5ac87602213 = $(`<div id="html_b753034c00aeed2e2353d5ac87602213" style="width: 100.0%; height: 100.0%;"><b>Austin</b><br>Themes:<br><span style='color:blue;'><b>Religious</b></span>: god, holy, soul<br><span style='color:green;'><b>Recovery</b></span>: hope<br><span style='color:purple;'><b>Tourism</b></span>: trip, visit, vacation<br></div>`)[0];
+                popup_6fbba6f04164efe2493c8cf56f980130.setContent(html_b753034c00aeed2e2353d5ac87602213);
+            
+        
+
+        circle_marker_86a71a12c9435ac3f7b30168e57e69aa.bindPopup(popup_6fbba6f04164efe2493c8cf56f980130)
+        ;
+
+        
+    
+    
+            var circle_marker_da1cc81129141deb0923b05e1c82d6a0 = L.circleMarker(
+                [35.3733, -119.0187],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_0c1d9fcfdc742329654ea28716a9ae5a);
+        
+    
+        var popup_f81af6ef4383c23e03b26e4c660c3d03 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_ae1e3b144363596eb9af297ff0aa84a9 = $(`<div id="html_ae1e3b144363596eb9af297ff0aa84a9" style="width: 100.0%; height: 100.0%;"><b>Bakersfield</b><br>Themes:<br><span style='color:blue;'><b>Religious</b></span>: god, bible, holy<br><span style='color:green;'><b>Recovery</b></span>: hope<br><span style='color:purple;'><b>Tourism</b></span>: trip, vacation<br></div>`)[0];
+                popup_f81af6ef4383c23e03b26e4c660c3d03.setContent(html_ae1e3b144363596eb9af297ff0aa84a9);
+            
+        
+
+        circle_marker_da1cc81129141deb0923b05e1c82d6a0.bindPopup(popup_f81af6ef4383c23e03b26e4c660c3d03)
+        ;
+
+        
+    
+    
+            var circle_marker_0434c078913b6fcfa4a18b5cc2a0e16f = L.circleMarker(
+                [39.2904, -76.6122],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_0c1d9fcfdc742329654ea28716a9ae5a);
+        
+    
+        var popup_06916e57ab023435b8548d31cb55feaa = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_d09a1bb832223168cac686df572ffe68 = $(`<div id="html_d09a1bb832223168cac686df572ffe68" style="width: 100.0%; height: 100.0%;"><b>Baltimore</b><br>Themes:<br><span style='color:blue;'><b>Religious</b></span>: god, holy, church<br><span style='color:green;'><b>Recovery</b></span>: hope, fire, healing<br><span style='color:purple;'><b>Tourism</b></span>: souvenirs, travel, journey<br></div>`)[0];
+                popup_06916e57ab023435b8548d31cb55feaa.setContent(html_d09a1bb832223168cac686df572ffe68);
+            
+        
+
+        circle_marker_0434c078913b6fcfa4a18b5cc2a0e16f.bindPopup(popup_06916e57ab023435b8548d31cb55feaa)
+        ;
+
+        
+    
+    
+            var circle_marker_72d5dfd488de95a4d75b4914f941db8a = L.circleMarker(
+                [42.3601, -71.0589],
+                {"bubblingMouseEvents": true, "color": "pink", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "pink", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_0c1d9fcfdc742329654ea28716a9ae5a);
+        
+    
+        var popup_7a358cc0571f46ff2da3919963a86977 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_f5fe47ae1f92e1a6ede50c2ef757aa38 = $(`<div id="html_f5fe47ae1f92e1a6ede50c2ef757aa38" style="width: 100.0%; height: 100.0%;"><b>Boston</b><br>Themes:<br><span style='color:pink;'><b>Family</b></span>: home, mother, care<br><span style='color:magenta;'><b>Sex & Nudity</b></span>: pleasure, body, skin<br><span style='color:blue;'><b>Religious</b></span>: god, holy, soul<br></div>`)[0];
+                popup_7a358cc0571f46ff2da3919963a86977.setContent(html_f5fe47ae1f92e1a6ede50c2ef757aa38);
+            
+        
+
+        circle_marker_72d5dfd488de95a4d75b4914f941db8a.bindPopup(popup_7a358cc0571f46ff2da3919963a86977)
+        ;
+
+        
+    
+    
+            var circle_marker_a446382903828118e73426cf01d12f7c = L.circleMarker(
+                [41.8781, -87.6298],
+                {"bubblingMouseEvents": true, "color": "pink", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "pink", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_0c1d9fcfdc742329654ea28716a9ae5a);
+        
+    
+        var popup_72045c8e90d4e19502b3a966d910773b = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_22373db9d7a25444559e792f9ba2bd30 = $(`<div id="html_22373db9d7a25444559e792f9ba2bd30" style="width: 100.0%; height: 100.0%;"><b>Chicago</b><br>Themes:<br><span style='color:pink;'><b>Family</b></span>: home, care, mother<br><span style='color:orange;'><b>Crime</b></span>: murder, court, gang<br><span style='color:cyan;'><b>Friendship</b></span>: care, friend, trust<br></div>`)[0];
+                popup_72045c8e90d4e19502b3a966d910773b.setContent(html_22373db9d7a25444559e792f9ba2bd30);
+            
+        
+
+        circle_marker_a446382903828118e73426cf01d12f7c.bindPopup(popup_72045c8e90d4e19502b3a966d910773b)
+        ;
+
+        
+    
+    
+            var circle_marker_2a5f093d197d2641e1c76213a79e3606 = L.circleMarker(
+                [39.1031, -84.512],
+                {"bubblingMouseEvents": true, "color": "pink", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "pink", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_0c1d9fcfdc742329654ea28716a9ae5a);
+        
+    
+        var popup_9c98a043d87a4281d90a8b7a2b8a0041 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_24c4875778d13303f247e41f0a726bb8 = $(`<div id="html_24c4875778d13303f247e41f0a726bb8" style="width: 100.0%; height: 100.0%;"><b>Cincinnati</b><br>Themes:<br><span style='color:pink;'><b>Family</b></span>: home, care, mother<br><span style='color:green;'><b>Recovery</b></span>: hope, fire, reborn<br><span style='color:red;'><b>Love</b></span>: couple, heart, kiss<br></div>`)[0];
+                popup_9c98a043d87a4281d90a8b7a2b8a0041.setContent(html_24c4875778d13303f247e41f0a726bb8);
+            
+        
+
+        circle_marker_2a5f093d197d2641e1c76213a79e3606.bindPopup(popup_9c98a043d87a4281d90a8b7a2b8a0041)
+        ;
+
+        
+    
+    
+            var circle_marker_c782f6e97e9a6675257e0c9ee0ff2e61 = L.circleMarker(
+                [43.0896, -79.0849],
+                {"bubblingMouseEvents": true, "color": "purple", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "purple", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_0c1d9fcfdc742329654ea28716a9ae5a);
+        
+    
+        var popup_715c513ddc2c2dd7d2571fbdccc93403 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_4d4f4c2642595dd545815e8255f1328e = $(`<div id="html_4d4f4c2642595dd545815e8255f1328e" style="width: 100.0%; height: 100.0%;"><b>City of Niagara Falls</b><br>Themes:<br><span style='color:purple;'><b>Tourism</b></span>: travel, trip, vacation<br><span style='color:orange;'><b>Crime</b></span>: guilty, murder<br><span style='color:green;'><b>Recovery</b></span>: hope<br></div>`)[0];
+                popup_715c513ddc2c2dd7d2571fbdccc93403.setContent(html_4d4f4c2642595dd545815e8255f1328e);
+            
+        
+
+        circle_marker_c782f6e97e9a6675257e0c9ee0ff2e61.bindPopup(popup_715c513ddc2c2dd7d2571fbdccc93403)
+        ;
+
+        
+    
+    
+            var circle_marker_32b7b593dab9c7a2bb9af7cf3fac6f04 = L.circleMarker(
+                [41.4993, -81.6944],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_0c1d9fcfdc742329654ea28716a9ae5a);
+        
+    
+        var popup_a9bb6cf68cdefd13e57c9d76ec5e5318 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_a908ea3854be8998877c500c137f8aea = $(`<div id="html_a908ea3854be8998877c500c137f8aea" style="width: 100.0%; height: 100.0%;"><b>Cleveland</b><br>Themes:<br><span style='color:blue;'><b>Religious</b></span>: god, holy, faith<br><span style='color:purple;'><b>Tourism</b></span>: trip, visit, adventure<br><span style='color:red;'><b>Love</b></span>: couple, date, kiss<br></div>`)[0];
+                popup_a9bb6cf68cdefd13e57c9d76ec5e5318.setContent(html_a908ea3854be8998877c500c137f8aea);
+            
+        
+
+        circle_marker_32b7b593dab9c7a2bb9af7cf3fac6f04.bindPopup(popup_a9bb6cf68cdefd13e57c9d76ec5e5318)
+        ;
+
+        
+    
+    
+            var circle_marker_cae582d18444078ab1c7126c9914648a = L.circleMarker(
+                [39.9612, -82.9988],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_0c1d9fcfdc742329654ea28716a9ae5a);
+        
+    
+        var popup_95b5dfcaa57ab8fca978b703b77d797c = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_78b4945ac713a48c5d2465fc8f361bc7 = $(`<div id="html_78b4945ac713a48c5d2465fc8f361bc7" style="width: 100.0%; height: 100.0%;"><b>Columbus</b><br>Themes:<br><span style='color:blue;'><b>Religious</b></span>: god, church, soul<br><span style='color:green;'><b>Recovery</b></span>: hope, fire<br><span style='color:purple;'><b>Tourism</b></span>: visit, explore<br></div>`)[0];
+                popup_95b5dfcaa57ab8fca978b703b77d797c.setContent(html_78b4945ac713a48c5d2465fc8f361bc7);
+            
+        
+
+        circle_marker_cae582d18444078ab1c7126c9914648a.bindPopup(popup_95b5dfcaa57ab8fca978b703b77d797c)
+        ;
+
+        
+    
+    
+            var circle_marker_1d72e2879d2ecb5da4d09e8a991f1840 = L.circleMarker(
+                [32.7767, -96.797],
+                {"bubblingMouseEvents": true, "color": "yellow", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "yellow", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_0c1d9fcfdc742329654ea28716a9ae5a);
+        
+    
+        var popup_19d88b179b8a9b508908e4e0cac2c9b1 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_378e3fe02737267633d09ab8ee5ca14e = $(`<div id="html_378e3fe02737267633d09ab8ee5ca14e" style="width: 100.0%; height: 100.0%;"><b>Dallas</b><br>Themes:<br><span style='color:yellow;'><b>Politics</b></span>: law, government, president<br><span style='color:blue;'><b>Religious</b></span>: god, holy, soul<br><span style='color:green;'><b>Recovery</b></span>: hope, fire, recovery<br></div>`)[0];
+                popup_19d88b179b8a9b508908e4e0cac2c9b1.setContent(html_378e3fe02737267633d09ab8ee5ca14e);
+            
+        
+
+        circle_marker_1d72e2879d2ecb5da4d09e8a991f1840.bindPopup(popup_19d88b179b8a9b508908e4e0cac2c9b1)
+        ;
+
+        
+    
+    
+            var circle_marker_4ec8319cabfa3038e67c00ce521b41a0 = L.circleMarker(
+                [39.7392, -104.9903],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_0c1d9fcfdc742329654ea28716a9ae5a);
+        
+    
+        var popup_530e2af76fd5162b52c8463d721dcb28 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_e57314d044fa8b31a461d890748c0171 = $(`<div id="html_e57314d044fa8b31a461d890748c0171" style="width: 100.0%; height: 100.0%;"><b>Denver</b><br>Themes:<br><span style='color:blue;'><b>Religious</b></span>: god, soul, saint<br><span style='color:cyan;'><b>Friendship</b></span>: care, trust, friend<br><span style='color:pink;'><b>Family</b></span>: care, home, mother<br></div>`)[0];
+                popup_530e2af76fd5162b52c8463d721dcb28.setContent(html_e57314d044fa8b31a461d890748c0171);
+            
+        
+
+        circle_marker_4ec8319cabfa3038e67c00ce521b41a0.bindPopup(popup_530e2af76fd5162b52c8463d721dcb28)
+        ;
+
+        
+    
+    
+            var circle_marker_ede6bcecbcbed8dc220bd1f2140d4d78 = L.circleMarker(
+                [42.3314, -83.0458],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_0c1d9fcfdc742329654ea28716a9ae5a);
+        
+    
+        var popup_87db0d19f7f0e303614fbb3e161c6da3 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_84c9e4a818ef680cd44e64d3397a02d1 = $(`<div id="html_84c9e4a818ef680cd44e64d3397a02d1" style="width: 100.0%; height: 100.0%;"><b>Detroit</b><br>Themes:<br><span style='color:green;'><b>Recovery</b></span>: hope, fire, survive<br><span style='color:pink;'><b>Family</b></span>: care, home, father<br><span style='color:orange;'><b>Crime</b></span>: gang, court, murder<br></div>`)[0];
+                popup_87db0d19f7f0e303614fbb3e161c6da3.setContent(html_84c9e4a818ef680cd44e64d3397a02d1);
+            
+        
+
+        circle_marker_ede6bcecbcbed8dc220bd1f2140d4d78.bindPopup(popup_87db0d19f7f0e303614fbb3e161c6da3)
+        ;
+
+        
+    
+    
+            var circle_marker_5eb0d355f34fe4ff4dc1864e152ae18d = L.circleMarker(
+                [31.7619, -106.485],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_0c1d9fcfdc742329654ea28716a9ae5a);
+        
+    
+        var popup_b6a314f12b09a599108c86f05d819729 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_7c3177f565797c7e07c889aba5a6df93 = $(`<div id="html_7c3177f565797c7e07c889aba5a6df93" style="width: 100.0%; height: 100.0%;"><b>El Paso</b><br>Themes:<br><span style='color:blue;'><b>Religious</b></span>: god<br><span style='color:green;'><b>Recovery</b></span>: recovery<br><span style='color:purple;'><b>Tourism</b></span>: visit<br></div>`)[0];
+                popup_b6a314f12b09a599108c86f05d819729.setContent(html_7c3177f565797c7e07c889aba5a6df93);
+            
+        
+
+        circle_marker_5eb0d355f34fe4ff4dc1864e152ae18d.bindPopup(popup_b6a314f12b09a599108c86f05d819729)
+        ;
+
+        
+    
+    
+            var circle_marker_09b955843f07d4c7a139ebd294f3bd5e = L.circleMarker(
+                [32.7555, -97.3308],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_0c1d9fcfdc742329654ea28716a9ae5a);
+        
+    
+        var popup_ab925e60f49eb23fb6532bfb53f81766 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_42ba5258edadd9883c644b251e3dc66a = $(`<div id="html_42ba5258edadd9883c644b251e3dc66a" style="width: 100.0%; height: 100.0%;"><b>Fort Worth</b><br>Themes:<br><span style='color:blue;'><b>Religious</b></span>: god, church, soul<br><span style='color:green;'><b>Recovery</b></span>: comeback, fire, hope<br><span style='color:orange;'><b>Crime</b></span>: detective, trial<br></div>`)[0];
+                popup_ab925e60f49eb23fb6532bfb53f81766.setContent(html_42ba5258edadd9883c644b251e3dc66a);
+            
+        
+
+        circle_marker_09b955843f07d4c7a139ebd294f3bd5e.bindPopup(popup_ab925e60f49eb23fb6532bfb53f81766)
+        ;
+
+        
+    
+    
+            var circle_marker_af5ad392bc751a6b05dbb55742a43f5b = L.circleMarker(
+                [29.7604, -95.3698],
+                {"bubblingMouseEvents": true, "color": "teal", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "teal", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_0c1d9fcfdc742329654ea28716a9ae5a);
+        
+    
+        var popup_5b214f15004a2fa43d1ced001ea200b2 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_6c64a5e6472c407227265f943eb67770 = $(`<div id="html_6c64a5e6472c407227265f943eb67770" style="width: 100.0%; height: 100.0%;"><b>Houston</b><br>Themes:<br><span style='color:teal;'><b>Science</b></span>: space, theory, study<br><span style='color:pink;'><b>Family</b></span>: home, mother, care<br><span style='color:green;'><b>Recovery</b></span>: fire, hope, survive<br></div>`)[0];
+                popup_5b214f15004a2fa43d1ced001ea200b2.setContent(html_6c64a5e6472c407227265f943eb67770);
+            
+        
+
+        circle_marker_af5ad392bc751a6b05dbb55742a43f5b.bindPopup(popup_5b214f15004a2fa43d1ced001ea200b2)
+        ;
+
+        
+    
+    
+            var circle_marker_fb85c56b8b0fad2a52c50ac835f55a28 = L.circleMarker(
+                [39.7684, -86.158],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_0c1d9fcfdc742329654ea28716a9ae5a);
+        
+    
+        var popup_bac77cce387911cd45206c734ab18cd7 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_0bf87e18f8cdce385b1597bf18929cf0 = $(`<div id="html_0bf87e18f8cdce385b1597bf18929cf0" style="width: 100.0%; height: 100.0%;"><b>Indianapolis</b><br>Themes:<br><span style='color:blue;'><b>Religious</b></span>: divine, god, church<br><span style='color:green;'><b>Recovery</b></span>: hope, comeback<br><span style='color:purple;'><b>Tourism</b></span>: travel, trip, tourist<br></div>`)[0];
+                popup_bac77cce387911cd45206c734ab18cd7.setContent(html_0bf87e18f8cdce385b1597bf18929cf0);
+            
+        
+
+        circle_marker_fb85c56b8b0fad2a52c50ac835f55a28.bindPopup(popup_bac77cce387911cd45206c734ab18cd7)
+        ;
+
+        
+    
+    
+            var circle_marker_b7a12673328b27b176bfcc050a130fb0 = L.circleMarker(
+                [30.3322, -81.6557],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_0c1d9fcfdc742329654ea28716a9ae5a);
+        
+    
+        var popup_1707395cac7abf6becbb643cfd5f460d = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_67520f728f774b6b315959902eb120b8 = $(`<div id="html_67520f728f774b6b315959902eb120b8" style="width: 100.0%; height: 100.0%;"><b>Jacksonville</b><br>Themes:<br><span style='color:blue;'><b>Religious</b></span>: god, church, prayer<br><span style='color:green;'><b>Recovery</b></span>: survive, rehabilitation<br><span style='color:purple;'><b>Tourism</b></span>: beach<br></div>`)[0];
+                popup_1707395cac7abf6becbb643cfd5f460d.setContent(html_67520f728f774b6b315959902eb120b8);
+            
+        
+
+        circle_marker_b7a12673328b27b176bfcc050a130fb0.bindPopup(popup_1707395cac7abf6becbb643cfd5f460d)
+        ;
+
+        
+    
+    
+            var circle_marker_e3f00be8f08dd1b7e0adcfa2cf21d46b = L.circleMarker(
+                [39.0997, -94.5786],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_0c1d9fcfdc742329654ea28716a9ae5a);
+        
+    
+        var popup_f64cb8dd131a0cfffc5fcdccfcc83f85 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_80b6162436ed603f4503916b396f9029 = $(`<div id="html_80b6162436ed603f4503916b396f9029" style="width: 100.0%; height: 100.0%;"><b>Kansas City</b><br>Themes:<br><span style='color:blue;'><b>Religious</b></span>: god, church, faith<br><span style='color:red;'><b>Love</b></span>: heart, couple, kiss<br><span style='color:cyan;'><b>Friendship</b></span>: care, friend, trust<br></div>`)[0];
+                popup_f64cb8dd131a0cfffc5fcdccfcc83f85.setContent(html_80b6162436ed603f4503916b396f9029);
+            
+        
+
+        circle_marker_e3f00be8f08dd1b7e0adcfa2cf21d46b.bindPopup(popup_f64cb8dd131a0cfffc5fcdccfcc83f85)
+        ;
+
+        
+    
+    
+            var circle_marker_4414eb04f1a86676fb82e51254fcb27b = L.circleMarker(
+                [36.1699, -115.1398],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_0c1d9fcfdc742329654ea28716a9ae5a);
+        
+    
+        var popup_2d72d5838b89a33b1c3cfc34231e1a64 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_f1994bc1c3c54a16aafbeea679d5498e = $(`<div id="html_f1994bc1c3c54a16aafbeea679d5498e" style="width: 100.0%; height: 100.0%;"><b>Las Vegas</b><br>Themes:<br><span style='color:orange;'><b>Crime</b></span>: murder, suspect, trial<br><span style='color:cyan;'><b>Friendship</b></span>: care, laughter<br><span style='color:green;'><b>Recovery</b></span>: hope, fire<br></div>`)[0];
+                popup_2d72d5838b89a33b1c3cfc34231e1a64.setContent(html_f1994bc1c3c54a16aafbeea679d5498e);
+            
+        
+
+        circle_marker_4414eb04f1a86676fb82e51254fcb27b.bindPopup(popup_2d72d5838b89a33b1c3cfc34231e1a64)
+        ;
+
+        
+    
+    
+            var circle_marker_5d405dd42c9945d2c8bd209444fb44bd = L.circleMarker(
+                [34.0522, -118.2437],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_0c1d9fcfdc742329654ea28716a9ae5a);
+        
+    
+        var popup_53eb2b0f59a39cb1538cf17f428edfd0 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_4be46f9f4dbb79001c040afe5904ead6 = $(`<div id="html_4be46f9f4dbb79001c040afe5904ead6" style="width: 100.0%; height: 100.0%;"><b>Los Angeles</b><br>Themes:<br><span style='color:orange;'><b>Crime</b></span>: murder, detective, court<br><span style='color:cyan;'><b>Friendship</b></span>: friend, care, trust<br><span style='color:red;'><b>Love</b></span>: couple, kiss, heart<br></div>`)[0];
+                popup_53eb2b0f59a39cb1538cf17f428edfd0.setContent(html_4be46f9f4dbb79001c040afe5904ead6);
+            
+        
+
+        circle_marker_5d405dd42c9945d2c8bd209444fb44bd.bindPopup(popup_53eb2b0f59a39cb1538cf17f428edfd0)
+        ;
+
+        
+    
+    
+            var circle_marker_f2310feee34a99c478a0574b7e844669 = L.circleMarker(
+                [38.2527, -85.7585],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_0c1d9fcfdc742329654ea28716a9ae5a);
+        
+    
+        var popup_bf6053a0a2102d2dfa542716060fcfca = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_bf4e19c4f50492935b568028793ee82a = $(`<div id="html_bf4e19c4f50492935b568028793ee82a" style="width: 100.0%; height: 100.0%;"><b>Louisville</b><br>Themes:<br><span style='color:green;'><b>Recovery</b></span>: hope<br><span style='color:purple;'><b>Tourism</b></span>: visit, resort<br><span style='color:orange;'><b>Crime</b></span>: guilty, murder<br></div>`)[0];
+                popup_bf6053a0a2102d2dfa542716060fcfca.setContent(html_bf4e19c4f50492935b568028793ee82a);
+            
+        
+
+        circle_marker_f2310feee34a99c478a0574b7e844669.bindPopup(popup_bf6053a0a2102d2dfa542716060fcfca)
+        ;
+
+        
+    
+    
+            var circle_marker_15f1460e97f1f5c5b692c98ada9af11b = L.circleMarker(
+                [35.1495, -90.049],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_0c1d9fcfdc742329654ea28716a9ae5a);
+        
+    
+        var popup_03b097cee35714bb2377b056e51bfd29 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_9f3d2d66e94c26994646b5f0a24b40a9 = $(`<div id="html_9f3d2d66e94c26994646b5f0a24b40a9" style="width: 100.0%; height: 100.0%;"><b>Memphis</b><br>Themes:<br><span style='color:blue;'><b>Religious</b></span>: god, soul, faith<br><span style='color:green;'><b>Recovery</b></span>: fire, hope, comeback<br><span style='color:purple;'><b>Tourism</b></span>: travel, tour, trip<br></div>`)[0];
+                popup_03b097cee35714bb2377b056e51bfd29.setContent(html_9f3d2d66e94c26994646b5f0a24b40a9);
+            
+        
+
+        circle_marker_15f1460e97f1f5c5b692c98ada9af11b.bindPopup(popup_03b097cee35714bb2377b056e51bfd29)
+        ;
+
+        
+    
+    
+            var circle_marker_ea964dd5d8ac626dd7755e69e9cb5f99 = L.circleMarker(
+                [25.7617, -80.1918],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_0c1d9fcfdc742329654ea28716a9ae5a);
+        
+    
+        var popup_f02c7691999cb679ad7e28a801ec7dda = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_de218a4333d95d3b474c98eccf484858 = $(`<div id="html_de218a4333d95d3b474c98eccf484858" style="width: 100.0%; height: 100.0%;"><b>Miami</b><br>Themes:<br><span style='color:red;'><b>Love</b></span>: couple, heart, date<br><span style='color:cyan;'><b>Friendship</b></span>: friend, care, trust<br><span style='color:pink;'><b>Family</b></span>: home, care, father<br></div>`)[0];
+                popup_f02c7691999cb679ad7e28a801ec7dda.setContent(html_de218a4333d95d3b474c98eccf484858);
+            
+        
+
+        circle_marker_ea964dd5d8ac626dd7755e69e9cb5f99.bindPopup(popup_f02c7691999cb679ad7e28a801ec7dda)
+        ;
+
+        
+    
+    
+            var circle_marker_1de18a9a49e2bb595594f7e8b539a279 = L.circleMarker(
+                [43.0389, -87.9065],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_0c1d9fcfdc742329654ea28716a9ae5a);
+        
+    
+        var popup_feb8a09efd7ebcbb18d9b80946e37634 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_ad28020497fce9633369d5f6732f3e7a = $(`<div id="html_ad28020497fce9633369d5f6732f3e7a" style="width: 100.0%; height: 100.0%;"><b>Milwaukee</b><br>Themes:<br><span style='color:blue;'><b>Religious</b></span>: god, faith, church<br><span style='color:green;'><b>Recovery</b></span>: hope, renewed<br><span style='color:purple;'><b>Tourism</b></span>: visit, destination<br></div>`)[0];
+                popup_feb8a09efd7ebcbb18d9b80946e37634.setContent(html_ad28020497fce9633369d5f6732f3e7a);
+            
+        
+
+        circle_marker_1de18a9a49e2bb595594f7e8b539a279.bindPopup(popup_feb8a09efd7ebcbb18d9b80946e37634)
+        ;
+
+        
+    
+    
+            var circle_marker_8c89d7b828cfc30d82786855b510759f = L.circleMarker(
+                [44.9778, -93.265],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_0c1d9fcfdc742329654ea28716a9ae5a);
+        
+    
+        var popup_9d25eb425abea083ec7578fd0044f14e = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_c21c7d8abd1e2b9fbf6e83d715ee1334 = $(`<div id="html_c21c7d8abd1e2b9fbf6e83d715ee1334" style="width: 100.0%; height: 100.0%;"><b>Minneapolis</b><br>Themes:<br><span style='color:green;'><b>Recovery</b></span>: hope, fire<br><span style='color:purple;'><b>Tourism</b></span>: trip, destination<br><span style='color:brown;'><b>History</b></span>: past, battle<br></div>`)[0];
+                popup_9d25eb425abea083ec7578fd0044f14e.setContent(html_c21c7d8abd1e2b9fbf6e83d715ee1334);
+            
+        
+
+        circle_marker_8c89d7b828cfc30d82786855b510759f.bindPopup(popup_9d25eb425abea083ec7578fd0044f14e)
+        ;
+
+        
+    
+    
+            var circle_marker_16c1f159ed6895852e61ef9dc50c2eb1 = L.circleMarker(
+                [36.1627, -86.7816],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_0c1d9fcfdc742329654ea28716a9ae5a);
+        
+    
+        var popup_b2f9fcd81207d7312337eb4b7a7f8239 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_480424f5bcde52d4eb70353f538dfe3b = $(`<div id="html_480424f5bcde52d4eb70353f538dfe3b" style="width: 100.0%; height: 100.0%;"><b>Nashville-Davidson</b><br>Themes:<br><span style='color:blue;'><b>Religious</b></span>: god, bible, spiritual<br><span style='color:red;'><b>Love</b></span>: heart, kiss, couple<br><span style='color:cyan;'><b>Friendship</b></span>: care, laughter, trust<br></div>`)[0];
+                popup_b2f9fcd81207d7312337eb4b7a7f8239.setContent(html_480424f5bcde52d4eb70353f538dfe3b);
+            
+        
+
+        circle_marker_16c1f159ed6895852e61ef9dc50c2eb1.bindPopup(popup_b2f9fcd81207d7312337eb4b7a7f8239)
+        ;
+
+        
+    
+    
+            var circle_marker_68c8b169ce8aea9bb0d492681fdb9842 = L.circleMarker(
+                [29.7604, -90.0715],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_0c1d9fcfdc742329654ea28716a9ae5a);
+        
+    
+        var popup_a222369e65b88df1d723ba481d5fd9c6 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_a36e4d8a3d91f32412004f31c7540347 = $(`<div id="html_a36e4d8a3d91f32412004f31c7540347" style="width: 100.0%; height: 100.0%;"><b>New Orleans</b><br>Themes:<br><span style='color:orange;'><b>Crime</b></span>: murder, witness, court<br><span style='color:pink;'><b>Family</b></span>: home, care, father<br><span style='color:red;'><b>Love</b></span>: couple, heart, date<br></div>`)[0];
+                popup_a222369e65b88df1d723ba481d5fd9c6.setContent(html_a36e4d8a3d91f32412004f31c7540347);
+            
+        
+
+        circle_marker_68c8b169ce8aea9bb0d492681fdb9842.bindPopup(popup_a222369e65b88df1d723ba481d5fd9c6)
+        ;
+
+        
+    
+    
+            var circle_marker_4512596b080a544c644b4a003d2001ed = L.circleMarker(
+                [40.7128, -74.006],
+                {"bubblingMouseEvents": true, "color": "pink", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "pink", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_0c1d9fcfdc742329654ea28716a9ae5a);
+        
+    
+        var popup_870a75479312c571c61b646c8c03de9e = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_170c86fccbffe3f4c2ba17c5f341294c = $(`<div id="html_170c86fccbffe3f4c2ba17c5f341294c" style="width: 100.0%; height: 100.0%;"><b>New York</b><br>Themes:<br><span style='color:pink;'><b>Family</b></span>: home, care, mother<br><span style='color:cyan;'><b>Friendship</b></span>: care, friend, trust<br><span style='color:red;'><b>Love</b></span>: couple, heart, kiss<br></div>`)[0];
+                popup_870a75479312c571c61b646c8c03de9e.setContent(html_170c86fccbffe3f4c2ba17c5f341294c);
+            
+        
+
+        circle_marker_4512596b080a544c644b4a003d2001ed.bindPopup(popup_870a75479312c571c61b646c8c03de9e)
+        ;
+
+        
+    
+    
+            var circle_marker_3daa3773fcea145fc42722735069d0bc = L.circleMarker(
+                [37.8044, -122.2711],
+                {"bubblingMouseEvents": true, "color": "purple", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "purple", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_0c1d9fcfdc742329654ea28716a9ae5a);
+        
+    
+        var popup_2a26ca5990c5b1d39d1858f2e8cf9ea2 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_7858fb30180034713efb6682db21dd37 = $(`<div id="html_7858fb30180034713efb6682db21dd37" style="width: 100.0%; height: 100.0%;"><b>Oakland</b><br>Themes:<br><span style='color:purple;'><b>Tourism</b></span>: trip, travel, vacation<br><span style='color:cyan;'><b>Friendship</b></span>: friend, care, support<br><span style='color:blue;'><b>Religious</b></span>: god, soul, divine<br></div>`)[0];
+                popup_2a26ca5990c5b1d39d1858f2e8cf9ea2.setContent(html_7858fb30180034713efb6682db21dd37);
+            
+        
+
+        circle_marker_3daa3773fcea145fc42722735069d0bc.bindPopup(popup_2a26ca5990c5b1d39d1858f2e8cf9ea2)
+        ;
+
+        
+    
+    
+            var circle_marker_4294ff2c40029aa7bec0720b7108e421 = L.circleMarker(
+                [35.4676, -97.5164],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_0c1d9fcfdc742329654ea28716a9ae5a);
+        
+    
+        var popup_d57865f2d9232bf9ae45168752afb2ec = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_6b6f90ad1d25c59df448d8bcbd77c6ac = $(`<div id="html_6b6f90ad1d25c59df448d8bcbd77c6ac" style="width: 100.0%; height: 100.0%;"><b>Oklahoma City</b><br>Themes:<br><span style='color:blue;'><b>Religious</b></span>: god, soul, cathedral<br><span style='color:green;'><b>Recovery</b></span>: hope, fire, comeback<br><span style='color:purple;'><b>Tourism</b></span>: trip, tourist, travel<br></div>`)[0];
+                popup_d57865f2d9232bf9ae45168752afb2ec.setContent(html_6b6f90ad1d25c59df448d8bcbd77c6ac);
+            
+        
+
+        circle_marker_4294ff2c40029aa7bec0720b7108e421.bindPopup(popup_d57865f2d9232bf9ae45168752afb2ec)
+        ;
+
+        
+    
+    
+            var circle_marker_de5a1758b3432f1029a730c73205c6ac = L.circleMarker(
+                [41.2565, -95.9345],
+                {"bubblingMouseEvents": true, "color": "purple", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "purple", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_0c1d9fcfdc742329654ea28716a9ae5a);
+        
+    
+        var popup_1c81f2e3b0757288961dab7e2647240a = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_23de0585fc324384def20ddc0b330c98 = $(`<div id="html_23de0585fc324384def20ddc0b330c98" style="width: 100.0%; height: 100.0%;"><b>Omaha</b><br>Themes:<br><span style='color:purple;'><b>Tourism</b></span>: beach, trip, visit<br><span style='color:blue;'><b>Religious</b></span>: god, church, soul<br><span style='color:green;'><b>Recovery</b></span>: hope, fire, comeback<br></div>`)[0];
+                popup_1c81f2e3b0757288961dab7e2647240a.setContent(html_23de0585fc324384def20ddc0b330c98);
+            
+        
+
+        circle_marker_de5a1758b3432f1029a730c73205c6ac.bindPopup(popup_1c81f2e3b0757288961dab7e2647240a)
+        ;
+
+        
+    
+    
+            var circle_marker_5fc6d349e9eca2591eea7d759c5603c3 = L.circleMarker(
+                [39.9526, -75.1652],
+                {"bubblingMouseEvents": true, "color": "pink", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "pink", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_0c1d9fcfdc742329654ea28716a9ae5a);
+        
+    
+        var popup_14bfd71c3410956222f55167da85037c = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_77812bd5615fc145cc55a4e8b4e943e2 = $(`<div id="html_77812bd5615fc145cc55a4e8b4e943e2" style="width: 100.0%; height: 100.0%;"><b>Philadelphia</b><br>Themes:<br><span style='color:pink;'><b>Family</b></span>: home, care, father<br><span style='color:blue;'><b>Religious</b></span>: god, soul, holy<br><span style='color:forestgreen;'><b>Nature</b></span>: earth, river, green<br></div>`)[0];
+                popup_14bfd71c3410956222f55167da85037c.setContent(html_77812bd5615fc145cc55a4e8b4e943e2);
+            
+        
+
+        circle_marker_5fc6d349e9eca2591eea7d759c5603c3.bindPopup(popup_14bfd71c3410956222f55167da85037c)
+        ;
+
+        
+    
+    
+            var circle_marker_efaed0dce1b0a5a6483c636ebc7b2c36 = L.circleMarker(
+                [33.4484, -112.074],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_0c1d9fcfdc742329654ea28716a9ae5a);
+        
+    
+        var popup_385c70bc7243717c4d85b0e01e31d57e = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_2c780ddf13737653f5b630c6e39d1de1 = $(`<div id="html_2c780ddf13737653f5b630c6e39d1de1" style="width: 100.0%; height: 100.0%;"><b>Phoenix</b><br>Themes:<br><span style='color:orange;'><b>Crime</b></span>: trial, murder, detective<br><span style='color:blue;'><b>Religious</b></span>: god, holy, saint<br><span style='color:purple;'><b>Tourism</b></span>: trip, vacation, beach<br></div>`)[0];
+                popup_385c70bc7243717c4d85b0e01e31d57e.setContent(html_2c780ddf13737653f5b630c6e39d1de1);
+            
+        
+
+        circle_marker_efaed0dce1b0a5a6483c636ebc7b2c36.bindPopup(popup_385c70bc7243717c4d85b0e01e31d57e)
+        ;
+
+        
+    
+    
+            var circle_marker_3bef1555c4d1e05edf1cf97ff1cb136f = L.circleMarker(
+                [40.4406, -79.9959],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_0c1d9fcfdc742329654ea28716a9ae5a);
+        
+    
+        var popup_abfc080e5461ab4bde274406bf1aa8ec = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_5082c96d30fb7bdd97778baff5d8a5ba = $(`<div id="html_5082c96d30fb7bdd97778baff5d8a5ba" style="width: 100.0%; height: 100.0%;"><b>Pittsburgh</b><br>Themes:<br><span style='color:red;'><b>Love</b></span>: couple, heart, kiss<br><span style='color:blue;'><b>Religious</b></span>: god, holy, soul<br><span style='color:green;'><b>Recovery</b></span>: hope, fire, comeback<br></div>`)[0];
+                popup_abfc080e5461ab4bde274406bf1aa8ec.setContent(html_5082c96d30fb7bdd97778baff5d8a5ba);
+            
+        
+
+        circle_marker_3bef1555c4d1e05edf1cf97ff1cb136f.bindPopup(popup_abfc080e5461ab4bde274406bf1aa8ec)
+        ;
+
+        
+    
+    
+            var circle_marker_bba25c6e2b8dbef7789d2f64df6f0371 = L.circleMarker(
+                [45.5051, -122.675],
+                {"bubblingMouseEvents": true, "color": "purple", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "purple", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_0c1d9fcfdc742329654ea28716a9ae5a);
+        
+    
+        var popup_4ab385ba51c3ed5be5bae98d0c228628 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_b02e619a31a60dc1b4d3df55840817f3 = $(`<div id="html_b02e619a31a60dc1b4d3df55840817f3" style="width: 100.0%; height: 100.0%;"><b>Portland</b><br>Themes:<br><span style='color:purple;'><b>Tourism</b></span>: visit, trip, favourite<br><span style='color:red;'><b>Love</b></span>: heart, couple, kiss<br><span style='color:blue;'><b>Religious</b></span>: god, holy, saint<br></div>`)[0];
+                popup_4ab385ba51c3ed5be5bae98d0c228628.setContent(html_b02e619a31a60dc1b4d3df55840817f3);
+            
+        
+
+        circle_marker_bba25c6e2b8dbef7789d2f64df6f0371.bindPopup(popup_4ab385ba51c3ed5be5bae98d0c228628)
+        ;
+
+        
+    
+    
+            var circle_marker_bbf86a33410f7c3cb0b13eafaa8ea04c = L.circleMarker(
+                [35.7796, -78.6382],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_0c1d9fcfdc742329654ea28716a9ae5a);
+        
+    
+        var popup_8696706084b57970d659fa661b517fb2 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_6683bfe5ca5a1212b83988096872e6fe = $(`<div id="html_6683bfe5ca5a1212b83988096872e6fe" style="width: 100.0%; height: 100.0%;"><b>Raleigh</b><br>Themes:<br><span style='color:blue;'><b>Religious</b></span>: god, temple, church<br><span style='color:green;'><b>Recovery</b></span>: fire<br><span style='color:purple;'><b>Tourism</b></span>: trip, beach<br></div>`)[0];
+                popup_8696706084b57970d659fa661b517fb2.setContent(html_6683bfe5ca5a1212b83988096872e6fe);
+            
+        
+
+        circle_marker_bbf86a33410f7c3cb0b13eafaa8ea04c.bindPopup(popup_8696706084b57970d659fa661b517fb2)
+        ;
+
+        
+    
+    
+            var circle_marker_691795d10deed2364ca3266f5d9b2e75 = L.circleMarker(
+                [38.5816, -121.4944],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_0c1d9fcfdc742329654ea28716a9ae5a);
+        
+    
+        var popup_ec33cf39eb13c602b8701fb276b5e751 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_c9cb43c885441ec6aa4a282fadd93b46 = $(`<div id="html_c9cb43c885441ec6aa4a282fadd93b46" style="width: 100.0%; height: 100.0%;"><b>Sacramento</b><br>Themes:<br><span style='color:blue;'><b>Religious</b></span>: god, soul, holy<br><span style='color:green;'><b>Recovery</b></span>: hope, fire<br><span style='color:purple;'><b>Tourism</b></span>: beach, trip, adventure<br></div>`)[0];
+                popup_ec33cf39eb13c602b8701fb276b5e751.setContent(html_c9cb43c885441ec6aa4a282fadd93b46);
+            
+        
+
+        circle_marker_691795d10deed2364ca3266f5d9b2e75.bindPopup(popup_ec33cf39eb13c602b8701fb276b5e751)
+        ;
+
+        
+    
+    
+            var circle_marker_857616101f414c168f1ae110b0b60744 = L.circleMarker(
+                [32.7157, -117.1611],
+                {"bubblingMouseEvents": true, "color": "cyan", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "cyan", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_0c1d9fcfdc742329654ea28716a9ae5a);
+        
+    
+        var popup_fb90fac0f728c4fdfd0a7472790e2624 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_0ab62f86a072e99c5830f92acbfe12a8 = $(`<div id="html_0ab62f86a072e99c5830f92acbfe12a8" style="width: 100.0%; height: 100.0%;"><b>San Diego</b><br>Themes:<br><span style='color:cyan;'><b>Friendship</b></span>: friend, care, sharing<br><span style='color:blue;'><b>Religious</b></span>: god, soul, church<br><span style='color:green;'><b>Recovery</b></span>: hope, fire, rehabilitation<br></div>`)[0];
+                popup_fb90fac0f728c4fdfd0a7472790e2624.setContent(html_0ab62f86a072e99c5830f92acbfe12a8);
+            
+        
+
+        circle_marker_857616101f414c168f1ae110b0b60744.bindPopup(popup_fb90fac0f728c4fdfd0a7472790e2624)
+        ;
+
+        
+    
+    
+            var circle_marker_0ee607499756437ddc735eb4f5c90a25 = L.circleMarker(
+                [37.7749, -122.4194],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_0c1d9fcfdc742329654ea28716a9ae5a);
+        
+    
+        var popup_c54a41f34bb54780bcf40d33c096283d = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_37674b67f5506d2deb933cedcfa17016 = $(`<div id="html_37674b67f5506d2deb933cedcfa17016" style="width: 100.0%; height: 100.0%;"><b>San Francisco</b><br>Themes:<br><span style='color:blue;'><b>Religious</b></span>: god, religion, church<br><span style='color:green;'><b>Recovery</b></span>: fire<br><span style='color:orange;'><b>Crime</b></span>: murder, suspect, witness<br></div>`)[0];
+                popup_c54a41f34bb54780bcf40d33c096283d.setContent(html_37674b67f5506d2deb933cedcfa17016);
+            
+        
+
+        circle_marker_0ee607499756437ddc735eb4f5c90a25.bindPopup(popup_c54a41f34bb54780bcf40d33c096283d)
+        ;
+
+        
+    
+    
+            var circle_marker_27b493166643bcd6ed9ee97ec6216a02 = L.circleMarker(
+                [32.0809, -81.0912],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_0c1d9fcfdc742329654ea28716a9ae5a);
+        
+    
+        var popup_e9c863daae5daf366259fff0cf6c9bbd = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_8b724c4ac0d787e0efb910f7b311e41e = $(`<div id="html_8b724c4ac0d787e0efb910f7b311e41e" style="width: 100.0%; height: 100.0%;"><b>Savannah</b><br>Themes:<br><span style='color:blue;'><b>Religious</b></span>: god<br><span style='color:green;'><b>Recovery</b></span>: fire, hope<br><span style='color:purple;'><b>Tourism</b></span>: adventure, trip<br></div>`)[0];
+                popup_e9c863daae5daf366259fff0cf6c9bbd.setContent(html_8b724c4ac0d787e0efb910f7b311e41e);
+            
+        
+
+        circle_marker_27b493166643bcd6ed9ee97ec6216a02.bindPopup(popup_e9c863daae5daf366259fff0cf6c9bbd)
+        ;
+
+        
+    
+    
+            var circle_marker_d37ea405c81d50fd7c5768e28a7dee11 = L.circleMarker(
+                [47.6062, -122.3321],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_0c1d9fcfdc742329654ea28716a9ae5a);
+        
+    
+        var popup_212ff31c9cae8508fe6779b73efd12fe = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_36691a08c6bab8faa3dd118fbd36b9a6 = $(`<div id="html_36691a08c6bab8faa3dd118fbd36b9a6" style="width: 100.0%; height: 100.0%;"><b>Seattle</b><br>Themes:<br><span style='color:red;'><b>Love</b></span>: couple, heart, date<br><span style='color:cyan;'><b>Friendship</b></span>: care, friend, trust<br><span style='color:pink;'><b>Family</b></span>: care, home, mother<br></div>`)[0];
+                popup_212ff31c9cae8508fe6779b73efd12fe.setContent(html_36691a08c6bab8faa3dd118fbd36b9a6);
+            
+        
+
+        circle_marker_d37ea405c81d50fd7c5768e28a7dee11.bindPopup(popup_212ff31c9cae8508fe6779b73efd12fe)
+        ;
+
+        
+    
+    
+            var circle_marker_0a638a83ec737736662610598679b1bc = L.circleMarker(
+                [37.9577, -121.2908],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_0c1d9fcfdc742329654ea28716a9ae5a);
+        
+    
+        var popup_2fa5eb701c2239051448d67a77e07742 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_abed9759bd3fdcf4c124bcfa49f63a84 = $(`<div id="html_abed9759bd3fdcf4c124bcfa49f63a84" style="width: 100.0%; height: 100.0%;"><b>Stockton</b><br>Themes:<br><span style='color:blue;'><b>Religious</b></span>: god, soul, holy<br><span style='color:green;'><b>Recovery</b></span>: hope<br><span style='color:purple;'><b>Tourism</b></span>: beach, adventure<br></div>`)[0];
+                popup_2fa5eb701c2239051448d67a77e07742.setContent(html_abed9759bd3fdcf4c124bcfa49f63a84);
+            
+        
+
+        circle_marker_0a638a83ec737736662610598679b1bc.bindPopup(popup_2fa5eb701c2239051448d67a77e07742)
+        ;
+
+        
+    
+    
+            var circle_marker_9dd3d4cf4ef7fbf3ca32b47d130119a7 = L.circleMarker(
+                [27.9506, -82.4572],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_0c1d9fcfdc742329654ea28716a9ae5a);
+        
+    
+        var popup_ee813b8db6aec2ab1d81ceff62c918a1 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_683ad97af99873bc186d26caee456224 = $(`<div id="html_683ad97af99873bc186d26caee456224" style="width: 100.0%; height: 100.0%;"><b>Tampa</b><br>Themes:<br><span style='color:blue;'><b>Religious</b></span>: god, holy, soul<br><span style='color:green;'><b>Recovery</b></span>: hope, fire<br><span style='color:orange;'><b>Crime</b></span>: murder, detective, corruption<br></div>`)[0];
+                popup_ee813b8db6aec2ab1d81ceff62c918a1.setContent(html_683ad97af99873bc186d26caee456224);
+            
+        
+
+        circle_marker_9dd3d4cf4ef7fbf3ca32b47d130119a7.bindPopup(popup_ee813b8db6aec2ab1d81ceff62c918a1)
+        ;
+
+        
+    
+    
+            var circle_marker_2513ed70407878bec40a1983c092957f = L.circleMarker(
+                [32.2226, -110.9747],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_0c1d9fcfdc742329654ea28716a9ae5a);
+        
+    
+        var popup_462b042d77f568272f1334d1237d8f2e = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_8640cda3bd7c9ecbc56df704564f002a = $(`<div id="html_8640cda3bd7c9ecbc56df704564f002a" style="width: 100.0%; height: 100.0%;"><b>Tucson</b><br>Themes:<br><span style='color:green;'><b>Recovery</b></span>: hope, fire, reborn<br><span style='color:purple;'><b>Tourism</b></span>: travel, tour, cruise<br><span style='color:orange;'><b>Crime</b></span>: suspect, gang, corruption<br></div>`)[0];
+                popup_462b042d77f568272f1334d1237d8f2e.setContent(html_8640cda3bd7c9ecbc56df704564f002a);
+            
+        
+
+        circle_marker_2513ed70407878bec40a1983c092957f.bindPopup(popup_462b042d77f568272f1334d1237d8f2e)
+        ;
+
+        
+    
+    
+            var circle_marker_ce81413a44d368f7fe5dbe8fdb56b08f = L.circleMarker(
+                [36.154, -95.9928],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_0c1d9fcfdc742329654ea28716a9ae5a);
+        
+    
+        var popup_660c4e4dffbcd0592cc05a29dfbe5cd0 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_6d784a68f0d02b9793595a7a4cbbbf9b = $(`<div id="html_6d784a68f0d02b9793595a7a4cbbbf9b" style="width: 100.0%; height: 100.0%;"><b>Tulsa</b><br>Themes:<br><span style='color:blue;'><b>Religious</b></span>: god, church, saint<br><span style='color:green;'><b>Recovery</b></span>: hope, fire<br><span style='color:purple;'><b>Tourism</b></span>: trip, travel, tourist<br></div>`)[0];
+                popup_660c4e4dffbcd0592cc05a29dfbe5cd0.setContent(html_6d784a68f0d02b9793595a7a4cbbbf9b);
+            
+        
+
+        circle_marker_ce81413a44d368f7fe5dbe8fdb56b08f.bindPopup(popup_660c4e4dffbcd0592cc05a29dfbe5cd0)
+        ;
+
+        
+    
+    
+            var circle_marker_107c7ab88919a5285f2d1b0f55f224bf = L.circleMarker(
+                [38.9072, -77.0369],
+                {"bubblingMouseEvents": true, "color": "pink", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "pink", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_0c1d9fcfdc742329654ea28716a9ae5a);
+        
+    
+        var popup_05ca6513b488b6e4c8c8a2fec1213cc3 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_8258448d134fcdcb803dfd8636db0691 = $(`<div id="html_8258448d134fcdcb803dfd8636db0691" style="width: 100.0%; height: 100.0%;"><b>Washington</b><br>Themes:<br><span style='color:pink;'><b>Family</b></span>: home, care, mother<br><span style='color:cyan;'><b>Friendship</b></span>: care, friend, trust<br><span style='color:green;'><b>Recovery</b></span>: hope, fire, survive<br></div>`)[0];
+                popup_05ca6513b488b6e4c8c8a2fec1213cc3.setContent(html_8258448d134fcdcb803dfd8636db0691);
+            
+        
+
+        circle_marker_107c7ab88919a5285f2d1b0f55f224bf.bindPopup(popup_05ca6513b488b6e4c8c8a2fec1213cc3)
+        ;
+
+        
+    
+</script>
+</html>
