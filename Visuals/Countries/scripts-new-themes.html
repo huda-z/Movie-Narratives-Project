@@ -1,0 +1,3881 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_fdd23e0f86d8526fdb740cac766c8a31 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/leaflet.markercluster.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.Default.css"/>
+</head>
+<body>
+    
+    
+<div style="position: fixed;
+            bottom: 50px; left: 50px; width: 250px; height: auto;
+            background-color: rgba(255, 255, 255, 0.8); z-index: 9999; border:2px solid #aaa;
+            padding: 10px; font-size: 14px; font-family: Arial, sans-serif;">
+    <b>Theme Legend:</b><br>
+    <div><i style="background: #0074D9; padding: 5px; color: white; border-radius: 5px;">&nbsp;&nbsp;&nbsp;</i> Family</div>
+    <div><i style="background: #FF69B4; padding: 5px; color: white; border-radius: 5px;">&nbsp;&nbsp;&nbsp;</i> Love</div>
+    <div><i style="background: #FF6347; padding: 5px; color: white; border-radius: 5px;">&nbsp;&nbsp;&nbsp;</i> War</div>
+    <div><i style="background: #8A2BE2; padding: 5px; color: white; border-radius: 5px;">&nbsp;&nbsp;&nbsp;</i> Politics</div>
+    <div><i style="background: #FFA500; padding: 5px; color: white; border-radius: 5px;">&nbsp;&nbsp;&nbsp;</i> Crime</div>
+    <div><i style="background: #32CD32; padding: 5px; color: white; border-radius: 5px;">&nbsp;&nbsp;&nbsp;</i> Nature</div>
+    <div><i style="background: #9400D3; padding: 5px; color: white; border-radius: 5px;">&nbsp;&nbsp;&nbsp;</i> Religious</div>
+    <div><i style="background: #228B22; padding: 5px; color: white; border-radius: 5px;">&nbsp;&nbsp;&nbsp;</i> Tourism</div>
+    <div><i style="background: #ADD8E6; padding: 5px; color: white; border-radius: 5px;">&nbsp;&nbsp;&nbsp;</i> Friendship</div>
+    <div><i style="background: #20B2AA; padding: 5px; color: white; border-radius: 5px;">&nbsp;&nbsp;&nbsp;</i> History</div>
+    <div><i style="background: #FFD700; padding: 5px; color: black; border-radius: 5px;">&nbsp;&nbsp;&nbsp;</i> Science</div>
+    <div><i style="background: #4B0082; padding: 5px; color: white; border-radius: 5px;">&nbsp;&nbsp;&nbsp;</i> Fantasy</div>
+    <div><i style="background: #DAA520; padding: 5px; color: white; border-radius: 5px;">&nbsp;&nbsp;&nbsp;</i> Recovery</div>
+    <div><i style="background: #FF0000; padding: 5px; color: white; border-radius: 5px;">&nbsp;&nbsp;&nbsp;</i> Sex and Nudity</div>
+</div>
+    
+            <div class="folium-map" id="map_fdd23e0f86d8526fdb740cac766c8a31" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_fdd23e0f86d8526fdb740cac766c8a31 = L.map(
+                "map_fdd23e0f86d8526fdb740cac766c8a31",
+                {
+                    center: [20.0, 0.0],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 2,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_417dd4e5c37fcd36a598d1f751865614 = L.tileLayer(
+                "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 20,
+  "maxNativeZoom": 20,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"https://carto.com/attributions\"\u003eCARTO\u003c/a\u003e",
+  "subdomains": "abcd",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_417dd4e5c37fcd36a598d1f751865614.addTo(map_fdd23e0f86d8526fdb740cac766c8a31);
+        
+    
+            var marker_cluster_28ef127ded9465f736aa22dce9e5ef0d = L.markerClusterGroup(
+                {
+}
+            );
+        
+    
+            var circle_marker_b783a65a6de0812235f56f94678a9d63 = L.circleMarker(
+                [61.0666922, -107.991707],
+                {"bubblingMouseEvents": true, "color": "#FFA500", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FFA500", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 2}
+            ).addTo(marker_cluster_28ef127ded9465f736aa22dce9e5ef0d);
+        
+    
+        var popup_d4427f329563fc9be1a2b218de80db69 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_6f2d6ae449e11626291ed079b16ee15f = $(`<div id="html_6f2d6ae449e11626291ed079b16ee15f" style="width: 100.0%; height: 100.0%;"><b>Crime</b><br>Theme Word: gang corruption suspect guilty assault trial court conviction investigation criminal murder<br>Location: Canada</div>`)[0];
+                popup_d4427f329563fc9be1a2b218de80db69.setContent(html_6f2d6ae449e11626291ed079b16ee15f);
+            
+        
+
+        circle_marker_b783a65a6de0812235f56f94678a9d63.bindPopup(popup_d4427f329563fc9be1a2b218de80db69)
+        ;
+
+        
+    
+    
+            circle_marker_b783a65a6de0812235f56f94678a9d63.bindTooltip(
+                `<div>
+                     Crime: gang corruption suspect guilty assault trial court conviction investigation criminal murder
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_c85199fc531f807d5d386ed97a3f7e0e = L.circleMarker(
+                [23.0131338, -80.8328748],
+                {"bubblingMouseEvents": true, "color": "#FFA500", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FFA500", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 2}
+            ).addTo(marker_cluster_28ef127ded9465f736aa22dce9e5ef0d);
+        
+    
+        var popup_1900211187c62113f220c31ff669dd20 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_0a206de48ffb0629c5176da2f58757f5 = $(`<div id="html_0a206de48ffb0629c5176da2f58757f5" style="width: 100.0%; height: 100.0%;"><b>Crime</b><br>Theme Word: gang criminal trial assault court guilty robbery murder witness suspect detective conviction burglary violence<br>Location: Cuba</div>`)[0];
+                popup_1900211187c62113f220c31ff669dd20.setContent(html_0a206de48ffb0629c5176da2f58757f5);
+            
+        
+
+        circle_marker_c85199fc531f807d5d386ed97a3f7e0e.bindPopup(popup_1900211187c62113f220c31ff669dd20)
+        ;
+
+        
+    
+    
+            circle_marker_c85199fc531f807d5d386ed97a3f7e0e.bindTooltip(
+                `<div>
+                     Crime: gang criminal trial assault court guilty robbery murder witness suspect detective conviction burglary violence
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_7c7c8cebcbb5e82e4bba902258850a97 = L.circleMarker(
+                [18.1850507, -77.3947693],
+                {"bubblingMouseEvents": true, "color": "#FFA500", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FFA500", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 2}
+            ).addTo(marker_cluster_28ef127ded9465f736aa22dce9e5ef0d);
+        
+    
+        var popup_13867a01c4c0da5fe9907a798979c86c = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_4fe5d7d4d84f217d74e2695d893b0cd7 = $(`<div id="html_4fe5d7d4d84f217d74e2695d893b0cd7" style="width: 100.0%; height: 100.0%;"><b>Crime</b><br>Theme Word: court theft murder criminal burglary suspect witness trial guilty violence<br>Location: Jamaica</div>`)[0];
+                popup_13867a01c4c0da5fe9907a798979c86c.setContent(html_4fe5d7d4d84f217d74e2695d893b0cd7);
+            
+        
+
+        circle_marker_7c7c8cebcbb5e82e4bba902258850a97.bindPopup(popup_13867a01c4c0da5fe9907a798979c86c)
+        ;
+
+        
+    
+    
+            circle_marker_7c7c8cebcbb5e82e4bba902258850a97.bindTooltip(
+                `<div>
+                     Crime: court theft murder criminal burglary suspect witness trial guilty violence
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_62593807738e4a9cd11ad120992f5059 = L.circleMarker(
+                [64.5731537, 11.52803643954819],
+                {"bubblingMouseEvents": true, "color": "#FFA500", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FFA500", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 2}
+            ).addTo(marker_cluster_28ef127ded9465f736aa22dce9e5ef0d);
+        
+    
+        var popup_c3a9ab0a543d9b36ce55e2793e056048 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_03866295f2650e631ed6e5d57cf04215 = $(`<div id="html_03866295f2650e631ed6e5d57cf04215" style="width: 100.0%; height: 100.0%;"><b>Crime</b><br>Theme Word: detective guilty suspect investigation murder burglary violence criminal court gang witness trial<br>Location: Norway</div>`)[0];
+                popup_c3a9ab0a543d9b36ce55e2793e056048.setContent(html_03866295f2650e631ed6e5d57cf04215);
+            
+        
+
+        circle_marker_62593807738e4a9cd11ad120992f5059.bindPopup(popup_c3a9ab0a543d9b36ce55e2793e056048)
+        ;
+
+        
+    
+    
+            circle_marker_62593807738e4a9cd11ad120992f5059.bindTooltip(
+                `<div>
+                     Crime: detective guilty suspect investigation murder burglary violence criminal court gang witness trial
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_9474c8edf0b00f33fa703d5bcea0e8cc = L.circleMarker(
+                [8.559559, -81.1308434],
+                {"bubblingMouseEvents": true, "color": "#FFA500", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FFA500", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 2}
+            ).addTo(marker_cluster_28ef127ded9465f736aa22dce9e5ef0d);
+        
+    
+        var popup_56028e3b3657947540a6208495e58bdf = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_6d2727545b56ef114b919e10a49a016f = $(`<div id="html_6d2727545b56ef114b919e10a49a016f" style="width: 100.0%; height: 100.0%;"><b>Crime</b><br>Theme Word: detective murder gang trial court injustice robbery criminal burglary violence<br>Location: Panama</div>`)[0];
+                popup_56028e3b3657947540a6208495e58bdf.setContent(html_6d2727545b56ef114b919e10a49a016f);
+            
+        
+
+        circle_marker_9474c8edf0b00f33fa703d5bcea0e8cc.bindPopup(popup_56028e3b3657947540a6208495e58bdf)
+        ;
+
+        
+    
+    
+            circle_marker_9474c8edf0b00f33fa703d5bcea0e8cc.bindTooltip(
+                `<div>
+                     Crime: detective murder gang trial court injustice robbery criminal burglary violence
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_f6dfca2cc219e6c7b86caa30222597e8 = L.circleMarker(
+                [14.4750607, -14.4529612],
+                {"bubblingMouseEvents": true, "color": "#FFA500", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FFA500", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 2}
+            ).addTo(marker_cluster_28ef127ded9465f736aa22dce9e5ef0d);
+        
+    
+        var popup_805652be0f4610d982be56ef681aeaca = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_6f7db1c247e79b4f617d1e0788973082 = $(`<div id="html_6f7db1c247e79b4f617d1e0788973082" style="width: 100.0%; height: 100.0%;"><b>Crime</b><br>Theme Word: violence investigation<br>Location: Senegal</div>`)[0];
+                popup_805652be0f4610d982be56ef681aeaca.setContent(html_6f7db1c247e79b4f617d1e0788973082);
+            
+        
+
+        circle_marker_f6dfca2cc219e6c7b86caa30222597e8.bindPopup(popup_805652be0f4610d982be56ef681aeaca)
+        ;
+
+        
+    
+    
+            circle_marker_f6dfca2cc219e6c7b86caa30222597e8.bindTooltip(
+                `<div>
+                     Crime: violence investigation
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_582467b30600800864d78cf6018eafed = L.circleMarker(
+                [-28.8166236, 24.991639],
+                {"bubblingMouseEvents": true, "color": "#FFA500", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FFA500", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 2}
+            ).addTo(marker_cluster_28ef127ded9465f736aa22dce9e5ef0d);
+        
+    
+        var popup_96296bd631f05455a13ec6de008b43f3 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_26d5ff2629a50a651b83eae946ed37bc = $(`<div id="html_26d5ff2629a50a651b83eae946ed37bc" style="width: 100.0%; height: 100.0%;"><b>Crime</b><br>Theme Word: violence court detective trial criminal guilty murder assault suspect conviction gang witness theft robbery smuggling<br>Location: South Africa</div>`)[0];
+                popup_96296bd631f05455a13ec6de008b43f3.setContent(html_26d5ff2629a50a651b83eae946ed37bc);
+            
+        
+
+        circle_marker_582467b30600800864d78cf6018eafed.bindPopup(popup_96296bd631f05455a13ec6de008b43f3)
+        ;
+
+        
+    
+    
+            circle_marker_582467b30600800864d78cf6018eafed.bindTooltip(
+                `<div>
+                     Crime: violence court detective trial criminal guilty murder assault suspect conviction gang witness theft robbery smuggling
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_80e9a262bbf457b537296ccd428f4edf = L.circleMarker(
+                [39.3260685, -4.8379791],
+                {"bubblingMouseEvents": true, "color": "#FFA500", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FFA500", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 2}
+            ).addTo(marker_cluster_28ef127ded9465f736aa22dce9e5ef0d);
+        
+    
+        var popup_55154f299708c3e7ec330c04505b6520 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_ab7f8f96f87168673aa955c1435bb352 = $(`<div id="html_ab7f8f96f87168673aa955c1435bb352" style="width: 100.0%; height: 100.0%;"><b>Crime</b><br>Theme Word: witness guilty murder injustice court violence detective trial assault investigation suspect gang smuggling criminal robbery theft burglary corruption<br>Location: Spain</div>`)[0];
+                popup_55154f299708c3e7ec330c04505b6520.setContent(html_ab7f8f96f87168673aa955c1435bb352);
+            
+        
+
+        circle_marker_80e9a262bbf457b537296ccd428f4edf.bindPopup(popup_55154f299708c3e7ec330c04505b6520)
+        ;
+
+        
+    
+    
+            circle_marker_80e9a262bbf457b537296ccd428f4edf.bindTooltip(
+                `<div>
+                     Crime: witness guilty murder injustice court violence detective trial assault investigation suspect gang smuggling criminal robbery theft burglary corruption
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_b67e3cf62a989c32ef6b4b414a97be30 = L.circleMarker(
+                [7.5554942, 80.7137847],
+                {"bubblingMouseEvents": true, "color": "#FFA500", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FFA500", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 2}
+            ).addTo(marker_cluster_28ef127ded9465f736aa22dce9e5ef0d);
+        
+    
+        var popup_49fc20450ba55ca5d672629b9113f495 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_07ec53483ab03ade343951f446a69422 = $(`<div id="html_07ec53483ab03ade343951f446a69422" style="width: 100.0%; height: 100.0%;"><b>Crime</b><br>Theme Word: robbery suspect<br>Location: Sri Lanka</div>`)[0];
+                popup_49fc20450ba55ca5d672629b9113f495.setContent(html_07ec53483ab03ade343951f446a69422);
+            
+        
+
+        circle_marker_b67e3cf62a989c32ef6b4b414a97be30.bindPopup(popup_49fc20450ba55ca5d672629b9113f495)
+        ;
+
+        
+    
+    
+            circle_marker_b67e3cf62a989c32ef6b4b414a97be30.bindTooltip(
+                `<div>
+                     Crime: robbery suspect
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_1dae6b500b6884d04b00d18bcc9a1344 = L.circleMarker(
+                [39.7837304, -100.445882],
+                {"bubblingMouseEvents": true, "color": "#0074D9", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#0074D9", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 2}
+            ).addTo(marker_cluster_28ef127ded9465f736aa22dce9e5ef0d);
+        
+    
+        var popup_2a32a3c15bae65f112eea50b1d99790b = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_c3707a73b1952d9cd0395a687250c7ba = $(`<div id="html_c3707a73b1952d9cd0395a687250c7ba" style="width: 100.0%; height: 100.0%;"><b>Family</b><br>Theme Word: foster protection kin ancestor adoption relatives roots household upbringing tradition maternal generation inheritance unity brotherhood clan guardian bonding paternal bloodline grandparents heritage progeny lineage nurturing descendant offspring parenting guardianship matriarch patriarch sisterhood togetherness homemaking<br>Location: United States</div>`)[0];
+                popup_2a32a3c15bae65f112eea50b1d99790b.setContent(html_c3707a73b1952d9cd0395a687250c7ba);
+            
+        
+
+        circle_marker_1dae6b500b6884d04b00d18bcc9a1344.bindPopup(popup_2a32a3c15bae65f112eea50b1d99790b)
+        ;
+
+        
+    
+    
+            circle_marker_1dae6b500b6884d04b00d18bcc9a1344.bindTooltip(
+                `<div>
+                     Family: foster protection kin ancestor adoption relatives roots household upbringing tradition maternal generation inheritance unity brotherhood clan guardian bonding paternal bloodline grandparents heritage progeny lineage nurturing descendant offspring parenting guardianship matriarch patriarch sisterhood togetherness homemaking
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_dbda755a18b79bf0e1b0bf96e77bf4cd = L.circleMarker(
+                [44.6663146, -93.6261918],
+                {"bubblingMouseEvents": true, "color": "#4B0082", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4B0082", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 2}
+            ).addTo(marker_cluster_28ef127ded9465f736aa22dce9e5ef0d);
+        
+    
+        var popup_1d259c5e73449ab1742dc03e75474f8e = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_3f8082c60cd8a80aa5acfbe0c71ec597 = $(`<div id="html_3f8082c60cd8a80aa5acfbe0c71ec597" style="width: 100.0%; height: 100.0%;"><b>Fantasy</b><br>Theme Word: magic legend hero fantasy enchantment sword magician dragon spell kingdom<br>Location: Jordan</div>`)[0];
+                popup_1d259c5e73449ab1742dc03e75474f8e.setContent(html_3f8082c60cd8a80aa5acfbe0c71ec597);
+            
+        
+
+        circle_marker_dbda755a18b79bf0e1b0bf96e77bf4cd.bindPopup(popup_1d259c5e73449ab1742dc03e75474f8e)
+        ;
+
+        
+    
+    
+            circle_marker_dbda755a18b79bf0e1b0bf96e77bf4cd.bindTooltip(
+                `<div>
+                     Fantasy: magic legend hero fantasy enchantment sword magician dragon spell kingdom
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_3ece03c6acbd09fb69e4e2fce9f63eaf = L.circleMarker(
+                [44.024322850000004, 21.07657433209902],
+                {"bubblingMouseEvents": true, "color": "#4B0082", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4B0082", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 2}
+            ).addTo(marker_cluster_28ef127ded9465f736aa22dce9e5ef0d);
+        
+    
+        var popup_c670e9a7950c423d605f4b6ca2f2de1f = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_58ad986ed2c8d46b59f4a9a178f24c3d = $(`<div id="html_58ad986ed2c8d46b59f4a9a178f24c3d" style="width: 100.0%; height: 100.0%;"><b>Fantasy</b><br>Theme Word: kingdom hero spell sword legend witch fantasy<br>Location: Serbia</div>`)[0];
+                popup_c670e9a7950c423d605f4b6ca2f2de1f.setContent(html_58ad986ed2c8d46b59f4a9a178f24c3d);
+            
+        
+
+        circle_marker_3ece03c6acbd09fb69e4e2fce9f63eaf.bindPopup(popup_c670e9a7950c423d605f4b6ca2f2de1f)
+        ;
+
+        
+    
+    
+            circle_marker_3ece03c6acbd09fb69e4e2fce9f63eaf.bindTooltip(
+                `<div>
+                     Fantasy: kingdom hero spell sword legend witch fantasy
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_1fbbd63b1ca42a73b7f4220a9b9ce465 = L.circleMarker(
+                [17.1204943, -88.6859028],
+                {"bubblingMouseEvents": true, "color": "#ADD8E6", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ADD8E6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 2}
+            ).addTo(marker_cluster_28ef127ded9465f736aa22dce9e5ef0d);
+        
+    
+        var popup_3c42491612f0bb8d8998c38542a69ac4 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_756c6238382e088b39f0d47d228253d4 = $(`<div id="html_756c6238382e088b39f0d47d228253d4" style="width: 100.0%; height: 100.0%;"><b>Friendship</b><br>Theme Word: sharing care friend trust support<br>Location: Belize</div>`)[0];
+                popup_3c42491612f0bb8d8998c38542a69ac4.setContent(html_756c6238382e088b39f0d47d228253d4);
+            
+        
+
+        circle_marker_1fbbd63b1ca42a73b7f4220a9b9ce465.bindPopup(popup_3c42491612f0bb8d8998c38542a69ac4)
+        ;
+
+        
+    
+    
+            circle_marker_1fbbd63b1ca42a73b7f4220a9b9ce465.bindTooltip(
+                `<div>
+                     Friendship: sharing care friend trust support
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_137625d829398819928562054dabfdbd = L.circleMarker(
+                [-31.7613365, -71.3187697],
+                {"bubblingMouseEvents": true, "color": "#ADD8E6", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ADD8E6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 2}
+            ).addTo(marker_cluster_28ef127ded9465f736aa22dce9e5ef0d);
+        
+    
+        var popup_a69941e05f9947d82b486f0916043c54 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_479512ff0bb67622cbdeb6fbfc4e1761 = $(`<div id="html_479512ff0bb67622cbdeb6fbfc4e1761" style="width: 100.0%; height: 100.0%;"><b>Friendship</b><br>Theme Word: adventure companion trust friend care bond<br>Location: Chile</div>`)[0];
+                popup_a69941e05f9947d82b486f0916043c54.setContent(html_479512ff0bb67622cbdeb6fbfc4e1761);
+            
+        
+
+        circle_marker_137625d829398819928562054dabfdbd.bindPopup(popup_a69941e05f9947d82b486f0916043c54)
+        ;
+
+        
+    
+    
+            circle_marker_137625d829398819928562054dabfdbd.bindTooltip(
+                `<div>
+                     Friendship: adventure companion trust friend care bond
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_0ac986358df3b216b2d7c222669cce81 = L.circleMarker(
+                [10.2735633, -84.0739102],
+                {"bubblingMouseEvents": true, "color": "#ADD8E6", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ADD8E6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 2}
+            ).addTo(marker_cluster_28ef127ded9465f736aa22dce9e5ef0d);
+        
+    
+        var popup_4b9eac49fafb2dada8c6dba21422fa45 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_44b1a71eac95210722a082ae57a4c4d3 = $(`<div id="html_44b1a71eac95210722a082ae57a4c4d3" style="width: 100.0%; height: 100.0%;"><b>Friendship</b><br>Theme Word: friend care laughter trust adventure companion support<br>Location: Costa Rica</div>`)[0];
+                popup_4b9eac49fafb2dada8c6dba21422fa45.setContent(html_44b1a71eac95210722a082ae57a4c4d3);
+            
+        
+
+        circle_marker_0ac986358df3b216b2d7c222669cce81.bindPopup(popup_4b9eac49fafb2dada8c6dba21422fa45)
+        ;
+
+        
+    
+    
+            circle_marker_0ac986358df3b216b2d7c222669cce81.bindTooltip(
+                `<div>
+                     Friendship: friend care laughter trust adventure companion support
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_c6127252a8cf43a3b3dc66b92b5db8be = L.circleMarker(
+                [19.0974031, -70.3028026],
+                {"bubblingMouseEvents": true, "color": "#ADD8E6", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ADD8E6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 2}
+            ).addTo(marker_cluster_28ef127ded9465f736aa22dce9e5ef0d);
+        
+    
+        var popup_99995d3d5d4747665c97bd9bb9d95167 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_ba5d09166f9a0b06e42fcc12655ca223 = $(`<div id="html_ba5d09166f9a0b06e42fcc12655ca223" style="width: 100.0%; height: 100.0%;"><b>Friendship</b><br>Theme Word: friend care laughter trust<br>Location: Dominican Republic</div>`)[0];
+                popup_99995d3d5d4747665c97bd9bb9d95167.setContent(html_ba5d09166f9a0b06e42fcc12655ca223);
+            
+        
+
+        circle_marker_c6127252a8cf43a3b3dc66b92b5db8be.bindPopup(popup_99995d3d5d4747665c97bd9bb9d95167)
+        ;
+
+        
+    
+    
+            circle_marker_c6127252a8cf43a3b3dc66b92b5db8be.bindTooltip(
+                `<div>
+                     Friendship: friend care laughter trust
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_cac8520786707fa82c94cbf64ca2a501 = L.circleMarker(
+                [42.5869578, 20.9021231],
+                {"bubblingMouseEvents": true, "color": "#ADD8E6", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ADD8E6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 2}
+            ).addTo(marker_cluster_28ef127ded9465f736aa22dce9e5ef0d);
+        
+    
+        var popup_932365873fca12845f758713e90cc3a1 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_fc9e38717b4fd4c3440f335e17dc7f7a = $(`<div id="html_fc9e38717b4fd4c3440f335e17dc7f7a" style="width: 100.0%; height: 100.0%;"><b>Friendship</b><br>Theme Word: friend trust care support<br>Location: Kosovo</div>`)[0];
+                popup_932365873fca12845f758713e90cc3a1.setContent(html_fc9e38717b4fd4c3440f335e17dc7f7a);
+            
+        
+
+        circle_marker_cac8520786707fa82c94cbf64ca2a501.bindPopup(popup_932365873fca12845f758713e90cc3a1)
+        ;
+
+        
+    
+    
+            circle_marker_cac8520786707fa82c94cbf64ca2a501.bindTooltip(
+                `<div>
+                     Friendship: friend trust care support
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_53fe21954b49937cc3f890f62544a60f = L.circleMarker(
+                [12.6090157, -85.2936911],
+                {"bubblingMouseEvents": true, "color": "#ADD8E6", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ADD8E6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 2}
+            ).addTo(marker_cluster_28ef127ded9465f736aa22dce9e5ef0d);
+        
+    
+        var popup_dcc51f6b19700362175bb1b41e8f7a8e = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_66bfc2dfa8a41a3ba5081409ba9a8088 = $(`<div id="html_66bfc2dfa8a41a3ba5081409ba9a8088" style="width: 100.0%; height: 100.0%;"><b>Friendship</b><br>Theme Word: care joy friend loyalty<br>Location: Nicaragua</div>`)[0];
+                popup_dcc51f6b19700362175bb1b41e8f7a8e.setContent(html_66bfc2dfa8a41a3ba5081409ba9a8088);
+            
+        
+
+        circle_marker_53fe21954b49937cc3f890f62544a60f.bindPopup(popup_dcc51f6b19700362175bb1b41e8f7a8e)
+        ;
+
+        
+    
+    
+            circle_marker_53fe21954b49937cc3f890f62544a60f.bindTooltip(
+                `<div>
+                     Friendship: care joy friend loyalty
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_25dc52546dc16f2b81dc10d504cf0d71 = L.circleMarker(
+                [-6.5247123, 35.7878438],
+                {"bubblingMouseEvents": true, "color": "#ADD8E6", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ADD8E6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 2}
+            ).addTo(marker_cluster_28ef127ded9465f736aa22dce9e5ef0d);
+        
+    
+        var popup_bfa7405214b8696741693057a8078e99 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_7a10eb7f93d6b2a82ce44d8733a26989 = $(`<div id="html_7a10eb7f93d6b2a82ce44d8733a26989" style="width: 100.0%; height: 100.0%;"><b>Friendship</b><br>Theme Word: care friend<br>Location: Tanzania</div>`)[0];
+                popup_bfa7405214b8696741693057a8078e99.setContent(html_7a10eb7f93d6b2a82ce44d8733a26989);
+            
+        
+
+        circle_marker_25dc52546dc16f2b81dc10d504cf0d71.bindPopup(popup_bfa7405214b8696741693057a8078e99)
+        ;
+
+        
+    
+    
+            circle_marker_25dc52546dc16f2b81dc10d504cf0d71.bindTooltip(
+                `<div>
+                     Friendship: care friend
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_28c18bd8385c1cbd5cdb535d1ff7bd8f = L.circleMarker(
+                [4.536307, -75.6723751],
+                {"bubblingMouseEvents": true, "color": "#20B2AA", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#20B2AA", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 2}
+            ).addTo(marker_cluster_28ef127ded9465f736aa22dce9e5ef0d);
+        
+    
+        var popup_38d93e97f84805b2e4cc450879eb0ca3 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_3993d1b457197898bdcf1cdf498e8883 = $(`<div id="html_3993d1b457197898bdcf1cdf498e8883" style="width: 100.0%; height: 100.0%;"><b>History</b><br>Theme Word: historical<br>Location: Armenia</div>`)[0];
+                popup_38d93e97f84805b2e4cc450879eb0ca3.setContent(html_3993d1b457197898bdcf1cdf498e8883);
+            
+        
+
+        circle_marker_28c18bd8385c1cbd5cdb535d1ff7bd8f.bindPopup(popup_38d93e97f84805b2e4cc450879eb0ca3)
+        ;
+
+        
+    
+    
+            circle_marker_28c18bd8385c1cbd5cdb535d1ff7bd8f.bindTooltip(
+                `<div>
+                     History: historical
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_81f06369c22593f107d8deceae370046 = L.circleMarker(
+                [9.5293472, 2.2584408],
+                {"bubblingMouseEvents": true, "color": "#20B2AA", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#20B2AA", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 2}
+            ).addTo(marker_cluster_28ef127ded9465f736aa22dce9e5ef0d);
+        
+    
+        var popup_55c3b59e89b1a9814530afc8031137b9 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_4fb5043719b7cc90fdcdbc8e3de74bcd = $(`<div id="html_4fb5043719b7cc90fdcdbc8e3de74bcd" style="width: 100.0%; height: 100.0%;"><b>History</b><br>Theme Word: past archaeology heritage historical monument ancient battle legacy museum period<br>Location: Benin</div>`)[0];
+                popup_55c3b59e89b1a9814530afc8031137b9.setContent(html_4fb5043719b7cc90fdcdbc8e3de74bcd);
+            
+        
+
+        circle_marker_81f06369c22593f107d8deceae370046.bindPopup(popup_55c3b59e89b1a9814530afc8031137b9)
+        ;
+
+        
+    
+    
+            circle_marker_81f06369c22593f107d8deceae370046.bindTooltip(
+                `<div>
+                     History: past archaeology heritage historical monument ancient battle legacy museum period
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_00d9e66574f0e8d1d7076df60b197db7 = L.circleMarker(
+                [-19.302233, 34.9144977],
+                {"bubblingMouseEvents": true, "color": "#20B2AA", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#20B2AA", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 2}
+            ).addTo(marker_cluster_28ef127ded9465f736aa22dce9e5ef0d);
+        
+    
+        var popup_e37a21ec87ab125b3aeb2c74ea1469ba = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_ebbe6548284080d777146a54bd22a573 = $(`<div id="html_ebbe6548284080d777146a54bd22a573" style="width: 100.0%; height: 100.0%;"><b>History</b><br>Theme Word: archaeology heritage historical monument ancient battle legacy past museum period<br>Location: Mozambique</div>`)[0];
+                popup_e37a21ec87ab125b3aeb2c74ea1469ba.setContent(html_ebbe6548284080d777146a54bd22a573);
+            
+        
+
+        circle_marker_00d9e66574f0e8d1d7076df60b197db7.bindPopup(popup_e37a21ec87ab125b3aeb2c74ea1469ba)
+        ;
+
+        
+    
+    
+            circle_marker_00d9e66574f0e8d1d7076df60b197db7.bindTooltip(
+                `<div>
+                     History: archaeology heritage historical monument ancient battle legacy past museum period
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_dc7990e4165159fa7f00815864c8a54f = L.circleMarker(
+                [13.1500331, -59.5250305],
+                {"bubblingMouseEvents": true, "color": "#FF69B4", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FF69B4", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 2}
+            ).addTo(marker_cluster_28ef127ded9465f736aa22dce9e5ef0d);
+        
+    
+        var popup_cbdb778eb2ef7beebaaa272ca1df648a = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_57e93fb55a92f22b7928f832ceb7b3f5 = $(`<div id="html_57e93fb55a92f22b7928f832ceb7b3f5" style="width: 100.0%; height: 100.0%;"><b>Love</b><br>Theme Word: couple beloved heart relationship date kiss commitment devotion<br>Location: Barbados</div>`)[0];
+                popup_cbdb778eb2ef7beebaaa272ca1df648a.setContent(html_57e93fb55a92f22b7928f832ceb7b3f5);
+            
+        
+
+        circle_marker_dc7990e4165159fa7f00815864c8a54f.bindPopup(popup_cbdb778eb2ef7beebaaa272ca1df648a)
+        ;
+
+        
+    
+    
+            circle_marker_dc7990e4165159fa7f00815864c8a54f.bindTooltip(
+                `<div>
+                     Love: couple beloved heart relationship date kiss commitment devotion
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_902316aba6776bf9a7ec5af227b03c85 = L.circleMarker(
+                [-23.3165935, -58.1693445],
+                {"bubblingMouseEvents": true, "color": "#FF69B4", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FF69B4", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 2}
+            ).addTo(marker_cluster_28ef127ded9465f736aa22dce9e5ef0d);
+        
+    
+        var popup_a321e89766eada16b19285cbf5ee1aa1 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_fa62f9d9789b974aeaa0b180626d767a = $(`<div id="html_fa62f9d9789b974aeaa0b180626d767a" style="width: 100.0%; height: 100.0%;"><b>Love</b><br>Theme Word: relationship kiss heart date affectionate fond couple<br>Location: Paraguay</div>`)[0];
+                popup_a321e89766eada16b19285cbf5ee1aa1.setContent(html_fa62f9d9789b974aeaa0b180626d767a);
+            
+        
+
+        circle_marker_902316aba6776bf9a7ec5af227b03c85.bindPopup(popup_a321e89766eada16b19285cbf5ee1aa1)
+        ;
+
+        
+    
+    
+            circle_marker_902316aba6776bf9a7ec5af227b03c85.bindTooltip(
+                `<div>
+                     Love: relationship kiss heart date affectionate fond couple
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_daceb67503e3582d8344cadee5f3235a = L.circleMarker(
+                [-6.8699697, -75.0458515],
+                {"bubblingMouseEvents": true, "color": "#FF69B4", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FF69B4", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 2}
+            ).addTo(marker_cluster_28ef127ded9465f736aa22dce9e5ef0d);
+        
+    
+        var popup_acdc10911f13dffbf7f10f6afe2c5910 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_b6545c59460478eb1a2804f75301b2c8 = $(`<div id="html_b6545c59460478eb1a2804f75301b2c8" style="width: 100.0%; height: 100.0%;"><b>Love</b><br>Theme Word: passion heart kiss devotion affectionate fond romance commitment intimacy relationship couple date beloved<br>Location: Peru</div>`)[0];
+                popup_acdc10911f13dffbf7f10f6afe2c5910.setContent(html_b6545c59460478eb1a2804f75301b2c8);
+            
+        
+
+        circle_marker_daceb67503e3582d8344cadee5f3235a.bindPopup(popup_acdc10911f13dffbf7f10f6afe2c5910)
+        ;
+
+        
+    
+    
+            circle_marker_daceb67503e3582d8344cadee5f3235a.bindTooltip(
+                `<div>
+                     Love: passion heart kiss devotion affectionate fond romance commitment intimacy relationship couple date beloved
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_53a71dd61d73d9a4f82770ed2ce7e2cc = L.circleMarker(
+                [38.6281733, 70.8156541],
+                {"bubblingMouseEvents": true, "color": "#FF69B4", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FF69B4", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 2}
+            ).addTo(marker_cluster_28ef127ded9465f736aa22dce9e5ef0d);
+        
+    
+        var popup_999dea1316e29ccf57d8abf650614ca5 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_47b6fcef71e36480172374f37f301c5b = $(`<div id="html_47b6fcef71e36480172374f37f301c5b" style="width: 100.0%; height: 100.0%;"><b>Love</b><br>Theme Word: couple date commitment kiss relationship heart<br>Location: Tajikistan</div>`)[0];
+                popup_999dea1316e29ccf57d8abf650614ca5.setContent(html_47b6fcef71e36480172374f37f301c5b);
+            
+        
+
+        circle_marker_53a71dd61d73d9a4f82770ed2ce7e2cc.bindPopup(popup_999dea1316e29ccf57d8abf650614ca5)
+        ;
+
+        
+    
+    
+            circle_marker_53a71dd61d73d9a4f82770ed2ce7e2cc.bindTooltip(
+                `<div>
+                     Love: couple date commitment kiss relationship heart
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_7c470227ed489bf17d9b224a0bf7e185 = L.circleMarker(
+                [-24.7761086, 134.755],
+                {"bubblingMouseEvents": true, "color": "#32CD32", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#32CD32", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 2}
+            ).addTo(marker_cluster_28ef127ded9465f736aa22dce9e5ef0d);
+        
+    
+        var popup_c811445ef7997049b714581668c9e425 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_83823082707f413aa5a1953761364fd2 = $(`<div id="html_83823082707f413aa5a1953761364fd2" style="width: 100.0%; height: 100.0%;"><b>Nature</b><br>Theme Word: river green beach sunrise environment sunset desert earth<br>Location: Australia</div>`)[0];
+                popup_c811445ef7997049b714581668c9e425.setContent(html_83823082707f413aa5a1953761364fd2);
+            
+        
+
+        circle_marker_7c470227ed489bf17d9b224a0bf7e185.bindPopup(popup_c811445ef7997049b714581668c9e425)
+        ;
+
+        
+    
+    
+            circle_marker_7c470227ed489bf17d9b224a0bf7e185.bindTooltip(
+                `<div>
+                     Nature: river green beach sunrise environment sunset desert earth
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_ff46eb69d1fdc30529a5afa1e1e4da95 = L.circleMarker(
+                [32.3293809, -83.1137366],
+                {"bubblingMouseEvents": true, "color": "#32CD32", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#32CD32", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 2}
+            ).addTo(marker_cluster_28ef127ded9465f736aa22dce9e5ef0d);
+        
+    
+        var popup_b84718822ccbb13a54a0c1f1bb547589 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_d726aa42a851def8d77c1833151ea738 = $(`<div id="html_d726aa42a851def8d77c1833151ea738" style="width: 100.0%; height: 100.0%;"><b>Nature</b><br>Theme Word: ocean beach green earth sunset sunrise river desert climate environment rainforest landscape forest mountain<br>Location: Georgia</div>`)[0];
+                popup_b84718822ccbb13a54a0c1f1bb547589.setContent(html_d726aa42a851def8d77c1833151ea738);
+            
+        
+
+        circle_marker_ff46eb69d1fdc30529a5afa1e1e4da95.bindPopup(popup_b84718822ccbb13a54a0c1f1bb547589)
+        ;
+
+        
+    
+    
+            circle_marker_ff46eb69d1fdc30529a5afa1e1e4da95.bindTooltip(
+                `<div>
+                     Nature: ocean beach green earth sunset sunrise river desert climate environment rainforest landscape forest mountain
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_5cad501a1f54112e54e2621a1741c00b = L.circleMarker(
+                [3.7203503, 73.2244152],
+                {"bubblingMouseEvents": true, "color": "#32CD32", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#32CD32", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 2}
+            ).addTo(marker_cluster_28ef127ded9465f736aa22dce9e5ef0d);
+        
+    
+        var popup_5410412434f7dba8aa4fb867b52c5d90 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_8fbd8156dfba31d968f9b7331dc6225b = $(`<div id="html_8fbd8156dfba31d968f9b7331dc6225b" style="width: 100.0%; height: 100.0%;"><b>Nature</b><br>Theme Word: ocean forest river biodiversity mountain environment<br>Location: Maldives</div>`)[0];
+                popup_5410412434f7dba8aa4fb867b52c5d90.setContent(html_8fbd8156dfba31d968f9b7331dc6225b);
+            
+        
+
+        circle_marker_5cad501a1f54112e54e2621a1741c00b.bindPopup(popup_5410412434f7dba8aa4fb867b52c5d90)
+        ;
+
+        
+    
+    
+            circle_marker_5cad501a1f54112e54e2621a1741c00b.bindTooltip(
+                `<div>
+                     Nature: ocean forest river biodiversity mountain environment
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_e36a27d458691ba0ba3b33eb4ba3ca5f = L.circleMarker(
+                [16.3700359, -2.2900239],
+                {"bubblingMouseEvents": true, "color": "#32CD32", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#32CD32", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 2}
+            ).addTo(marker_cluster_28ef127ded9465f736aa22dce9e5ef0d);
+        
+    
+        var popup_4d6b1309289dd21a503d16749f109aac = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_eec49674ee012c61546073ea3350391c = $(`<div id="html_eec49674ee012c61546073ea3350391c" style="width: 100.0%; height: 100.0%;"><b>Nature</b><br>Theme Word: ocean river earth beach desert green climate<br>Location: Mali</div>`)[0];
+                popup_4d6b1309289dd21a503d16749f109aac.setContent(html_eec49674ee012c61546073ea3350391c);
+            
+        
+
+        circle_marker_e36a27d458691ba0ba3b33eb4ba3ca5f.bindPopup(popup_4d6b1309289dd21a503d16749f109aac)
+        ;
+
+        
+    
+    
+            circle_marker_e36a27d458691ba0ba3b33eb4ba3ca5f.bindTooltip(
+                `<div>
+                     Nature: ocean river earth beach desert green climate
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_6f2fc5bccaddd02032bb10ddc2fa64af = L.circleMarker(
+                [35.8885993, 14.4476911],
+                {"bubblingMouseEvents": true, "color": "#32CD32", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#32CD32", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 2}
+            ).addTo(marker_cluster_28ef127ded9465f736aa22dce9e5ef0d);
+        
+    
+        var popup_0de00f3a66e1fff5d50a60cc11c5b897 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_ce50424c37d69f9322f0dcf4ce83b4d4 = $(`<div id="html_ce50424c37d69f9322f0dcf4ce83b4d4" style="width: 100.0%; height: 100.0%;"><b>Nature</b><br>Theme Word: ocean beach wilderness green earth desert river forest<br>Location: Malta</div>`)[0];
+                popup_0de00f3a66e1fff5d50a60cc11c5b897.setContent(html_ce50424c37d69f9322f0dcf4ce83b4d4);
+            
+        
+
+        circle_marker_6f2fc5bccaddd02032bb10ddc2fa64af.bindPopup(popup_0de00f3a66e1fff5d50a60cc11c5b897)
+        ;
+
+        
+    
+    
+            circle_marker_6f2fc5bccaddd02032bb10ddc2fa64af.bindTooltip(
+                `<div>
+                     Nature: ocean beach wilderness green earth desert river forest
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_bb9d2c458c2a38df168da190110359b4 = L.circleMarker(
+                [28.3780464, 83.9999901],
+                {"bubblingMouseEvents": true, "color": "#32CD32", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#32CD32", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 2}
+            ).addTo(marker_cluster_28ef127ded9465f736aa22dce9e5ef0d);
+        
+    
+        var popup_d40b488fa62e09a23514c219fd67d783 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_dbf948007b26fa568e6adecd7de3e90b = $(`<div id="html_dbf948007b26fa568e6adecd7de3e90b" style="width: 100.0%; height: 100.0%;"><b>Nature</b><br>Theme Word: mountain earth landscape green river<br>Location: Nepal</div>`)[0];
+                popup_d40b488fa62e09a23514c219fd67d783.setContent(html_dbf948007b26fa568e6adecd7de3e90b);
+            
+        
+
+        circle_marker_bb9d2c458c2a38df168da190110359b4.bindPopup(popup_d40b488fa62e09a23514c219fd67d783)
+        ;
+
+        
+    
+    
+            circle_marker_bb9d2c458c2a38df168da190110359b4.bindTooltip(
+                `<div>
+                     Nature: mountain earth landscape green river
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_b9520084f8e03a5284f862e99bfbf7de = L.circleMarker(
+                [-1.9646631, 30.0644358],
+                {"bubblingMouseEvents": true, "color": "#32CD32", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#32CD32", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 2}
+            ).addTo(marker_cluster_28ef127ded9465f736aa22dce9e5ef0d);
+        
+    
+        var popup_bb0cb5853f940caa85bb92ff997491b7 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_b3bae9f926f4fa37c6f74e3e002774f8 = $(`<div id="html_b3bae9f926f4fa37c6f74e3e002774f8" style="width: 100.0%; height: 100.0%;"><b>Nature</b><br>Theme Word: climate mountain wildlife earth environment beach green sunset<br>Location: Rwanda</div>`)[0];
+                popup_bb0cb5853f940caa85bb92ff997491b7.setContent(html_b3bae9f926f4fa37c6f74e3e002774f8);
+            
+        
+
+        circle_marker_b9520084f8e03a5284f862e99bfbf7de.bindPopup(popup_bb0cb5853f940caa85bb92ff997491b7)
+        ;
+
+        
+    
+    
+            circle_marker_b9520084f8e03a5284f862e99bfbf7de.bindTooltip(
+                `<div>
+                     Nature: climate mountain wildlife earth environment beach green sunset
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_ee0debccc6207e1488f615ea1aa3a822 = L.circleMarker(
+                [53.4250605, 27.6971358],
+                {"bubblingMouseEvents": true, "color": "#8A2BE2", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#8A2BE2", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 2}
+            ).addTo(marker_cluster_28ef127ded9465f736aa22dce9e5ef0d);
+        
+    
+        var popup_67db2c3d3120bfde68d70c5a6bfdaaa9 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_2a329abc6ee2dc26deaac2850f3709ce = $(`<div id="html_2a329abc6ee2dc26deaac2850f3709ce" style="width: 100.0%; height: 100.0%;"><b>Politics</b><br>Theme Word: law democracy political president campaign government legislation<br>Location: Belarus</div>`)[0];
+                popup_67db2c3d3120bfde68d70c5a6bfdaaa9.setContent(html_2a329abc6ee2dc26deaac2850f3709ce);
+            
+        
+
+        circle_marker_ee0debccc6207e1488f615ea1aa3a822.bindPopup(popup_67db2c3d3120bfde68d70c5a6bfdaaa9)
+        ;
+
+        
+    
+    
+            circle_marker_ee0debccc6207e1488f615ea1aa3a822.bindTooltip(
+                `<div>
+                     Politics: law democracy political president campaign government legislation
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_29d4206a34f962064c5e6d21b531a6c4 = L.circleMarker(
+                [-17.0568696, -64.9912286],
+                {"bubblingMouseEvents": true, "color": "#8A2BE2", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#8A2BE2", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 2}
+            ).addTo(marker_cluster_28ef127ded9465f736aa22dce9e5ef0d);
+        
+    
+        var popup_577951ac8a09ed09f087b3969bd115bd = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_57ae8bc315c26248658430a51dd88336 = $(`<div id="html_57ae8bc315c26248658430a51dd88336" style="width: 100.0%; height: 100.0%;"><b>Politics</b><br>Theme Word: government policy democracy president political election republic candidate law rights campaign parliament congress corruption<br>Location: Bolivia</div>`)[0];
+                popup_577951ac8a09ed09f087b3969bd115bd.setContent(html_57ae8bc315c26248658430a51dd88336);
+            
+        
+
+        circle_marker_29d4206a34f962064c5e6d21b531a6c4.bindPopup(popup_577951ac8a09ed09f087b3969bd115bd)
+        ;
+
+        
+    
+    
+            circle_marker_29d4206a34f962064c5e6d21b531a6c4.bindTooltip(
+                `<div>
+                     Politics: government policy democracy president political election republic candidate law rights campaign parliament congress corruption
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_8ea039347d99916b5c48343973edbb12 = L.circleMarker(
+                [12.5433216, 104.8144914],
+                {"bubblingMouseEvents": true, "color": "#8A2BE2", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#8A2BE2", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 2}
+            ).addTo(marker_cluster_28ef127ded9465f736aa22dce9e5ef0d);
+        
+    
+        var popup_085f71901f06e8f5d060bc4a18e82938 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_c07d574334ef921e0f8ad9f16c079072 = $(`<div id="html_c07d574334ef921e0f8ad9f16c079072" style="width: 100.0%; height: 100.0%;"><b>Politics</b><br>Theme Word: government president congress law policy campaign<br>Location: Cambodia</div>`)[0];
+                popup_085f71901f06e8f5d060bc4a18e82938.setContent(html_c07d574334ef921e0f8ad9f16c079072);
+            
+        
+
+        circle_marker_8ea039347d99916b5c48343973edbb12.bindPopup(popup_085f71901f06e8f5d060bc4a18e82938)
+        ;
+
+        
+    
+    
+            circle_marker_8ea039347d99916b5c48343973edbb12.bindTooltip(
+                `<div>
+                     Politics: government president congress law policy campaign
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_cb35db0922180747c223bd9c9ec94b61 = L.circleMarker(
+                [15.9500319, 37.9999668],
+                {"bubblingMouseEvents": true, "color": "#8A2BE2", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#8A2BE2", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 2}
+            ).addTo(marker_cluster_28ef127ded9465f736aa22dce9e5ef0d);
+        
+    
+        var popup_c416a80c741c976ca9c6e9f787f8e5c8 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_dcaee19c7d09432df772ad40569ea61f = $(`<div id="html_dcaee19c7d09432df772ad40569ea61f" style="width: 100.0%; height: 100.0%;"><b>Politics</b><br>Theme Word: president government political congress law policy<br>Location: Eritrea</div>`)[0];
+                popup_c416a80c741c976ca9c6e9f787f8e5c8.setContent(html_dcaee19c7d09432df772ad40569ea61f);
+            
+        
+
+        circle_marker_cb35db0922180747c223bd9c9ec94b61.bindPopup(popup_c416a80c741c976ca9c6e9f787f8e5c8)
+        ;
+
+        
+    
+    
+            circle_marker_cb35db0922180747c223bd9c9ec94b61.bindTooltip(
+                `<div>
+                     Politics: president government political congress law policy
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_7d5b867c085642650d5c95893e69cf49 = L.circleMarker(
+                [63.2467777, 25.9209164],
+                {"bubblingMouseEvents": true, "color": "#8A2BE2", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#8A2BE2", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 2}
+            ).addTo(marker_cluster_28ef127ded9465f736aa22dce9e5ef0d);
+        
+    
+        var popup_f3c55f4c7095ed06c2981fd0599efb0b = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_86cdd280f996a27b94499696fc757675 = $(`<div id="html_86cdd280f996a27b94499696fc757675" style="width: 100.0%; height: 100.0%;"><b>Politics</b><br>Theme Word: rights vote political government law election campaign republic<br>Location: Finland</div>`)[0];
+                popup_f3c55f4c7095ed06c2981fd0599efb0b.setContent(html_86cdd280f996a27b94499696fc757675);
+            
+        
+
+        circle_marker_7d5b867c085642650d5c95893e69cf49.bindPopup(popup_f3c55f4c7095ed06c2981fd0599efb0b)
+        ;
+
+        
+    
+    
+            circle_marker_7d5b867c085642650d5c95893e69cf49.bindTooltip(
+                `<div>
+                     Politics: rights vote political government law election campaign republic
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_6a584b40806439e4d9448104aeac85a9 = L.circleMarker(
+                [47.1817585, 19.5060937],
+                {"bubblingMouseEvents": true, "color": "#8A2BE2", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#8A2BE2", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 2}
+            ).addTo(marker_cluster_28ef127ded9465f736aa22dce9e5ef0d);
+        
+    
+        var popup_8aa037ff4aa069e8ae63f7ef7e1ead7f = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_138cb9384d10a8307e5a229f24bc769c = $(`<div id="html_138cb9384d10a8307e5a229f24bc769c" style="width: 100.0%; height: 100.0%;"><b>Politics</b><br>Theme Word: president government political politician democracy parliament law governmental republic policy rights vote<br>Location: Hungary</div>`)[0];
+                popup_8aa037ff4aa069e8ae63f7ef7e1ead7f.setContent(html_138cb9384d10a8307e5a229f24bc769c);
+            
+        
+
+        circle_marker_6a584b40806439e4d9448104aeac85a9.bindPopup(popup_8aa037ff4aa069e8ae63f7ef7e1ead7f)
+        ;
+
+        
+    
+    
+            circle_marker_6a584b40806439e4d9448104aeac85a9.bindTooltip(
+                `<div>
+                     Politics: president government political politician democracy parliament law governmental republic policy rights vote
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_e3dbff88202363fc0625c695b021b9cb = L.circleMarker(
+                [64.9841821, -18.1059013],
+                {"bubblingMouseEvents": true, "color": "#8A2BE2", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#8A2BE2", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 2}
+            ).addTo(marker_cluster_28ef127ded9465f736aa22dce9e5ef0d);
+        
+    
+        var popup_9fe1ccab9cf1ddc7755bf8f025d1eb72 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_48a64abdba50b2e3440be29c165d632e = $(`<div id="html_48a64abdba50b2e3440be29c165d632e" style="width: 100.0%; height: 100.0%;"><b>Politics</b><br>Theme Word: government policy president political law lobbying legislation congress vote campaign corruption<br>Location: Iceland</div>`)[0];
+                popup_9fe1ccab9cf1ddc7755bf8f025d1eb72.setContent(html_48a64abdba50b2e3440be29c165d632e);
+            
+        
+
+        circle_marker_e3dbff88202363fc0625c695b021b9cb.bindPopup(popup_9fe1ccab9cf1ddc7755bf8f025d1eb72)
+        ;
+
+        
+    
+    
+            circle_marker_e3dbff88202363fc0625c695b021b9cb.bindTooltip(
+                `<div>
+                     Politics: government policy president political law lobbying legislation congress vote campaign corruption
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_75a6df119656d456eb4c945d78b5cb8c = L.circleMarker(
+                [56.8406494, 24.7537645],
+                {"bubblingMouseEvents": true, "color": "#8A2BE2", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#8A2BE2", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 2}
+            ).addTo(marker_cluster_28ef127ded9465f736aa22dce9e5ef0d);
+        
+    
+        var popup_c1f9bddc6f4e5942a84fbef41c056772 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_3d10628ec076f03c4e6baa07502b3601 = $(`<div id="html_3d10628ec076f03c4e6baa07502b3601" style="width: 100.0%; height: 100.0%;"><b>Politics</b><br>Theme Word: political government law policy governmental campaign bureaucracy debate<br>Location: Latvia</div>`)[0];
+                popup_c1f9bddc6f4e5942a84fbef41c056772.setContent(html_3d10628ec076f03c4e6baa07502b3601);
+            
+        
+
+        circle_marker_75a6df119656d456eb4c945d78b5cb8c.bindPopup(popup_c1f9bddc6f4e5942a84fbef41c056772)
+        ;
+
+        
+    
+    
+            circle_marker_75a6df119656d456eb4c945d78b5cb8c.bindTooltip(
+                `<div>
+                     Politics: political government law policy governmental campaign bureaucracy debate
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_ae1dd8dcfa2acec2facc7d2582af97e2 = L.circleMarker(
+                [5.7499721, -9.3658524],
+                {"bubblingMouseEvents": true, "color": "#8A2BE2", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#8A2BE2", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 2}
+            ).addTo(marker_cluster_28ef127ded9465f736aa22dce9e5ef0d);
+        
+    
+        var popup_3d6585e6bf1b1cf3b7ed6cf79c2e491a = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_e3707017600d49fce2d2cba37f0bbbe2 = $(`<div id="html_e3707017600d49fce2d2cba37f0bbbe2" style="width: 100.0%; height: 100.0%;"><b>Politics</b><br>Theme Word: republic political president parliament government law election corruption<br>Location: Liberia</div>`)[0];
+                popup_3d6585e6bf1b1cf3b7ed6cf79c2e491a.setContent(html_e3707017600d49fce2d2cba37f0bbbe2);
+            
+        
+
+        circle_marker_ae1dd8dcfa2acec2facc7d2582af97e2.bindPopup(popup_3d6585e6bf1b1cf3b7ed6cf79c2e491a)
+        ;
+
+        
+    
+    
+            circle_marker_ae1dd8dcfa2acec2facc7d2582af97e2.bindTooltip(
+                `<div>
+                     Politics: republic political president parliament government law election corruption
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_437d2936effce8d7d14757265bcd90d0 = L.circleMarker(
+                [4.5693754, 102.2656823],
+                {"bubblingMouseEvents": true, "color": "#8A2BE2", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#8A2BE2", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 2}
+            ).addTo(marker_cluster_28ef127ded9465f736aa22dce9e5ef0d);
+        
+    
+        var popup_c0a1ab3abcf9afdbe69f849f3d50e962 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_073e933362b545d0693e14630f076fb7 = $(`<div id="html_073e933362b545d0693e14630f076fb7" style="width: 100.0%; height: 100.0%;"><b>Politics</b><br>Theme Word: political government president parliament democracy corruption vote election law campaign<br>Location: Malaysia</div>`)[0];
+                popup_c0a1ab3abcf9afdbe69f849f3d50e962.setContent(html_073e933362b545d0693e14630f076fb7);
+            
+        
+
+        circle_marker_437d2936effce8d7d14757265bcd90d0.bindPopup(popup_c0a1ab3abcf9afdbe69f849f3d50e962)
+        ;
+
+        
+    
+    
+            circle_marker_437d2936effce8d7d14757265bcd90d0.bindTooltip(
+                `<div>
+                     Politics: political government president parliament democracy corruption vote election law campaign
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_e1720a4313e72b42406a614b9737dceb = L.circleMarker(
+                [43.7323492, 7.4276832],
+                {"bubblingMouseEvents": true, "color": "#8A2BE2", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#8A2BE2", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 2}
+            ).addTo(marker_cluster_28ef127ded9465f736aa22dce9e5ef0d);
+        
+    
+        var popup_eb13ab671d6eec6b7669c3f87be0ef61 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_9d2cf965c1bcd48d8e76987953b5d37d = $(`<div id="html_9d2cf965c1bcd48d8e76987953b5d37d" style="width: 100.0%; height: 100.0%;"><b>Politics</b><br>Theme Word: political<br>Location: Monaco</div>`)[0];
+                popup_eb13ab671d6eec6b7669c3f87be0ef61.setContent(html_9d2cf965c1bcd48d8e76987953b5d37d);
+            
+        
+
+        circle_marker_e1720a4313e72b42406a614b9737dceb.bindPopup(popup_eb13ab671d6eec6b7669c3f87be0ef61)
+        ;
+
+        
+    
+    
+            circle_marker_e1720a4313e72b42406a614b9737dceb.bindTooltip(
+                `<div>
+                     Politics: political
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_dbb2814e1dd219b2f529f448d12e077a = L.circleMarker(
+                [28.3347722, -10.371337908392647],
+                {"bubblingMouseEvents": true, "color": "#8A2BE2", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#8A2BE2", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 2}
+            ).addTo(marker_cluster_28ef127ded9465f736aa22dce9e5ef0d);
+        
+    
+        var popup_e90561a97eaebe19c4917ff0c59a3a60 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_b4a1bf4666fabbc0ae454903907eb617 = $(`<div id="html_b4a1bf4666fabbc0ae454903907eb617" style="width: 100.0%; height: 100.0%;"><b>Politics</b><br>Theme Word: law election political candidate campaign government parliament rights vote policy<br>Location: Morocco</div>`)[0];
+                popup_e90561a97eaebe19c4917ff0c59a3a60.setContent(html_b4a1bf4666fabbc0ae454903907eb617);
+            
+        
+
+        circle_marker_dbb2814e1dd219b2f529f448d12e077a.bindPopup(popup_e90561a97eaebe19c4917ff0c59a3a60)
+        ;
+
+        
+    
+    
+            circle_marker_dbb2814e1dd219b2f529f448d12e077a.bindTooltip(
+                `<div>
+                     Politics: law election political candidate campaign government parliament rights vote policy
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_1da988c53423ed311915992c93255b2f = L.circleMarker(
+                [34.0678644, -102.524362],
+                {"bubblingMouseEvents": true, "color": "#8A2BE2", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#8A2BE2", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 2}
+            ).addTo(marker_cluster_28ef127ded9465f736aa22dce9e5ef0d);
+        
+    
+        var popup_178a69eafdf8e2a5feab11975d9e082d = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_e3aef795d591cf93787f4a0c778e81a5 = $(`<div id="html_e3aef795d591cf93787f4a0c778e81a5" style="width: 100.0%; height: 100.0%;"><b>Politics</b><br>Theme Word: political congress policy president legislation government rights republic parliament law election corruption debate politician vote<br>Location: Sudan</div>`)[0];
+                popup_178a69eafdf8e2a5feab11975d9e082d.setContent(html_e3aef795d591cf93787f4a0c778e81a5);
+            
+        
+
+        circle_marker_1da988c53423ed311915992c93255b2f.bindPopup(popup_178a69eafdf8e2a5feab11975d9e082d)
+        ;
+
+        
+    
+    
+            circle_marker_1da988c53423ed311915992c93255b2f.bindTooltip(
+                `<div>
+                     Politics: political congress policy president legislation government rights republic parliament law election corruption debate politician vote
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_7b34ba95f2d9115fe42baf33ef3748ce = L.circleMarker(
+                [23.5983227, 120.83537694479215],
+                {"bubblingMouseEvents": true, "color": "#8A2BE2", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#8A2BE2", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 2}
+            ).addTo(marker_cluster_28ef127ded9465f736aa22dce9e5ef0d);
+        
+    
+        var popup_5048160a33415414f04cb4c99f05791b = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_f1f4cbe73f55925776db1add0c5cbfa9 = $(`<div id="html_f1f4cbe73f55925776db1add0c5cbfa9" style="width: 100.0%; height: 100.0%;"><b>Politics</b><br>Theme Word: candidate government law vote campaign president political politician election rights<br>Location: Taiwan</div>`)[0];
+                popup_5048160a33415414f04cb4c99f05791b.setContent(html_f1f4cbe73f55925776db1add0c5cbfa9);
+            
+        
+
+        circle_marker_7b34ba95f2d9115fe42baf33ef3748ce.bindPopup(popup_5048160a33415414f04cb4c99f05791b)
+        ;
+
+        
+    
+    
+            circle_marker_7b34ba95f2d9115fe42baf33ef3748ce.bindTooltip(
+                `<div>
+                     Politics: candidate government law vote campaign president political politician election rights
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_81cb7ad6c6cc6dda2eafbcb479367860 = L.circleMarker(
+                [8.0018709, -66.1109318],
+                {"bubblingMouseEvents": true, "color": "#8A2BE2", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#8A2BE2", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 2}
+            ).addTo(marker_cluster_28ef127ded9465f736aa22dce9e5ef0d);
+        
+    
+        var popup_ca863827d47b5ee9138aecd34bc6b793 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_f7213446a2bd7e84a7c1b51111886639 = $(`<div id="html_f7213446a2bd7e84a7c1b51111886639" style="width: 100.0%; height: 100.0%;"><b>Politics</b><br>Theme Word: president government law democracy congress political rights policy election republic candidate campaign parliament vote<br>Location: Venezuela</div>`)[0];
+                popup_ca863827d47b5ee9138aecd34bc6b793.setContent(html_f7213446a2bd7e84a7c1b51111886639);
+            
+        
+
+        circle_marker_81cb7ad6c6cc6dda2eafbcb479367860.bindPopup(popup_ca863827d47b5ee9138aecd34bc6b793)
+        ;
+
+        
+    
+    
+            circle_marker_81cb7ad6c6cc6dda2eafbcb479367860.bindTooltip(
+                `<div>
+                     Politics: president government law democracy congress political rights policy election republic candidate campaign parliament vote
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_130b1a03676ac79fe013ce11660210f4 = L.circleMarker(
+                [-18.4554963, 29.7468414],
+                {"bubblingMouseEvents": true, "color": "#8A2BE2", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#8A2BE2", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 2}
+            ).addTo(marker_cluster_28ef127ded9465f736aa22dce9e5ef0d);
+        
+    
+        var popup_64abe7206668295f5106f818ace2aa2c = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_90d1e9fc90cd9513b776d08326ebfee8 = $(`<div id="html_90d1e9fc90cd9513b776d08326ebfee8" style="width: 100.0%; height: 100.0%;"><b>Politics</b><br>Theme Word: rights president government political campaign election candidate<br>Location: Zimbabwe</div>`)[0];
+                popup_64abe7206668295f5106f818ace2aa2c.setContent(html_90d1e9fc90cd9513b776d08326ebfee8);
+            
+        
+
+        circle_marker_130b1a03676ac79fe013ce11660210f4.bindPopup(popup_64abe7206668295f5106f818ace2aa2c)
+        ;
+
+        
+    
+    
+            circle_marker_130b1a03676ac79fe013ce11660210f4.bindTooltip(
+                `<div>
+                     Politics: rights president government political campaign election candidate
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_10f3d7c9daea00b0cd26bd0f15121dbd = L.circleMarker(
+                [-11.8775768, 17.5691241],
+                {"bubblingMouseEvents": true, "color": "#9400D3", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#9400D3", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 2}
+            ).addTo(marker_cluster_28ef127ded9465f736aa22dce9e5ef0d);
+        
+    
+        var popup_b630b35b6639605f9cf0b6275ce60524 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_9f895962619e56b89862465bc8e5e81c = $(`<div id="html_9f895962619e56b89862465bc8e5e81c" style="width: 100.0%; height: 100.0%;"><b>Religious</b><br>Theme Word: god bible faith holy spiritual church soul divine saint sacred hymn<br>Location: Angola</div>`)[0];
+                popup_b630b35b6639605f9cf0b6275ce60524.setContent(html_9f895962619e56b89862465bc8e5e81c);
+            
+        
+
+        circle_marker_10f3d7c9daea00b0cd26bd0f15121dbd.bindPopup(popup_b630b35b6639605f9cf0b6275ce60524)
+        ;
+
+        
+    
+    
+            circle_marker_10f3d7c9daea00b0cd26bd0f15121dbd.bindTooltip(
+                `<div>
+                     Religious: god bible faith holy spiritual church soul divine saint sacred hymn
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_d57e0a1b25f80c9a1071222e2951b253 = L.circleMarker(
+                [24.7736546, -78.0000547],
+                {"bubblingMouseEvents": true, "color": "#9400D3", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#9400D3", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 2}
+            ).addTo(marker_cluster_28ef127ded9465f736aa22dce9e5ef0d);
+        
+    
+        var popup_6dd3b9c6f98336db846869f55bf12aef = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_3b9ea8fb320368e5ab448a6014864b3c = $(`<div id="html_3b9ea8fb320368e5ab448a6014864b3c" style="width: 100.0%; height: 100.0%;"><b>Religious</b><br>Theme Word: god faith spiritual church bible mosque soul sanctuary holy meditation sacred temple<br>Location: Bahamas</div>`)[0];
+                popup_6dd3b9c6f98336db846869f55bf12aef.setContent(html_3b9ea8fb320368e5ab448a6014864b3c);
+            
+        
+
+        circle_marker_d57e0a1b25f80c9a1071222e2951b253.bindPopup(popup_6dd3b9c6f98336db846869f55bf12aef)
+        ;
+
+        
+    
+    
+            circle_marker_d57e0a1b25f80c9a1071222e2951b253.bindTooltip(
+                `<div>
+                     Religious: god faith spiritual church bible mosque soul sanctuary holy meditation sacred temple
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_18a90eb28dfbcd35d85d658f52f98af4 = L.circleMarker(
+                [-10.3333333, -53.2],
+                {"bubblingMouseEvents": true, "color": "#9400D3", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#9400D3", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 2}
+            ).addTo(marker_cluster_28ef127ded9465f736aa22dce9e5ef0d);
+        
+    
+        var popup_0869d09d75a9775147038078f744d5eb = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_2b68833f499c0faedb3a24aee4723ff0 = $(`<div id="html_2b68833f499c0faedb3a24aee4723ff0" style="width: 100.0%; height: 100.0%;"><b>Religious</b><br>Theme Word: god church holy altar divine saint soul faith devotion sacred worship pilgrimage ritual religion temple bible<br>Location: Brazil</div>`)[0];
+                popup_0869d09d75a9775147038078f744d5eb.setContent(html_2b68833f499c0faedb3a24aee4723ff0);
+            
+        
+
+        circle_marker_18a90eb28dfbcd35d85d658f52f98af4.bindPopup(popup_0869d09d75a9775147038078f744d5eb)
+        ;
+
+        
+    
+    
+            circle_marker_18a90eb28dfbcd35d85d658f52f98af4.bindTooltip(
+                `<div>
+                     Religious: god church holy altar divine saint soul faith devotion sacred worship pilgrimage ritual religion temple bible
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_31b61290179a07f2dc692a30791dd818 = L.circleMarker(
+                [35.0000663, 104.999955],
+                {"bubblingMouseEvents": true, "color": "#9400D3", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#9400D3", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 2}
+            ).addTo(marker_cluster_28ef127ded9465f736aa22dce9e5ef0d);
+        
+    
+        var popup_d9843bf9e29e68e6b72c922278f41762 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_cb387cdc94514dc43327c83166c121dc = $(`<div id="html_cb387cdc94514dc43327c83166c121dc" style="width: 100.0%; height: 100.0%;"><b>Religious</b><br>Theme Word: bible divine sacred ritual god prayer soul devotion divinity faith religion spiritual holy temple saint hymn altar worship church sanctuary buddhism meditation monastery cathedral<br>Location: China</div>`)[0];
+                popup_d9843bf9e29e68e6b72c922278f41762.setContent(html_cb387cdc94514dc43327c83166c121dc);
+            
+        
+
+        circle_marker_31b61290179a07f2dc692a30791dd818.bindPopup(popup_d9843bf9e29e68e6b72c922278f41762)
+        ;
+
+        
+    
+    
+            circle_marker_31b61290179a07f2dc692a30791dd818.bindTooltip(
+                `<div>
+                     Religious: bible divine sacred ritual god prayer soul devotion divinity faith religion spiritual holy temple saint hymn altar worship church sanctuary buddhism meditation monastery cathedral
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_2e35776914481c39f2e475bca4f2d288 = L.circleMarker(
+                [-2.9814344, 23.8222636],
+                {"bubblingMouseEvents": true, "color": "#9400D3", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#9400D3", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 2}
+            ).addTo(marker_cluster_28ef127ded9465f736aa22dce9e5ef0d);
+        
+    
+        var popup_f471c4bc8fac102136363960957bdce1 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_e0ae893db7cf8025e307d487c717c313 = $(`<div id="html_e0ae893db7cf8025e307d487c717c313" style="width: 100.0%; height: 100.0%;"><b>Religious</b><br>Theme Word: god faith church holy ritual sacred divine soul<br>Location: Democratic Republic of the Congo</div>`)[0];
+                popup_f471c4bc8fac102136363960957bdce1.setContent(html_e0ae893db7cf8025e307d487c717c313);
+            
+        
+
+        circle_marker_2e35776914481c39f2e475bca4f2d288.bindPopup(popup_f471c4bc8fac102136363960957bdce1)
+        ;
+
+        
+    
+    
+            circle_marker_2e35776914481c39f2e475bca4f2d288.bindTooltip(
+                `<div>
+                     Religious: god faith church holy ritual sacred divine soul
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_b63bb2f164d87f4d22fd464df2b2a284 = L.circleMarker(
+                [26.2540493, 29.2675469],
+                {"bubblingMouseEvents": true, "color": "#9400D3", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#9400D3", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 2}
+            ).addTo(marker_cluster_28ef127ded9465f736aa22dce9e5ef0d);
+        
+    
+        var popup_6164587bd7ad5c26f2aa925b94ae297d = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_cdb63733c26a2533c4d0a9ba822882ac = $(`<div id="html_cdb63733c26a2533c4d0a9ba822882ac" style="width: 100.0%; height: 100.0%;"><b>Religious</b><br>Theme Word: faith god prayer soul holy sacred ritual devotion church religion islam temple mosque worship christianity divine saint sanctuary spiritual bible<br>Location: Egypt</div>`)[0];
+                popup_6164587bd7ad5c26f2aa925b94ae297d.setContent(html_cdb63733c26a2533c4d0a9ba822882ac);
+            
+        
+
+        circle_marker_b63bb2f164d87f4d22fd464df2b2a284.bindPopup(popup_6164587bd7ad5c26f2aa925b94ae297d)
+        ;
+
+        
+    
+    
+            circle_marker_b63bb2f164d87f4d22fd464df2b2a284.bindTooltip(
+                `<div>
+                     Religious: faith god prayer soul holy sacred ritual devotion church religion islam temple mosque worship christianity divine saint sanctuary spiritual bible
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_b3845cf629bc88859acc1e71b8a64bd9 = L.circleMarker(
+                [46.603354, 1.8883335],
+                {"bubblingMouseEvents": true, "color": "#9400D3", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#9400D3", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 2}
+            ).addTo(marker_cluster_28ef127ded9465f736aa22dce9e5ef0d);
+        
+    
+        var popup_86b1ddad95421f97766615a137435456 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_22731aa7ada26b317a4748b9c8e9b1b6 = $(`<div id="html_22731aa7ada26b317a4748b9c8e9b1b6" style="width: 100.0%; height: 100.0%;"><b>Religious</b><br>Theme Word: god sacred faith holy church clergy soul saint worship prayer devotion parish sanctuary bible divine religion temple altar ritual divinity monastery spiritual cathedral pilgrimage sacrament hymn christianity<br>Location: France</div>`)[0];
+                popup_86b1ddad95421f97766615a137435456.setContent(html_22731aa7ada26b317a4748b9c8e9b1b6);
+            
+        
+
+        circle_marker_b3845cf629bc88859acc1e71b8a64bd9.bindPopup(popup_86b1ddad95421f97766615a137435456)
+        ;
+
+        
+    
+    
+            circle_marker_b3845cf629bc88859acc1e71b8a64bd9.bindTooltip(
+                `<div>
+                     Religious: god sacred faith holy church clergy soul saint worship prayer devotion parish sanctuary bible divine religion temple altar ritual divinity monastery spiritual cathedral pilgrimage sacrament hymn christianity
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_8e07ba90c6e18a35cfecbea7d4463b7d = L.circleMarker(
+                [38.9953683, 21.9877132],
+                {"bubblingMouseEvents": true, "color": "#9400D3", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#9400D3", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 2}
+            ).addTo(marker_cluster_28ef127ded9465f736aa22dce9e5ef0d);
+        
+    
+        var popup_4702cec25420a301b44b785e25e6d29f = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_faa8484ab33eb1b12f54645f6daf2cb5 = $(`<div id="html_faa8484ab33eb1b12f54645f6daf2cb5" style="width: 100.0%; height: 100.0%;"><b>Religious</b><br>Theme Word: divine holy saint god soul church hymn prayer faith devotion temple deity divinity sacred ritual spiritual sanctuary worship religion<br>Location: Greece</div>`)[0];
+                popup_4702cec25420a301b44b785e25e6d29f.setContent(html_faa8484ab33eb1b12f54645f6daf2cb5);
+            
+        
+
+        circle_marker_8e07ba90c6e18a35cfecbea7d4463b7d.bindPopup(popup_4702cec25420a301b44b785e25e6d29f)
+        ;
+
+        
+    
+    
+            circle_marker_8e07ba90c6e18a35cfecbea7d4463b7d.bindTooltip(
+                `<div>
+                     Religious: divine holy saint god soul church hymn prayer faith devotion temple deity divinity sacred ritual spiritual sanctuary worship religion
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_6a3629460bf15796cf1a656bc0f42f89 = L.circleMarker(
+                [22.3511148, 78.6677428],
+                {"bubblingMouseEvents": true, "color": "#9400D3", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#9400D3", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 2}
+            ).addTo(marker_cluster_28ef127ded9465f736aa22dce9e5ef0d);
+        
+    
+        var popup_19c308beb4151b9f390c3b3437eb23fd = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_e1f6629d1943fe72973811c9e2f6e840 = $(`<div id="html_e1f6629d1943fe72973811c9e2f6e840" style="width: 100.0%; height: 100.0%;"><b>Religious</b><br>Theme Word: god soul temple worship prayer sacred church cathedral parish faith divine religion ritual saint holy pilgrimage devotion spiritual deity sanctuary mosque bible<br>Location: India</div>`)[0];
+                popup_19c308beb4151b9f390c3b3437eb23fd.setContent(html_e1f6629d1943fe72973811c9e2f6e840);
+            
+        
+
+        circle_marker_6a3629460bf15796cf1a656bc0f42f89.bindPopup(popup_19c308beb4151b9f390c3b3437eb23fd)
+        ;
+
+        
+    
+    
+            circle_marker_6a3629460bf15796cf1a656bc0f42f89.bindTooltip(
+                `<div>
+                     Religious: god soul temple worship prayer sacred church cathedral parish faith divine religion ritual saint holy pilgrimage devotion spiritual deity sanctuary mosque bible
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_a22f0745fbafa8aca94cb6f9219c15ea = L.circleMarker(
+                [36.5748441, 139.2394179],
+                {"bubblingMouseEvents": true, "color": "#9400D3", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#9400D3", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 2}
+            ).addTo(marker_cluster_28ef127ded9465f736aa22dce9e5ef0d);
+        
+    
+        var popup_6f5e335e3bff48f60381cb7dff6b2402 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_4f055f51b7e499050c4a9c8da60a7821 = $(`<div id="html_4f055f51b7e499050c4a9c8da60a7821" style="width: 100.0%; height: 100.0%;"><b>Religious</b><br>Theme Word: worship god temple soul faith bible divine sacred saint holy hymn church religion cathedral parish ritual altar sanctuary prayer spiritual deity<br>Location: Japan</div>`)[0];
+                popup_6f5e335e3bff48f60381cb7dff6b2402.setContent(html_4f055f51b7e499050c4a9c8da60a7821);
+            
+        
+
+        circle_marker_a22f0745fbafa8aca94cb6f9219c15ea.bindPopup(popup_6f5e335e3bff48f60381cb7dff6b2402)
+        ;
+
+        
+    
+    
+            circle_marker_a22f0745fbafa8aca94cb6f9219c15ea.bindTooltip(
+                `<div>
+                     Religious: worship god temple soul faith bible divine sacred saint holy hymn church religion cathedral parish ritual altar sanctuary prayer spiritual deity
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_0178437ada19832effe1c08638869a39 = L.circleMarker(
+                [48.1012954, 66.7780818],
+                {"bubblingMouseEvents": true, "color": "#9400D3", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#9400D3", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 2}
+            ).addTo(marker_cluster_28ef127ded9465f736aa22dce9e5ef0d);
+        
+    
+        var popup_fa4d9123694231816ca44c9d4ab42540 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_df554340e81f4b3a8cf3325206b72ea3 = $(`<div id="html_df554340e81f4b3a8cf3325206b72ea3" style="width: 100.0%; height: 100.0%;"><b>Religious</b><br>Theme Word: god holy prayer faith<br>Location: Kazakhstan</div>`)[0];
+                popup_fa4d9123694231816ca44c9d4ab42540.setContent(html_df554340e81f4b3a8cf3325206b72ea3);
+            
+        
+
+        circle_marker_0178437ada19832effe1c08638869a39.bindPopup(popup_fa4d9123694231816ca44c9d4ab42540)
+        ;
+
+        
+    
+    
+            circle_marker_0178437ada19832effe1c08638869a39.bindTooltip(
+                `<div>
+                     Religious: god holy prayer faith
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_9cba50bdb750662e4f3269c7dffa446a = L.circleMarker(
+                [40.375713, -76.4626118],
+                {"bubblingMouseEvents": true, "color": "#9400D3", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#9400D3", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 2}
+            ).addTo(marker_cluster_28ef127ded9465f736aa22dce9e5ef0d);
+        
+    
+        var popup_6a8d88e0104dbe81a1783578b9414b2f = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_ffa3f364e01ffc3dbf81ff7443f798e2 = $(`<div id="html_ffa3f364e01ffc3dbf81ff7443f798e2" style="width: 100.0%; height: 100.0%;"><b>Religious</b><br>Theme Word: god sacred pilgrimage mosque sanctuary faith prayer divine holy cathedral church parish altar soul<br>Location: Lebanon</div>`)[0];
+                popup_6a8d88e0104dbe81a1783578b9414b2f.setContent(html_ffa3f364e01ffc3dbf81ff7443f798e2);
+            
+        
+
+        circle_marker_9cba50bdb750662e4f3269c7dffa446a.bindPopup(popup_6a8d88e0104dbe81a1783578b9414b2f)
+        ;
+
+        
+    
+    
+            circle_marker_9cba50bdb750662e4f3269c7dffa446a.bindTooltip(
+                `<div>
+                     Religious: god sacred pilgrimage mosque sanctuary faith prayer divine holy cathedral church parish altar soul
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_a09bee63aa2b7a9c94af0e155d7bda86 = L.circleMarker(
+                [19.4326296, -99.1331785],
+                {"bubblingMouseEvents": true, "color": "#9400D3", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#9400D3", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 2}
+            ).addTo(marker_cluster_28ef127ded9465f736aa22dce9e5ef0d);
+        
+    
+        var popup_525c26bc985800cf93b5e25d6e216d18 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_b81537ad8b60add797b02ac835209644 = $(`<div id="html_b81537ad8b60add797b02ac835209644" style="width: 100.0%; height: 100.0%;"><b>Religious</b><br>Theme Word: church holy soul god prayer saint sacred bible divine spiritual faith buddhism deity islam religion meditation ritual temple altar worship divinity monastery devotion<br>Location: Mexico</div>`)[0];
+                popup_525c26bc985800cf93b5e25d6e216d18.setContent(html_b81537ad8b60add797b02ac835209644);
+            
+        
+
+        circle_marker_a09bee63aa2b7a9c94af0e155d7bda86.bindPopup(popup_525c26bc985800cf93b5e25d6e216d18)
+        ;
+
+        
+    
+    
+            circle_marker_a09bee63aa2b7a9c94af0e155d7bda86.bindTooltip(
+                `<div>
+                     Religious: church holy soul god prayer saint sacred bible divine spiritual faith buddhism deity islam religion meditation ritual temple altar worship divinity monastery devotion
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_23957edfb61cf1574995a9458736ada1 = L.circleMarker(
+                [46.8250388, 103.8499736],
+                {"bubblingMouseEvents": true, "color": "#9400D3", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#9400D3", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 2}
+            ).addTo(marker_cluster_28ef127ded9465f736aa22dce9e5ef0d);
+        
+    
+        var popup_d1b9feff6b97d275bb22127da3bb7efc = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_f90d75f231d1453078d47b193f501f51 = $(`<div id="html_f90d75f231d1453078d47b193f501f51" style="width: 100.0%; height: 100.0%;"><b>Religious</b><br>Theme Word: worship soul sacred temple altar divine church god holy faith<br>Location: Mongolia</div>`)[0];
+                popup_d1b9feff6b97d275bb22127da3bb7efc.setContent(html_f90d75f231d1453078d47b193f501f51);
+            
+        
+
+        circle_marker_23957edfb61cf1574995a9458736ada1.bindPopup(popup_d1b9feff6b97d275bb22127da3bb7efc)
+        ;
+
+        
+    
+    
+            circle_marker_23957edfb61cf1574995a9458736ada1.bindTooltip(
+                `<div>
+                     Religious: worship soul sacred temple altar divine church god holy faith
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_9ba07a1c8455e0ea6f39a8549c2c54d5 = L.circleMarker(
+                [12.7503486, 122.7312101],
+                {"bubblingMouseEvents": true, "color": "#9400D3", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#9400D3", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 2}
+            ).addTo(marker_cluster_28ef127ded9465f736aa22dce9e5ef0d);
+        
+    
+        var popup_bd79a049515c5356e49df0f01ecd77bf = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_58150fb65c25b2f97f587c45590e9d85 = $(`<div id="html_58150fb65c25b2f97f587c45590e9d85" style="width: 100.0%; height: 100.0%;"><b>Religious</b><br>Theme Word: holy saint god devotion worship religion sacred soul prayer hymn faith bible church meditation parish<br>Location: Philippines</div>`)[0];
+                popup_bd79a049515c5356e49df0f01ecd77bf.setContent(html_58150fb65c25b2f97f587c45590e9d85);
+            
+        
+
+        circle_marker_9ba07a1c8455e0ea6f39a8549c2c54d5.bindPopup(popup_bd79a049515c5356e49df0f01ecd77bf)
+        ;
+
+        
+    
+    
+            circle_marker_9ba07a1c8455e0ea6f39a8549c2c54d5.bindTooltip(
+                `<div>
+                     Religious: holy saint god devotion worship religion sacred soul prayer hymn faith bible church meditation parish
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_8f4fa19a48981fc5e0df5f8c6cf6e659 = L.circleMarker(
+                [52.215933, 19.134422],
+                {"bubblingMouseEvents": true, "color": "#9400D3", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#9400D3", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 2}
+            ).addTo(marker_cluster_28ef127ded9465f736aa22dce9e5ef0d);
+        
+    
+        var popup_6fe92b07ab5cab017b007975d1b188e6 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_c9762f9517636833dd6921d6271b976f = $(`<div id="html_c9762f9517636833dd6921d6271b976f" style="width: 100.0%; height: 100.0%;"><b>Religious</b><br>Theme Word: faith soul bible god church saint prayer spiritual divine holy hymn parish altar clergy religion ritual sacred temple<br>Location: Poland</div>`)[0];
+                popup_6fe92b07ab5cab017b007975d1b188e6.setContent(html_c9762f9517636833dd6921d6271b976f);
+            
+        
+
+        circle_marker_8f4fa19a48981fc5e0df5f8c6cf6e659.bindPopup(popup_6fe92b07ab5cab017b007975d1b188e6)
+        ;
+
+        
+    
+    
+            circle_marker_8f4fa19a48981fc5e0df5f8c6cf6e659.bindTooltip(
+                `<div>
+                     Religious: faith soul bible god church saint prayer spiritual divine holy hymn parish altar clergy religion ritual sacred temple
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_cbafd656a9271c0f2e7ee97f213f646f = L.circleMarker(
+                [39.6621648, -8.1353519],
+                {"bubblingMouseEvents": true, "color": "#9400D3", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#9400D3", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 2}
+            ).addTo(marker_cluster_28ef127ded9465f736aa22dce9e5ef0d);
+        
+    
+        var popup_e57e38ffefc314cf00eab57fb657062d = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_b0cc6cb2d52d19e5baac8dadcd492004 = $(`<div id="html_b0cc6cb2d52d19e5baac8dadcd492004" style="width: 100.0%; height: 100.0%;"><b>Religious</b><br>Theme Word: god bible soul saint faith prayer holy spiritual divine<br>Location: Portugal</div>`)[0];
+                popup_e57e38ffefc314cf00eab57fb657062d.setContent(html_b0cc6cb2d52d19e5baac8dadcd492004);
+            
+        
+
+        circle_marker_cbafd656a9271c0f2e7ee97f213f646f.bindPopup(popup_e57e38ffefc314cf00eab57fb657062d)
+        ;
+
+        
+    
+    
+            circle_marker_cbafd656a9271c0f2e7ee97f213f646f.bindTooltip(
+                `<div>
+                     Religious: god bible soul saint faith prayer holy spiritual divine
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_a0f029d121256283a566083e87107a84 = L.circleMarker(
+                [25.3336984, 51.2295295],
+                {"bubblingMouseEvents": true, "color": "#9400D3", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#9400D3", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 2}
+            ).addTo(marker_cluster_28ef127ded9465f736aa22dce9e5ef0d);
+        
+    
+        var popup_e2e84e1a7eb3037620a8c9d5e4fddfae = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_20a7c5169d9211b1f56a2dca10352d1d = $(`<div id="html_20a7c5169d9211b1f56a2dca10352d1d" style="width: 100.0%; height: 100.0%;"><b>Religious</b><br>Theme Word: holy god divine saint religion sacred faith<br>Location: Qatar</div>`)[0];
+                popup_e2e84e1a7eb3037620a8c9d5e4fddfae.setContent(html_20a7c5169d9211b1f56a2dca10352d1d);
+            
+        
+
+        circle_marker_a0f029d121256283a566083e87107a84.bindPopup(popup_e2e84e1a7eb3037620a8c9d5e4fddfae)
+        ;
+
+        
+    
+    
+            circle_marker_a0f029d121256283a566083e87107a84.bindTooltip(
+                `<div>
+                     Religious: holy god divine saint religion sacred faith
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_ae08fd465b13348f9de3f4cdbe35b161 = L.circleMarker(
+                [45.9852129, 24.6859225],
+                {"bubblingMouseEvents": true, "color": "#9400D3", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#9400D3", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 2}
+            ).addTo(marker_cluster_28ef127ded9465f736aa22dce9e5ef0d);
+        
+    
+        var popup_8b95ee214edec373973481eebf86bd99 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_054193c724cdf069d271f54737a8d2ca = $(`<div id="html_054193c724cdf069d271f54737a8d2ca" style="width: 100.0%; height: 100.0%;"><b>Religious</b><br>Theme Word: god religion faith prayer ritual church bible devotion holy sacred worship soul spiritual<br>Location: Romania</div>`)[0];
+                popup_8b95ee214edec373973481eebf86bd99.setContent(html_054193c724cdf069d271f54737a8d2ca);
+            
+        
+
+        circle_marker_ae08fd465b13348f9de3f4cdbe35b161.bindPopup(popup_8b95ee214edec373973481eebf86bd99)
+        ;
+
+        
+    
+    
+            circle_marker_ae08fd465b13348f9de3f4cdbe35b161.bindTooltip(
+                `<div>
+                     Religious: god religion faith prayer ritual church bible devotion holy sacred worship soul spiritual
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_44a39577b9a863e2061e8e59d1cdad24 = L.circleMarker(
+                [64.6863136, 97.7453061],
+                {"bubblingMouseEvents": true, "color": "#9400D3", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#9400D3", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 2}
+            ).addTo(marker_cluster_28ef127ded9465f736aa22dce9e5ef0d);
+        
+    
+        var popup_442ce860fc6dae99dd468e1ce87931b2 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_0e76f46e498ce3d5c4cf993b35ffc637 = $(`<div id="html_0e76f46e498ce3d5c4cf993b35ffc637" style="width: 100.0%; height: 100.0%;"><b>Religious</b><br>Theme Word: faith soul bible god church divine sacred temple altar holy cathedral spiritual devotion religion worship parish saint pilgrimage mosque sanctuary prayer hymn monastery<br>Location: Russia</div>`)[0];
+                popup_442ce860fc6dae99dd468e1ce87931b2.setContent(html_0e76f46e498ce3d5c4cf993b35ffc637);
+            
+        
+
+        circle_marker_44a39577b9a863e2061e8e59d1cdad24.bindPopup(popup_442ce860fc6dae99dd468e1ce87931b2)
+        ;
+
+        
+    
+    
+            circle_marker_44a39577b9a863e2061e8e59d1cdad24.bindTooltip(
+                `<div>
+                     Religious: faith soul bible god church divine sacred temple altar holy cathedral spiritual devotion religion worship parish saint pilgrimage mosque sanctuary prayer hymn monastery
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_47ac978fd192421ba485b8ec8402cc6b = L.circleMarker(
+                [59.6749712, 14.5208584],
+                {"bubblingMouseEvents": true, "color": "#9400D3", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#9400D3", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 2}
+            ).addTo(marker_cluster_28ef127ded9465f736aa22dce9e5ef0d);
+        
+    
+        var popup_6f90a02aa1175bf163553c748df74ada = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_3cb4fab964d7f2d847d8756750254ccf = $(`<div id="html_3cb4fab964d7f2d847d8756750254ccf" style="width: 100.0%; height: 100.0%;"><b>Religious</b><br>Theme Word: god saint holy divine faith church devotion soul worship spiritual pilgrimage hymn bible religion monastery<br>Location: Sweden</div>`)[0];
+                popup_6f90a02aa1175bf163553c748df74ada.setContent(html_3cb4fab964d7f2d847d8756750254ccf);
+            
+        
+
+        circle_marker_47ac978fd192421ba485b8ec8402cc6b.bindPopup(popup_6f90a02aa1175bf163553c748df74ada)
+        ;
+
+        
+    
+    
+            circle_marker_47ac978fd192421ba485b8ec8402cc6b.bindTooltip(
+                `<div>
+                     Religious: god saint holy divine faith church devotion soul worship spiritual pilgrimage hymn bible religion monastery
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_4b3496ef9d107b7c1eb9f851c27e2f20 = L.circleMarker(
+                [34.8147886, 38.42317811509885],
+                {"bubblingMouseEvents": true, "color": "#9400D3", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#9400D3", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 2}
+            ).addTo(marker_cluster_28ef127ded9465f736aa22dce9e5ef0d);
+        
+    
+        var popup_ea6d43c8a71b7a04c56db32ff321b3cc = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_051b51d96444db37a9df5ece48477bef = $(`<div id="html_051b51d96444db37a9df5ece48477bef" style="width: 100.0%; height: 100.0%;"><b>Religious</b><br>Theme Word: worship prayer soul church god holy religion islam temple mosque sacred pilgrimage sanctuary faith divine monastery spiritual devotion<br>Location: Syria</div>`)[0];
+                popup_ea6d43c8a71b7a04c56db32ff321b3cc.setContent(html_051b51d96444db37a9df5ece48477bef);
+            
+        
+
+        circle_marker_4b3496ef9d107b7c1eb9f851c27e2f20.bindPopup(popup_ea6d43c8a71b7a04c56db32ff321b3cc)
+        ;
+
+        
+    
+    
+            circle_marker_4b3496ef9d107b7c1eb9f851c27e2f20.bindTooltip(
+                `<div>
+                     Religious: worship prayer soul church god holy religion islam temple mosque sacred pilgrimage sanctuary faith divine monastery spiritual devotion
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_3968e83e948fac2fd6a339a1dcc393bd = L.circleMarker(
+                [49.4871968, 31.2718321],
+                {"bubblingMouseEvents": true, "color": "#9400D3", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#9400D3", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 2}
+            ).addTo(marker_cluster_28ef127ded9465f736aa22dce9e5ef0d);
+        
+    
+        var popup_46d07521996e8dedaea4d55538b0fa2f = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_334234bf4e6e602e79c5c2a677ed83e9 = $(`<div id="html_334234bf4e6e602e79c5c2a677ed83e9" style="width: 100.0%; height: 100.0%;"><b>Religious</b><br>Theme Word: god faith soul church prayer worship saint holy spiritual<br>Location: Ukraine</div>`)[0];
+                popup_46d07521996e8dedaea4d55538b0fa2f.setContent(html_334234bf4e6e602e79c5c2a677ed83e9);
+            
+        
+
+        circle_marker_3968e83e948fac2fd6a339a1dcc393bd.bindPopup(popup_46d07521996e8dedaea4d55538b0fa2f)
+        ;
+
+        
+    
+    
+            circle_marker_3968e83e948fac2fd6a339a1dcc393bd.bindTooltip(
+                `<div>
+                     Religious: god faith soul church prayer worship saint holy spiritual
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_ff9015647f515a6a38264b084b922325 = L.circleMarker(
+                [16.3471243, 47.8915271],
+                {"bubblingMouseEvents": true, "color": "#9400D3", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#9400D3", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 2}
+            ).addTo(marker_cluster_28ef127ded9465f736aa22dce9e5ef0d);
+        
+    
+        var popup_7ea6dc2c424db634ebbbd3074a39d869 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_f7c8a8abf003d12bdcbfefb2c0715859 = $(`<div id="html_f7c8a8abf003d12bdcbfefb2c0715859" style="width: 100.0%; height: 100.0%;"><b>Religious</b><br>Theme Word: christianity faith god islam religion mosque holy prayer<br>Location: Yemen</div>`)[0];
+                popup_7ea6dc2c424db634ebbbd3074a39d869.setContent(html_f7c8a8abf003d12bdcbfefb2c0715859);
+            
+        
+
+        circle_marker_ff9015647f515a6a38264b084b922325.bindPopup(popup_7ea6dc2c424db634ebbbd3074a39d869)
+        ;
+
+        
+    
+    
+            circle_marker_ff9015647f515a6a38264b084b922325.bindTooltip(
+                `<div>
+                     Religious: christianity faith god islam religion mosque holy prayer
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_98825997301385ad84fd688293f17d7f = L.circleMarker(
+                [8.6062347, 151.832744331612],
+                {"bubblingMouseEvents": true, "color": "#FFD700", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FFD700", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 2}
+            ).addTo(marker_cluster_28ef127ded9465f736aa22dce9e5ef0d);
+        
+    
+        var popup_7aab21cdb4cb35fa6ca94fabb80d779b = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_a7e77c5c22e06b02bcecd50e403033c0 = $(`<div id="html_a7e77c5c22e06b02bcecd50e403033c0" style="width: 100.0%; height: 100.0%;"><b>Science</b><br>Theme Word: lab research study cure<br>Location: Federated States of Micronesia</div>`)[0];
+                popup_7aab21cdb4cb35fa6ca94fabb80d779b.setContent(html_a7e77c5c22e06b02bcecd50e403033c0);
+            
+        
+
+        circle_marker_98825997301385ad84fd688293f17d7f.bindPopup(popup_7aab21cdb4cb35fa6ca94fabb80d779b)
+        ;
+
+        
+    
+    
+            circle_marker_98825997301385ad84fd688293f17d7f.bindTooltip(
+                `<div>
+                     Science: lab research study cure
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_4bc37e089c561430e43f7403f131198b = L.circleMarker(
+                [7.0323598, 19.9981227],
+                {"bubblingMouseEvents": true, "color": "#808080", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#808080", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 2}
+            ).addTo(marker_cluster_28ef127ded9465f736aa22dce9e5ef0d);
+        
+    
+        var popup_2b6b26f346aae0a4f97859602de7700b = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_8b8b6e6c432d2df47e270a1b213579fe = $(`<div id="html_8b8b6e6c432d2df47e270a1b213579fe" style="width: 100.0%; height: 100.0%;"><b>Sex & Nudity</b><br>Theme Word: skin body sex sexual orgasm romantic pleasure desire attraction sexuality provocative nude<br>Location: Central African Republic</div>`)[0];
+                popup_2b6b26f346aae0a4f97859602de7700b.setContent(html_8b8b6e6c432d2df47e270a1b213579fe);
+            
+        
+
+        circle_marker_4bc37e089c561430e43f7403f131198b.bindPopup(popup_2b6b26f346aae0a4f97859602de7700b)
+        ;
+
+        
+    
+    
+            circle_marker_4bc37e089c561430e43f7403f131198b.bindTooltip(
+                `<div>
+                     Sex & Nudity: skin body sex sexual orgasm romantic pleasure desire attraction sexuality provocative nude
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_e9f9d4e3c186a957e26495f28771ddc3 = L.circleMarker(
+                [-23.2335499, 17.3231107],
+                {"bubblingMouseEvents": true, "color": "#808080", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#808080", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 2}
+            ).addTo(marker_cluster_28ef127ded9465f736aa22dce9e5ef0d);
+        
+    
+        var popup_c1aa539fc87c4308b36a980ef1a1e351 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_f62bfc4515d7159ce232123001e1b46d = $(`<div id="html_f62bfc4515d7159ce232123001e1b46d" style="width: 100.0%; height: 100.0%;"><b>Sex & Nudity</b><br>Theme Word: sexual sex sexuality<br>Location: Namibia</div>`)[0];
+                popup_c1aa539fc87c4308b36a980ef1a1e351.setContent(html_f62bfc4515d7159ce232123001e1b46d);
+            
+        
+
+        circle_marker_e9f9d4e3c186a957e26495f28771ddc3.bindPopup(popup_c1aa539fc87c4308b36a980ef1a1e351)
+        ;
+
+        
+    
+    
+            circle_marker_e9f9d4e3c186a957e26495f28771ddc3.bindTooltip(
+                `<div>
+                     Sex & Nudity: sexual sex sexuality
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_d1806d64c9e5d5a1b47fd15e802081ed = L.circleMarker(
+                [54.7023545, -3.2765753],
+                {"bubblingMouseEvents": true, "color": "#808080", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#808080", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 2}
+            ).addTo(marker_cluster_28ef127ded9465f736aa22dce9e5ef0d);
+        
+    
+        var popup_af4406d6306ba4ff38d77a80739ad335 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_be24a42c2808ad6e390889799d03fdfa = $(`<div id="html_be24a42c2808ad6e390889799d03fdfa" style="width: 100.0%; height: 100.0%;"><b>Sex & Nudity</b><br>Theme Word: desire affection body pleasure bare romantic skin temptation explicit sex nude undressed attraction flirt sexual passion seduction intimacy erotic sensual lust seductive stripping provocative exposure bottomless orgasm sexuality topless eroticism<br>Location: United Kingdom</div>`)[0];
+                popup_af4406d6306ba4ff38d77a80739ad335.setContent(html_be24a42c2808ad6e390889799d03fdfa);
+            
+        
+
+        circle_marker_d1806d64c9e5d5a1b47fd15e802081ed.bindPopup(popup_af4406d6306ba4ff38d77a80739ad335)
+        ;
+
+        
+    
+    
+            circle_marker_d1806d64c9e5d5a1b47fd15e802081ed.bindTooltip(
+                `<div>
+                     Sex & Nudity: desire affection body pleasure bare romantic skin temptation explicit sex nude undressed attraction flirt sexual passion seduction intimacy erotic sensual lust seductive stripping provocative exposure bottomless orgasm sexuality topless eroticism
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_386f3a81bdf8e9b8ea0cd138269280ed = L.circleMarker(
+                [-32.8755548, -56.0201525],
+                {"bubblingMouseEvents": true, "color": "#808080", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#808080", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 2}
+            ).addTo(marker_cluster_28ef127ded9465f736aa22dce9e5ef0d);
+        
+    
+        var popup_ffbb41789ad4a6c33666bf9af88a175e = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_427d542d5aa7f1b767733c59321c3503 = $(`<div id="html_427d542d5aa7f1b767733c59321c3503" style="width: 100.0%; height: 100.0%;"><b>Sex & Nudity</b><br>Theme Word: pleasure passion sex skin desire sexual body romantic flirt seduction<br>Location: Uruguay</div>`)[0];
+                popup_ffbb41789ad4a6c33666bf9af88a175e.setContent(html_427d542d5aa7f1b767733c59321c3503);
+            
+        
+
+        circle_marker_386f3a81bdf8e9b8ea0cd138269280ed.bindPopup(popup_ffbb41789ad4a6c33666bf9af88a175e)
+        ;
+
+        
+    
+    
+            circle_marker_386f3a81bdf8e9b8ea0cd138269280ed.bindTooltip(
+                `<div>
+                     Sex & Nudity: pleasure passion sex skin desire sexual body romantic flirt seduction
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_0de9802b5b108ddfb00e066e8c7b0a08 = L.circleMarker(
+                [4.6125522, 13.1535811],
+                {"bubblingMouseEvents": true, "color": "#228B22", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#228B22", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 2}
+            ).addTo(marker_cluster_28ef127ded9465f736aa22dce9e5ef0d);
+        
+    
+        var popup_28fed617cc9e10998804b2271519c1fb = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_291c8bd97aac04e7e7ed3ecb5fe55810 = $(`<div id="html_291c8bd97aac04e7e7ed3ecb5fe55810" style="width: 100.0%; height: 100.0%;"><b>Tourism</b><br>Theme Word: vacation favourite holiday<br>Location: Cameroon</div>`)[0];
+                popup_28fed617cc9e10998804b2271519c1fb.setContent(html_291c8bd97aac04e7e7ed3ecb5fe55810);
+            
+        
+
+        circle_marker_0de9802b5b108ddfb00e066e8c7b0a08.bindPopup(popup_28fed617cc9e10998804b2271519c1fb)
+        ;
+
+        
+    
+    
+            circle_marker_0de9802b5b108ddfb00e066e8c7b0a08.bindTooltip(
+                `<div>
+                     Tourism: vacation favourite holiday
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_72c982da380cb551d2077079e4b10ff6 = L.circleMarker(
+                [-1.3397668, -79.3666965],
+                {"bubblingMouseEvents": true, "color": "#228B22", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#228B22", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 2}
+            ).addTo(marker_cluster_28ef127ded9465f736aa22dce9e5ef0d);
+        
+    
+        var popup_91a1f60349786f29b3196d930295d67c = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_7fc22922d370ae51747c537ac4729ed9 = $(`<div id="html_7fc22922d370ae51747c537ac4729ed9" style="width: 100.0%; height: 100.0%;"><b>Tourism</b><br>Theme Word: beach vacation trip journey resort adventure scenic travel destination<br>Location: Ecuador</div>`)[0];
+                popup_91a1f60349786f29b3196d930295d67c.setContent(html_7fc22922d370ae51747c537ac4729ed9);
+            
+        
+
+        circle_marker_72c982da380cb551d2077079e4b10ff6.bindPopup(popup_91a1f60349786f29b3196d930295d67c)
+        ;
+
+        
+    
+    
+            circle_marker_72c982da380cb551d2077079e4b10ff6.bindTooltip(
+                `<div>
+                     Tourism: beach vacation trip journey resort adventure scenic travel destination
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_3aa1d175d0b92f6ace210cfb1d60d778 = L.circleMarker(
+                [-18.1239696, 179.0122737],
+                {"bubblingMouseEvents": true, "color": "#228B22", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#228B22", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 2}
+            ).addTo(marker_cluster_28ef127ded9465f736aa22dce9e5ef0d);
+        
+    
+        var popup_7bd5bae4039ca834054d535a2dbb8f51 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_6efcab0f546f4e0c367d9029f0d6f189 = $(`<div id="html_6efcab0f546f4e0c367d9029f0d6f189" style="width: 100.0%; height: 100.0%;"><b>Tourism</b><br>Theme Word: explore holiday tour travel visit vacation resort trip beach adventure journey destination<br>Location: Fiji</div>`)[0];
+                popup_7bd5bae4039ca834054d535a2dbb8f51.setContent(html_6efcab0f546f4e0c367d9029f0d6f189);
+            
+        
+
+        circle_marker_3aa1d175d0b92f6ace210cfb1d60d778.bindPopup(popup_7bd5bae4039ca834054d535a2dbb8f51)
+        ;
+
+        
+    
+    
+            circle_marker_3aa1d175d0b92f6ace210cfb1d60d778.bindTooltip(
+                `<div>
+                     Tourism: explore holiday tour travel visit vacation resort trip beach adventure journey destination
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_497ab1c693c2c337059289c60cecd33b = L.circleMarker(
+                [19.1399952, -72.3570972],
+                {"bubblingMouseEvents": true, "color": "#228B22", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#228B22", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 2}
+            ).addTo(marker_cluster_28ef127ded9465f736aa22dce9e5ef0d);
+        
+    
+        var popup_e0148e953cc4baee20db328b61c9d65b = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_30621ed227f58c9220ec452eb03121f6 = $(`<div id="html_30621ed227f58c9220ec452eb03121f6" style="width: 100.0%; height: 100.0%;"><b>Tourism</b><br>Theme Word: vacation trip cruise adventure resort beach tourist visit sightseeing holiday tour travel museum favourite destination<br>Location: Haiti</div>`)[0];
+                popup_e0148e953cc4baee20db328b61c9d65b.setContent(html_30621ed227f58c9220ec452eb03121f6);
+            
+        
+
+        circle_marker_497ab1c693c2c337059289c60cecd33b.bindPopup(popup_e0148e953cc4baee20db328b61c9d65b)
+        ;
+
+        
+    
+    
+            circle_marker_497ab1c693c2c337059289c60cecd33b.bindTooltip(
+                `<div>
+                     Tourism: vacation trip cruise adventure resort beach tourist visit sightseeing holiday tour travel museum favourite destination
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_4d7f89713a1efe9a5b86434f20fe2b02 = L.circleMarker(
+                [55.3500003, 23.7499997],
+                {"bubblingMouseEvents": true, "color": "#228B22", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#228B22", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 2}
+            ).addTo(marker_cluster_28ef127ded9465f736aa22dce9e5ef0d);
+        
+    
+        var popup_9b3a20c4994c2b6aad9caaa985299f6b = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_6b70d1ff2f450d09a98e192fe8b1b27f = $(`<div id="html_6b70d1ff2f450d09a98e192fe8b1b27f" style="width: 100.0%; height: 100.0%;"><b>Tourism</b><br>Theme Word: trip visit vacation beach travel<br>Location: Lithuania</div>`)[0];
+                popup_9b3a20c4994c2b6aad9caaa985299f6b.setContent(html_6b70d1ff2f450d09a98e192fe8b1b27f);
+            
+        
+
+        circle_marker_4d7f89713a1efe9a5b86434f20fe2b02.bindPopup(popup_9b3a20c4994c2b6aad9caaa985299f6b)
+        ;
+
+        
+    
+    
+            circle_marker_4d7f89713a1efe9a5b86434f20fe2b02.bindTooltip(
+                `<div>
+                     Tourism: trip visit vacation beach travel
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_91ec78644a78114b74fcfc83a83b223b = L.circleMarker(
+                [52.2434979, 5.6343227],
+                {"bubblingMouseEvents": true, "color": "#228B22", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#228B22", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 2}
+            ).addTo(marker_cluster_28ef127ded9465f736aa22dce9e5ef0d);
+        
+    
+        var popup_7600142b5a60044a7110cb54bdedc9bd = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_563e5aecb966b0b2145dbaf9c3cac76b = $(`<div id="html_563e5aecb966b0b2145dbaf9c3cac76b" style="width: 100.0%; height: 100.0%;"><b>Tourism</b><br>Theme Word: museum trip vacation visit itinerary excursion beach journey holiday<br>Location: Netherlands</div>`)[0];
+                popup_7600142b5a60044a7110cb54bdedc9bd.setContent(html_563e5aecb966b0b2145dbaf9c3cac76b);
+            
+        
+
+        circle_marker_91ec78644a78114b74fcfc83a83b223b.bindPopup(popup_7600142b5a60044a7110cb54bdedc9bd)
+        ;
+
+        
+    
+    
+            circle_marker_91ec78644a78114b74fcfc83a83b223b.bindTooltip(
+                `<div>
+                     Tourism: museum trip vacation visit itinerary excursion beach journey holiday
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_5a6cefe155e476d50cdf1d863bb0f440 = L.circleMarker(
+                [1.357107, 103.8194992],
+                {"bubblingMouseEvents": true, "color": "#228B22", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#228B22", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 2}
+            ).addTo(marker_cluster_28ef127ded9465f736aa22dce9e5ef0d);
+        
+    
+        var popup_a9520977dd11370d79b79ba702fd087c = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_5ce505078074407ddfe2b61bfd385de6 = $(`<div id="html_5ce505078074407ddfe2b61bfd385de6" style="width: 100.0%; height: 100.0%;"><b>Tourism</b><br>Theme Word: trip destination journey travel visit tourist favourite tour cruise holiday excursion beach adventure museum landmark vacation<br>Location: Singapore</div>`)[0];
+                popup_a9520977dd11370d79b79ba702fd087c.setContent(html_5ce505078074407ddfe2b61bfd385de6);
+            
+        
+
+        circle_marker_5a6cefe155e476d50cdf1d863bb0f440.bindPopup(popup_a9520977dd11370d79b79ba702fd087c)
+        ;
+
+        
+    
+    
+            circle_marker_5a6cefe155e476d50cdf1d863bb0f440.bindTooltip(
+                `<div>
+                     Tourism: trip destination journey travel visit tourist favourite tour cruise holiday excursion beach adventure museum landmark vacation
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_6044b981b2d05d043e5f72605fc80dad = L.circleMarker(
+                [36.638392, 127.6961188],
+                {"bubblingMouseEvents": true, "color": "#228B22", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#228B22", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 2}
+            ).addTo(marker_cluster_28ef127ded9465f736aa22dce9e5ef0d);
+        
+    
+        var popup_37698d2d5e1ace8d25e1a67bebc13da3 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_7a03acde97a3c36acb49989c635dd17a = $(`<div id="html_7a03acde97a3c36acb49989c635dd17a" style="width: 100.0%; height: 100.0%;"><b>Tourism</b><br>Theme Word: journey trip vacation tourist visit<br>Location: South Korea</div>`)[0];
+                popup_37698d2d5e1ace8d25e1a67bebc13da3.setContent(html_7a03acde97a3c36acb49989c635dd17a);
+            
+        
+
+        circle_marker_6044b981b2d05d043e5f72605fc80dad.bindPopup(popup_37698d2d5e1ace8d25e1a67bebc13da3)
+        ;
+
+        
+    
+    
+            circle_marker_6044b981b2d05d043e5f72605fc80dad.bindTooltip(
+                `<div>
+                     Tourism: journey trip vacation tourist visit
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_c5c6d400c4f70654aeab6e1289cc9321 = L.circleMarker(
+                [46.7985624, 8.2319736],
+                {"bubblingMouseEvents": true, "color": "#228B22", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#228B22", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 2}
+            ).addTo(marker_cluster_28ef127ded9465f736aa22dce9e5ef0d);
+        
+    
+        var popup_8e9e25c965352a0b7926f2cb5caff8e3 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_fdf24cd173e1ad04b75f8ec4a49bfc9b = $(`<div id="html_fdf24cd173e1ad04b75f8ec4a49bfc9b" style="width: 100.0%; height: 100.0%;"><b>Tourism</b><br>Theme Word: trip cruise travel vacation tourist souvenirs attraction beach visit museum holiday explore itinerary adventure destination resort favourite journey tour excursion<br>Location: Switzerland</div>`)[0];
+                popup_8e9e25c965352a0b7926f2cb5caff8e3.setContent(html_fdf24cd173e1ad04b75f8ec4a49bfc9b);
+            
+        
+
+        circle_marker_c5c6d400c4f70654aeab6e1289cc9321.bindPopup(popup_8e9e25c965352a0b7926f2cb5caff8e3)
+        ;
+
+        
+    
+    
+            circle_marker_c5c6d400c4f70654aeab6e1289cc9321.bindTooltip(
+                `<div>
+                     Tourism: trip cruise travel vacation tourist souvenirs attraction beach visit museum holiday explore itinerary adventure destination resort favourite journey tour excursion
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_1a64fa3dec3a815d461e1ea2b266906f = L.circleMarker(
+                [14.8971921, 100.83273],
+                {"bubblingMouseEvents": true, "color": "#228B22", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#228B22", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 2}
+            ).addTo(marker_cluster_28ef127ded9465f736aa22dce9e5ef0d);
+        
+    
+        var popup_69e49c32dc3d29210f169ec13e15a561 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_0f9235e68c4a9b030f722ed9425afa17 = $(`<div id="html_0f9235e68c4a9b030f722ed9425afa17" style="width: 100.0%; height: 100.0%;"><b>Tourism</b><br>Theme Word: trip vacation travel resort destination beach visit tourist tour holiday journey scenic sightseeing<br>Location: Thailand</div>`)[0];
+                popup_69e49c32dc3d29210f169ec13e15a561.setContent(html_0f9235e68c4a9b030f722ed9425afa17);
+            
+        
+
+        circle_marker_1a64fa3dec3a815d461e1ea2b266906f.bindPopup(popup_69e49c32dc3d29210f169ec13e15a561)
+        ;
+
+        
+    
+    
+            circle_marker_1a64fa3dec3a815d461e1ea2b266906f.bindTooltip(
+                `<div>
+                     Tourism: trip vacation travel resort destination beach visit tourist tour holiday journey scenic sightseeing
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_2f1af2a8ca136a63b5e820947ebcbf9b = L.circleMarker(
+                [36.8002068, 10.1857757],
+                {"bubblingMouseEvents": true, "color": "#228B22", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#228B22", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 2}
+            ).addTo(marker_cluster_28ef127ded9465f736aa22dce9e5ef0d);
+        
+    
+        var popup_e5dc0dd56aa802819acc4bc811edeefb = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_a11cb417c6c98bcda5e78c12b01cc3ae = $(`<div id="html_a11cb417c6c98bcda5e78c12b01cc3ae" style="width: 100.0%; height: 100.0%;"><b>Tourism</b><br>Theme Word: vacation resort holiday tour tourist beach trip visit travel<br>Location: Tunisia</div>`)[0];
+                popup_e5dc0dd56aa802819acc4bc811edeefb.setContent(html_a11cb417c6c98bcda5e78c12b01cc3ae);
+            
+        
+
+        circle_marker_2f1af2a8ca136a63b5e820947ebcbf9b.bindPopup(popup_e5dc0dd56aa802819acc4bc811edeefb)
+        ;
+
+        
+    
+    
+            circle_marker_2f1af2a8ca136a63b5e820947ebcbf9b.bindTooltip(
+                `<div>
+                     Tourism: vacation resort holiday tour tourist beach trip visit travel
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_c461f172c361ebf67634440ec21ae859 = L.circleMarker(
+                [24.0002488, 53.9994829],
+                {"bubblingMouseEvents": true, "color": "#228B22", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#228B22", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 2}
+            ).addTo(marker_cluster_28ef127ded9465f736aa22dce9e5ef0d);
+        
+    
+        var popup_d2f20422ba5f0a7cc4b7e1ea563ed54f = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_46e3308ad353aa9e168c5925c4164882 = $(`<div id="html_46e3308ad353aa9e168c5925c4164882" style="width: 100.0%; height: 100.0%;"><b>Tourism</b><br>Theme Word: trip<br>Location: United Arab Emirates</div>`)[0];
+                popup_d2f20422ba5f0a7cc4b7e1ea563ed54f.setContent(html_46e3308ad353aa9e168c5925c4164882);
+            
+        
+
+        circle_marker_c461f172c361ebf67634440ec21ae859.bindPopup(popup_d2f20422ba5f0a7cc4b7e1ea563ed54f)
+        ;
+
+        
+    
+    
+            circle_marker_c461f172c361ebf67634440ec21ae859.bindTooltip(
+                `<div>
+                     Tourism: trip
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_57871c7680f30697f8cbc95966acbd2d = L.circleMarker(
+                [28.0000272, 2.9999825],
+                {"bubblingMouseEvents": true, "color": "#FF6347", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FF6347", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 2}
+            ).addTo(marker_cluster_28ef127ded9465f736aa22dce9e5ef0d);
+        
+    
+        var popup_f0acc429813392e5775ff4bfb7b1332b = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_485a6ea4986319ed761a26a69b1c3bb4 = $(`<div id="html_485a6ea4986319ed761a26a69b1c3bb4" style="width: 100.0%; height: 100.0%;"><b>War</b><br>Theme Word: soldier victory revolution army fight violence soldiers battle weapon troops military<br>Location: Algeria</div>`)[0];
+                popup_f0acc429813392e5775ff4bfb7b1332b.setContent(html_485a6ea4986319ed761a26a69b1c3bb4);
+            
+        
+
+        circle_marker_57871c7680f30697f8cbc95966acbd2d.bindPopup(popup_f0acc429813392e5775ff4bfb7b1332b)
+        ;
+
+        
+    
+    
+            circle_marker_57871c7680f30697f8cbc95966acbd2d.bindTooltip(
+                `<div>
+                     War: soldier victory revolution army fight violence soldiers battle weapon troops military
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_101908db87071c0f5fd02932396b2388 = L.circleMarker(
+                [4.099917, -72.9088133],
+                {"bubblingMouseEvents": true, "color": "#FF6347", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FF6347", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 2}
+            ).addTo(marker_cluster_28ef127ded9465f736aa22dce9e5ef0d);
+        
+    
+        var popup_b88aab94c6528ea8ee32bd83fb0732d8 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_0d84ba02bf19f6f92675376d6fbfed4d = $(`<div id="html_0d84ba02bf19f6f92675376d6fbfed4d" style="width: 100.0%; height: 100.0%;"><b>War</b><br>Theme Word: victory fight strategy warfare battle troops military assault<br>Location: Colombia</div>`)[0];
+                popup_b88aab94c6528ea8ee32bd83fb0732d8.setContent(html_0d84ba02bf19f6f92675376d6fbfed4d);
+            
+        
+
+        circle_marker_101908db87071c0f5fd02932396b2388.bindPopup(popup_b88aab94c6528ea8ee32bd83fb0732d8)
+        ;
+
+        
+    
+    
+            circle_marker_101908db87071c0f5fd02932396b2388.bindTooltip(
+                `<div>
+                     War: victory fight strategy warfare battle troops military assault
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_6aa6db5fef15bebae82b68ff91c3a33c = L.circleMarker(
+                [45.3658443, 15.6575209],
+                {"bubblingMouseEvents": true, "color": "#FF6347", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FF6347", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 2}
+            ).addTo(marker_cluster_28ef127ded9465f736aa22dce9e5ef0d);
+        
+    
+        var popup_263cec5c330d90b0575e0fd8ed1ce046 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_eb5383870423148817dc56fb1cf59044 = $(`<div id="html_eb5383870423148817dc56fb1cf59044" style="width: 100.0%; height: 100.0%;"><b>War</b><br>Theme Word: troops fight military peacekeeping battle conflict<br>Location: Croatia</div>`)[0];
+                popup_263cec5c330d90b0575e0fd8ed1ce046.setContent(html_eb5383870423148817dc56fb1cf59044);
+            
+        
+
+        circle_marker_6aa6db5fef15bebae82b68ff91c3a33c.bindPopup(popup_263cec5c330d90b0575e0fd8ed1ce046)
+        ;
+
+        
+    
+    
+            circle_marker_6aa6db5fef15bebae82b68ff91c3a33c.bindTooltip(
+                `<div>
+                     War: troops fight military peacekeeping battle conflict
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_382d412e12e21eb26b2368ff6d56e22e = L.circleMarker(
+                [34.9174159, 32.889902651331866],
+                {"bubblingMouseEvents": true, "color": "#FF6347", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FF6347", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 2}
+            ).addTo(marker_cluster_28ef127ded9465f736aa22dce9e5ef0d);
+        
+    
+        var popup_76b47bb67acd561be2fd73c434cf2244 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_c1ae6dbb2353a7e9f052700713ef4bc4 = $(`<div id="html_c1ae6dbb2353a7e9f052700713ef4bc4" style="width: 100.0%; height: 100.0%;"><b>War</b><br>Theme Word: weapon soldiers military revolution soldier fight army violence victory<br>Location: Cyprus</div>`)[0];
+                popup_76b47bb67acd561be2fd73c434cf2244.setContent(html_c1ae6dbb2353a7e9f052700713ef4bc4);
+            
+        
+
+        circle_marker_382d412e12e21eb26b2368ff6d56e22e.bindPopup(popup_76b47bb67acd561be2fd73c434cf2244)
+        ;
+
+        
+    
+    
+            circle_marker_382d412e12e21eb26b2368ff6d56e22e.bindTooltip(
+                `<div>
+                     War: weapon soldiers military revolution soldier fight army violence victory
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_f2e21fffc457f69094cdafd65bd8e164 = L.circleMarker(
+                [13.8000382, -88.9140683],
+                {"bubblingMouseEvents": true, "color": "#FF6347", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FF6347", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 2}
+            ).addTo(marker_cluster_28ef127ded9465f736aa22dce9e5ef0d);
+        
+    
+        var popup_3daa7a3ff5061dcfe3387c830a88c4f5 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_a0a2cf48713dd608e70590c7a3074083 = $(`<div id="html_a0a2cf48713dd608e70590c7a3074083" style="width: 100.0%; height: 100.0%;"><b>War</b><br>Theme Word: military soldiers combat troops army violence soldier revolution fight<br>Location: El Salvador</div>`)[0];
+                popup_3daa7a3ff5061dcfe3387c830a88c4f5.setContent(html_a0a2cf48713dd608e70590c7a3074083);
+            
+        
+
+        circle_marker_f2e21fffc457f69094cdafd65bd8e164.bindPopup(popup_3daa7a3ff5061dcfe3387c830a88c4f5)
+        ;
+
+        
+    
+    
+            circle_marker_f2e21fffc457f69094cdafd65bd8e164.bindTooltip(
+                `<div>
+                     War: military soldiers combat troops army violence soldier revolution fight
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_34ed263846945088959c7d7a60e42afc = L.circleMarker(
+                [10.2116702, 38.6521203],
+                {"bubblingMouseEvents": true, "color": "#FF6347", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FF6347", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 2}
+            ).addTo(marker_cluster_28ef127ded9465f736aa22dce9e5ef0d);
+        
+    
+        var popup_072c92deb0d0a054ab9861c1eeb09c1e = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_980271df37b903bb26feafe7ba54ded1 = $(`<div id="html_980271df37b903bb26feafe7ba54ded1" style="width: 100.0%; height: 100.0%;"><b>War</b><br>Theme Word: soldier soldiers fight defeat warfare invasion assault troops army military<br>Location: Ethiopia</div>`)[0];
+                popup_072c92deb0d0a054ab9861c1eeb09c1e.setContent(html_980271df37b903bb26feafe7ba54ded1);
+            
+        
+
+        circle_marker_34ed263846945088959c7d7a60e42afc.bindPopup(popup_072c92deb0d0a054ab9861c1eeb09c1e)
+        ;
+
+        
+    
+    
+            circle_marker_34ed263846945088959c7d7a60e42afc.bindTooltip(
+                `<div>
+                     War: soldier soldiers fight defeat warfare invasion assault troops army military
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_ef3db5e7643309d56a6199a152d7fc22 = L.circleMarker(
+                [51.1638175, 10.4478313],
+                {"bubblingMouseEvents": true, "color": "#FF6347", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FF6347", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 2}
+            ).addTo(marker_cluster_28ef127ded9465f736aa22dce9e5ef0d);
+        
+    
+        var popup_11b13aedd47c634cacc0fe1a5ac53ecd = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_66078266655596af211ded79caa47ab3 = $(`<div id="html_66078266655596af211ded79caa47ab3" style="width: 100.0%; height: 100.0%;"><b>War</b><br>Theme Word: fight military revolution weapon army victory siege hostilities troops soldier battle invasion combat soldiers warfare assault conflict trench violence defeat guerrilla strategy frontline<br>Location: Germany</div>`)[0];
+                popup_11b13aedd47c634cacc0fe1a5ac53ecd.setContent(html_66078266655596af211ded79caa47ab3);
+            
+        
+
+        circle_marker_ef3db5e7643309d56a6199a152d7fc22.bindPopup(popup_11b13aedd47c634cacc0fe1a5ac53ecd)
+        ;
+
+        
+    
+    
+            circle_marker_ef3db5e7643309d56a6199a152d7fc22.bindTooltip(
+                `<div>
+                     War: fight military revolution weapon army victory siege hostilities troops soldier battle invasion combat soldiers warfare assault conflict trench violence defeat guerrilla strategy frontline
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_910ba582c46e3fcaa33d5065e13b56d3 = L.circleMarker(
+                [10.7226226, -10.7083587],
+                {"bubblingMouseEvents": true, "color": "#FF6347", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FF6347", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 2}
+            ).addTo(marker_cluster_28ef127ded9465f736aa22dce9e5ef0d);
+        
+    
+        var popup_c6d5e64cc5ed85a19608798c4781d843 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_53819634bc86826c7457dfc245f0f67a = $(`<div id="html_53819634bc86826c7457dfc245f0f67a" style="width: 100.0%; height: 100.0%;"><b>War</b><br>Theme Word: military soldiers fight victory strategy army conflict violence weapon<br>Location: Guinea</div>`)[0];
+                popup_c6d5e64cc5ed85a19608798c4781d843.setContent(html_53819634bc86826c7457dfc245f0f67a);
+            
+        
+
+        circle_marker_910ba582c46e3fcaa33d5065e13b56d3.bindPopup(popup_c6d5e64cc5ed85a19608798c4781d843)
+        ;
+
+        
+    
+    
+            circle_marker_910ba582c46e3fcaa33d5065e13b56d3.bindTooltip(
+                `<div>
+                     War: military soldiers fight victory strategy army conflict violence weapon
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_bbea6c2f695e318989c8fd10b97abb6e = L.circleMarker(
+                [-2.4833826, 117.8902853],
+                {"bubblingMouseEvents": true, "color": "#FF6347", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FF6347", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 2}
+            ).addTo(marker_cluster_28ef127ded9465f736aa22dce9e5ef0d);
+        
+    
+        var popup_8247704a1b11efe1e3c603c16e13e847 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_6a8577a8ab901bae18f7173ee57a47ce = $(`<div id="html_6a8577a8ab901bae18f7173ee57a47ce" style="width: 100.0%; height: 100.0%;"><b>War</b><br>Theme Word: violence fight hostilities battle soldiers soldier troops weapon army<br>Location: Indonesia</div>`)[0];
+                popup_8247704a1b11efe1e3c603c16e13e847.setContent(html_6a8577a8ab901bae18f7173ee57a47ce);
+            
+        
+
+        circle_marker_bbea6c2f695e318989c8fd10b97abb6e.bindPopup(popup_8247704a1b11efe1e3c603c16e13e847)
+        ;
+
+        
+    
+    
+            circle_marker_bbea6c2f695e318989c8fd10b97abb6e.bindTooltip(
+                `<div>
+                     War: violence fight hostilities battle soldiers soldier troops weapon army
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_7ef88e0ac65518c8bfc6975bdb11ef15 = L.circleMarker(
+                [32.6475314, 54.5643516],
+                {"bubblingMouseEvents": true, "color": "#FF6347", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FF6347", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 2}
+            ).addTo(marker_cluster_28ef127ded9465f736aa22dce9e5ef0d);
+        
+    
+        var popup_33abec38dc55bf96b7ba04799f0969cb = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_076a7b9d7b83331c1ed48c4959afd0f6 = $(`<div id="html_076a7b9d7b83331c1ed48c4959afd0f6" style="width: 100.0%; height: 100.0%;"><b>War</b><br>Theme Word: combat troops army weapon assault soldiers fight battle revolution military siege defeat victory invasion strategy soldier conflict warfare<br>Location: Iran</div>`)[0];
+                popup_33abec38dc55bf96b7ba04799f0969cb.setContent(html_076a7b9d7b83331c1ed48c4959afd0f6);
+            
+        
+
+        circle_marker_7ef88e0ac65518c8bfc6975bdb11ef15.bindPopup(popup_33abec38dc55bf96b7ba04799f0969cb)
+        ;
+
+        
+    
+    
+            circle_marker_7ef88e0ac65518c8bfc6975bdb11ef15.bindTooltip(
+                `<div>
+                     War: combat troops army weapon assault soldiers fight battle revolution military siege defeat victory invasion strategy soldier conflict warfare
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_243171e5056855d7b194683829e8defb = L.circleMarker(
+                [33.0955793, 44.1749775],
+                {"bubblingMouseEvents": true, "color": "#FF6347", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FF6347", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 2}
+            ).addTo(marker_cluster_28ef127ded9465f736aa22dce9e5ef0d);
+        
+    
+        var popup_a576984a13c19347893e5c4ddbc61db3 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_ae9421d1c7591f34a48f79417ca5e559 = $(`<div id="html_ae9421d1c7591f34a48f79417ca5e559" style="width: 100.0%; height: 100.0%;"><b>War</b><br>Theme Word: weapon soldier army military warfare invasion fight violence soldiers troops battle strategy combat assault victory conflict revolution defeat<br>Location: Iraq</div>`)[0];
+                popup_a576984a13c19347893e5c4ddbc61db3.setContent(html_ae9421d1c7591f34a48f79417ca5e559);
+            
+        
+
+        circle_marker_243171e5056855d7b194683829e8defb.bindPopup(popup_a576984a13c19347893e5c4ddbc61db3)
+        ;
+
+        
+    
+    
+            circle_marker_243171e5056855d7b194683829e8defb.bindTooltip(
+                `<div>
+                     War: weapon soldier army military warfare invasion fight violence soldiers troops battle strategy combat assault victory conflict revolution defeat
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_67fcc97f5d333f3f7b02de7fb51e786d = L.circleMarker(
+                [42.6384261, 12.674297],
+                {"bubblingMouseEvents": true, "color": "#FF6347", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FF6347", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 2}
+            ).addTo(marker_cluster_28ef127ded9465f736aa22dce9e5ef0d);
+        
+    
+        var popup_145bf577eeffc14a7d4f83229ce65b7a = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_f1bc189bd8364b58349cc159531add9c = $(`<div id="html_f1bc189bd8364b58349cc159531add9c" style="width: 100.0%; height: 100.0%;"><b>War</b><br>Theme Word: revolution fight defeat soldier battle trench assault weapon army invasion warfare military soldiers violence victory siege<br>Location: Italy</div>`)[0];
+                popup_145bf577eeffc14a7d4f83229ce65b7a.setContent(html_f1bc189bd8364b58349cc159531add9c);
+            
+        
+
+        circle_marker_67fcc97f5d333f3f7b02de7fb51e786d.bindPopup(popup_145bf577eeffc14a7d4f83229ce65b7a)
+        ;
+
+        
+    
+    
+            circle_marker_67fcc97f5d333f3f7b02de7fb51e786d.bindTooltip(
+                `<div>
+                     War: revolution fight defeat soldier battle trench assault weapon army invasion warfare military soldiers violence victory siege
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_18889998dc47199ad5684c1138358fea = L.circleMarker(
+                [1.4419683, 38.4313975],
+                {"bubblingMouseEvents": true, "color": "#FF6347", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FF6347", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 2}
+            ).addTo(marker_cluster_28ef127ded9465f736aa22dce9e5ef0d);
+        
+    
+        var popup_3a8df17e0818e93d850e9cfa7abb0222 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_1515d171c76a618e283bcf82465ebb40 = $(`<div id="html_1515d171c76a618e283bcf82465ebb40" style="width: 100.0%; height: 100.0%;"><b>War</b><br>Theme Word: military soldier weapon warfare battle fight army defeat victory violence<br>Location: Kenya</div>`)[0];
+                popup_3a8df17e0818e93d850e9cfa7abb0222.setContent(html_1515d171c76a618e283bcf82465ebb40);
+            
+        
+
+        circle_marker_18889998dc47199ad5684c1138358fea.bindPopup(popup_3a8df17e0818e93d850e9cfa7abb0222)
+        ;
+
+        
+    
+    
+            circle_marker_18889998dc47199ad5684c1138358fea.bindTooltip(
+                `<div>
+                     War: military soldier weapon warfare battle fight army defeat victory violence
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_711877db2811105024612e6f155c99be = L.circleMarker(
+                [29.3796532, 47.9734174],
+                {"bubblingMouseEvents": true, "color": "#FF6347", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FF6347", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 2}
+            ).addTo(marker_cluster_28ef127ded9465f736aa22dce9e5ef0d);
+        
+    
+        var popup_26fc6a31523628cbe4f209bcf3473c15 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_e619216d2689992b7029a9d8e74a65a9 = $(`<div id="html_e619216d2689992b7029a9d8e74a65a9" style="width: 100.0%; height: 100.0%;"><b>War</b><br>Theme Word: soldiers army military troops battle strategy combat assault victory soldier conflict violence weapon<br>Location: Kuwait</div>`)[0];
+                popup_26fc6a31523628cbe4f209bcf3473c15.setContent(html_e619216d2689992b7029a9d8e74a65a9);
+            
+        
+
+        circle_marker_711877db2811105024612e6f155c99be.bindPopup(popup_26fc6a31523628cbe4f209bcf3473c15)
+        ;
+
+        
+    
+    
+            circle_marker_711877db2811105024612e6f155c99be.bindTooltip(
+                `<div>
+                     War: soldiers army military troops battle strategy combat assault victory soldier conflict violence weapon
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_1b7d402e677865c86b7f0688a41e882f = L.circleMarker(
+                [20.0171109, 103.378253],
+                {"bubblingMouseEvents": true, "color": "#FF6347", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FF6347", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 2}
+            ).addTo(marker_cluster_28ef127ded9465f736aa22dce9e5ef0d);
+        
+    
+        var popup_b6713d5ab795dd9cd613b24d7ba24103 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_0fe2476063c1b57a7ea1c35a4a24a3cb = $(`<div id="html_0fe2476063c1b57a7ea1c35a4a24a3cb" style="width: 100.0%; height: 100.0%;"><b>War</b><br>Theme Word: military combat weapon fight soldier troops soldiers army warfare conflict revolution<br>Location: Laos</div>`)[0];
+                popup_b6713d5ab795dd9cd613b24d7ba24103.setContent(html_0fe2476063c1b57a7ea1c35a4a24a3cb);
+            
+        
+
+        circle_marker_1b7d402e677865c86b7f0688a41e882f.bindPopup(popup_b6713d5ab795dd9cd613b24d7ba24103)
+        ;
+
+        
+    
+    
+            circle_marker_1b7d402e677865c86b7f0688a41e882f.bindTooltip(
+                `<div>
+                     War: military combat weapon fight soldier troops soldiers army warfare conflict revolution
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_258de941e83b56ed2baff043c7469ca7 = L.circleMarker(
+                [26.8234472, 18.1236723],
+                {"bubblingMouseEvents": true, "color": "#FF6347", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FF6347", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 2}
+            ).addTo(marker_cluster_28ef127ded9465f736aa22dce9e5ef0d);
+        
+    
+        var popup_fab869ea1a0f360857eec7d06d3908b8 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_640baf4393a5e13fd1b1b0436ceb166d = $(`<div id="html_640baf4393a5e13fd1b1b0436ceb166d" style="width: 100.0%; height: 100.0%;"><b>War</b><br>Theme Word: fight soldiers battle army military soldier defeat troops victory guerrilla revolution invasion siege<br>Location: Libya</div>`)[0];
+                popup_fab869ea1a0f360857eec7d06d3908b8.setContent(html_640baf4393a5e13fd1b1b0436ceb166d);
+            
+        
+
+        circle_marker_258de941e83b56ed2baff043c7469ca7.bindPopup(popup_fab869ea1a0f360857eec7d06d3908b8)
+        ;
+
+        
+    
+    
+            circle_marker_258de941e83b56ed2baff043c7469ca7.bindTooltip(
+                `<div>
+                     War: fight soldiers battle army military soldier defeat troops victory guerrilla revolution invasion siege
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_8c13b29874ee459bd206929c20c25ff2 = L.circleMarker(
+                [-18.9249604, 46.4416422],
+                {"bubblingMouseEvents": true, "color": "#FF6347", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FF6347", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 2}
+            ).addTo(marker_cluster_28ef127ded9465f736aa22dce9e5ef0d);
+        
+    
+        var popup_6dec3de24b58bf6a3d8582c6e7952a5d = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_b95f80f6c9730f90ef159c4509cb251a = $(`<div id="html_b95f80f6c9730f90ef159c4509cb251a" style="width: 100.0%; height: 100.0%;"><b>War</b><br>Theme Word: military soldiers hostilities invasion fight troops army combat battle soldier<br>Location: Madagascar</div>`)[0];
+                popup_6dec3de24b58bf6a3d8582c6e7952a5d.setContent(html_b95f80f6c9730f90ef159c4509cb251a);
+            
+        
+
+        circle_marker_8c13b29874ee459bd206929c20c25ff2.bindPopup(popup_6dec3de24b58bf6a3d8582c6e7952a5d)
+        ;
+
+        
+    
+    
+            circle_marker_8c13b29874ee459bd206929c20c25ff2.bindTooltip(
+                `<div>
+                     War: military soldiers hostilities invasion fight troops army combat battle soldier
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_f0344b5f8a9c5629dca1d61ea4a18926 = L.circleMarker(
+                [8.230816999999998, 167.7953223704529],
+                {"bubblingMouseEvents": true, "color": "#FF6347", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FF6347", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 2}
+            ).addTo(marker_cluster_28ef127ded9465f736aa22dce9e5ef0d);
+        
+    
+        var popup_cd23d0c0ded1abed9a1f67fce81d3bb2 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_dbfaf778ba1a18c050400a61f0cf62bd = $(`<div id="html_dbfaf778ba1a18c050400a61f0cf62bd" style="width: 100.0%; height: 100.0%;"><b>War</b><br>Theme Word: fight strategy invasion combat battle<br>Location: Marshall Islands</div>`)[0];
+                popup_cd23d0c0ded1abed9a1f67fce81d3bb2.setContent(html_dbfaf778ba1a18c050400a61f0cf62bd);
+            
+        
+
+        circle_marker_f0344b5f8a9c5629dca1d61ea4a18926.bindPopup(popup_cd23d0c0ded1abed9a1f67fce81d3bb2)
+        ;
+
+        
+    
+    
+            circle_marker_f0344b5f8a9c5629dca1d61ea4a18926.bindTooltip(
+                `<div>
+                     War: fight strategy invasion combat battle
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_0c330635dd51f1d818fae3c4fe022ffb = L.circleMarker(
+                [9.6000359, 7.9999721],
+                {"bubblingMouseEvents": true, "color": "#FF6347", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FF6347", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 2}
+            ).addTo(marker_cluster_28ef127ded9465f736aa22dce9e5ef0d);
+        
+    
+        var popup_8fb93746aeb0f1a3335cda0ca9d7592c = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_cf8b328a40e1dda8e2a2b40bfe9e5abe = $(`<div id="html_cf8b328a40e1dda8e2a2b40bfe9e5abe" style="width: 100.0%; height: 100.0%;"><b>War</b><br>Theme Word: violence troops soldiers guerrilla fight military<br>Location: Nigeria</div>`)[0];
+                popup_8fb93746aeb0f1a3335cda0ca9d7592c.setContent(html_cf8b328a40e1dda8e2a2b40bfe9e5abe);
+            
+        
+
+        circle_marker_0c330635dd51f1d818fae3c4fe022ffb.bindPopup(popup_8fb93746aeb0f1a3335cda0ca9d7592c)
+        ;
+
+        
+    
+    
+            circle_marker_0c330635dd51f1d818fae3c4fe022ffb.bindTooltip(
+                `<div>
+                     War: violence troops soldiers guerrilla fight military
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_47ba216933f266e442998f2e287d0096 = L.circleMarker(
+                [40.3736611, 127.0870417],
+                {"bubblingMouseEvents": true, "color": "#FF6347", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FF6347", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 2}
+            ).addTo(marker_cluster_28ef127ded9465f736aa22dce9e5ef0d);
+        
+    
+        var popup_d5f1ce90030032bb3e3bf4cefb05894d = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_603467ad01ace9af539fab5d472192cd = $(`<div id="html_603467ad01ace9af539fab5d472192cd" style="width: 100.0%; height: 100.0%;"><b>War</b><br>Theme Word: weapon fight military revolution conflict troops battle victory violence soldiers invasion combat strategy army defeat soldier<br>Location: North Korea</div>`)[0];
+                popup_d5f1ce90030032bb3e3bf4cefb05894d.setContent(html_603467ad01ace9af539fab5d472192cd);
+            
+        
+
+        circle_marker_47ba216933f266e442998f2e287d0096.bindPopup(popup_d5f1ce90030032bb3e3bf4cefb05894d)
+        ;
+
+        
+    
+    
+            circle_marker_47ba216933f266e442998f2e287d0096.bindTooltip(
+                `<div>
+                     War: weapon fight military revolution conflict troops battle victory violence soldiers invasion combat strategy army defeat soldier
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_a32db168513b05fbb20ca5be7e5a468d = L.circleMarker(
+                [30.3308401, 71.247499],
+                {"bubblingMouseEvents": true, "color": "#FF6347", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FF6347", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 2}
+            ).addTo(marker_cluster_28ef127ded9465f736aa22dce9e5ef0d);
+        
+    
+        var popup_bf3a83e4eeaf6a51aa17262f0f114c64 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_2bf8e298f64162bfcce9cc4f247f8c4e = $(`<div id="html_2bf8e298f64162bfcce9cc4f247f8c4e" style="width: 100.0%; height: 100.0%;"><b>War</b><br>Theme Word: fight violence hostilities warfare soldiers invasion army weapon battle soldier victory military defeat troops conflict<br>Location: Pakistan</div>`)[0];
+                popup_bf3a83e4eeaf6a51aa17262f0f114c64.setContent(html_2bf8e298f64162bfcce9cc4f247f8c4e);
+            
+        
+
+        circle_marker_a32db168513b05fbb20ca5be7e5a468d.bindPopup(popup_bf3a83e4eeaf6a51aa17262f0f114c64)
+        ;
+
+        
+    
+    
+            circle_marker_a32db168513b05fbb20ca5be7e5a468d.bindTooltip(
+                `<div>
+                     War: fight violence hostilities warfare soldiers invasion army weapon battle soldier victory military defeat troops conflict
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_329c6a80bdfff3fc1d89b7674511575a = L.circleMarker(
+                [8.3676771, 49.083416],
+                {"bubblingMouseEvents": true, "color": "#FF6347", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FF6347", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 2}
+            ).addTo(marker_cluster_28ef127ded9465f736aa22dce9e5ef0d);
+        
+    
+        var popup_9d7956f59e54411fc9ecd9ec234b623e = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_4bab91cc0d88d108fff88c55f2a9e216 = $(`<div id="html_4bab91cc0d88d108fff88c55f2a9e216" style="width: 100.0%; height: 100.0%;"><b>War</b><br>Theme Word: weapon fight army assault troops combat soldier victory<br>Location: Somalia</div>`)[0];
+                popup_9d7956f59e54411fc9ecd9ec234b623e.setContent(html_4bab91cc0d88d108fff88c55f2a9e216);
+            
+        
+
+        circle_marker_329c6a80bdfff3fc1d89b7674511575a.bindPopup(popup_9d7956f59e54411fc9ecd9ec234b623e)
+        ;
+
+        
+    
+    
+            circle_marker_329c6a80bdfff3fc1d89b7674511575a.bindTooltip(
+                `<div>
+                     War: weapon fight army assault troops combat soldier victory
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_6e6ef0a05884b04db1d684a9edad10fa = L.circleMarker(
+                [1.5333554, 32.2166578],
+                {"bubblingMouseEvents": true, "color": "#FF6347", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FF6347", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 2}
+            ).addTo(marker_cluster_28ef127ded9465f736aa22dce9e5ef0d);
+        
+    
+        var popup_6a4f837e723a4736d84a0691bbfc1991 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_fccfaf4b113cf41b1d4f23935bbd0c50 = $(`<div id="html_fccfaf4b113cf41b1d4f23935bbd0c50" style="width: 100.0%; height: 100.0%;"><b>War</b><br>Theme Word: army troops military soldiers<br>Location: Uganda</div>`)[0];
+                popup_6a4f837e723a4736d84a0691bbfc1991.setContent(html_fccfaf4b113cf41b1d4f23935bbd0c50);
+            
+        
+
+        circle_marker_6e6ef0a05884b04db1d684a9edad10fa.bindPopup(popup_6a4f837e723a4736d84a0691bbfc1991)
+        ;
+
+        
+    
+    
+            circle_marker_6e6ef0a05884b04db1d684a9edad10fa.bindTooltip(
+                `<div>
+                     War: army troops military soldiers
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_f7a1ec265a365f042df7537e3b75fd30 = L.circleMarker(
+                [15.9266657, 107.9650855],
+                {"bubblingMouseEvents": true, "color": "#FF6347", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FF6347", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 2}
+            ).addTo(marker_cluster_28ef127ded9465f736aa22dce9e5ef0d);
+        
+    
+        var popup_a7284df2df61951f09f26f5e41252c4a = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_c6cf2d34d6f66cfb7cd712bbd4b41f56 = $(`<div id="html_c6cf2d34d6f66cfb7cd712bbd4b41f56" style="width: 100.0%; height: 100.0%;"><b>War</b><br>Theme Word: weapon soldier violence military army victory battle combat fight soldiers assault troops strategy revolution trench warfare conflict invasion defeat<br>Location: Vietnam</div>`)[0];
+                popup_a7284df2df61951f09f26f5e41252c4a.setContent(html_c6cf2d34d6f66cfb7cd712bbd4b41f56);
+            
+        
+
+        circle_marker_f7a1ec265a365f042df7537e3b75fd30.bindPopup(popup_a7284df2df61951f09f26f5e41252c4a)
+        ;
+
+        
+    
+    
+            circle_marker_f7a1ec265a365f042df7537e3b75fd30.bindTooltip(
+                `<div>
+                     War: weapon soldier violence military army victory battle combat fight soldiers assault troops strategy revolution trench warfare conflict invasion defeat
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            marker_cluster_28ef127ded9465f736aa22dce9e5ef0d.addTo(map_fdd23e0f86d8526fdb740cac766c8a31);
+        
+</script>
+</html>
