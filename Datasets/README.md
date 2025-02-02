@@ -205,3 +205,4 @@ Here are **3 selected movies** with their word frequencies from the **movie scri
 
 ---
 
+### **Note**: Due to the large size of the datasets, a Google Drive link is provided for easy access: https://drive.google.com/drive/folders/1aJ55Figa9r5u7DQn6I89tyJUU5xcpW4d?usp=sharing
