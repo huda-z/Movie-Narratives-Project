@@ -155,9 +155,9 @@ Here are **3 selected movies** with their word frequencies from the **movie scri
 
 | Location            | Frequency of Mentions | Top Associated Words                          |
 |---------------------|-----------------------|-----------------------------------------------|
-| United States       | 0                     |                                               |
-| Brazil              | 1177                  | jake, kate, carson                           |
-| Canada              | 857                   | sparky, victor, victors                       |
+| United States       | 3310                  | win, happy, travel                            |
+| Brazil              | 1177                  | kill, kate, carson                           |
+| Canada              | 857                   | sparky, fancy, victors                       |
 
 ---
 
@@ -165,9 +165,9 @@ Here are **3 selected movies** with their word frequencies from the **movie scri
 
 | Location            | Frequency of Mentions | Top Associated Words                          |
 |---------------------|-----------------------|-----------------------------------------------|
-| United States       | 0                     |                                               |
-| Brazil              | 1177                  | jake, kate, carson                           |
-| Canada              | 857                   | sparky, victor, victors                       |
+| United States       | 2112                  | fight, liberity, toursim                      |
+| Brazil              | 2177                  | burn, love, victory                           |
+| Canada              | 357                   | sparky, victor, victors                       |
 
 ---
 
