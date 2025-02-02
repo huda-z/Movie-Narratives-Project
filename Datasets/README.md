@@ -1,5 +1,3 @@
-
-
 # Movie Summaries and Scripts - Dataset README
 ## Overview
 
@@ -29,7 +27,7 @@ This dataset includes movie summaries that combine plot and synopsis details fro
 
 #### **Example Data (After Processing with RoBERTa):**
 
-| Unnamed: 0 | film_id   | final_summary                                                                 | processed_final_summary                                                                                                                                                     |
+| Index | film_id   | final_summary                                                                 | processed_final_summary                                                                                                                                                     |
 |------------|-----------|-------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | 0          | tt0111161 | Over the course of several years two convicts form a friendship...            | ['Over', 'Ġthe', 'Ġcourse', 'Ġof', 'Ġseveral', 'Ġyears', ',', 'Ġtwo', 'Ġconvicts', 'Ġform', 'Ġa', 'Ġfriendship', '...']                                                     |
 | 1          | tt0468569 | When the menace known as the joker wreaks havoc...                            | ['When', 'Ġthe', 'Ġmenace', 'Ġknown', 'Ġas', 'Ġthe', 'Ġjoker', 'Ġwreaks', 'Ġhavoc', '...']                                                                                   |
@@ -93,4 +91,117 @@ Location extraction has been performed on both movie scripts and summaries to id
 - The **Web-Scraped Movie Scripts Dataset** provides subtitles or raw script data and processes them in the same manner.
 - The **Location Extraction** tables show identified locations in both movie scripts and summaries for enhanced location analysis.
 
+## **4. Word Frequency Analysis (Top 10 Words)**
+
+Here are **3 selected movies** with their word frequencies from the **movie scripts** dataset:
+
+### **Dataset 5A: Word Frequency Analysis (Top 10 Words)**
+
+| Movie Name       | Word Frequencies                                                                 |
+|------------------|-----------------------------------------------------------------------------------|
+| South Africa     | {'new': 2, 'york': 2, 'jeff': 2, 'music': 3, 'truth': 2, 'francisco': 3}          |
+| Greece           | {'addams': 33, 'wednesday': 70, 'family': 47, 'gomez': 26, 'morticia': 25}        |
+| Brazil           | {'holiday': 1, 'love': 3, 'together': 4, 'family': 5, 'vacation': 2}              |
+
+---
+
+## **5. Sentiment Analysis (Scripts & Summaries)**
+
+### **Dataset 6A: Sentiment Analysis for Scripts**
+
+| Location | Top Positive Words                                        | Top Negative Words                     |
+|----------|------------------------------------------------------------|----------------------------------------|
+| Russia   | {'happy': 0.57, 'glory': 0.54, 'friend': 0.49}             | {'serious': -0.08, 'falling': -0.15}   |
+| Brazil   | {'joy': 0.55, 'peace': 0.53, 'love': 0.50}                 | {'danger': -0.10, 'sad': -0.20}       |
+| Canada   | {'success': 0.60, 'grace': 0.55, 'victory': 0.58}          | {'defeat': -0.12, 'loss': -0.10}      |
+
+---
+
+### **Dataset 6B: Sentiment Analysis for Summaries**
+
+| Location | Top Positive Words                                        | Top Negative Words                     |
+|----------|------------------------------------------------------------|----------------------------------------|
+| Russia   | {'happy': 0.57, 'glory': 0.54, 'friend': 0.49}             | {'serious': -0.08, 'falling': -0.15}   |
+| Brazil   | {'joy': 0.55, 'peace': 0.53, 'love': 0.50}                 | {'danger': -0.10, 'sad': -0.20}       |
+| Canada   | {'success': 0.60, 'grace': 0.55, 'victory': 0.58}          | {'defeat': -0.12, 'loss': -0.10}      |
+
+---
+
+## **6. Theme Classification (Scripts & Summaries)**
+
+### **Dataset 7A: Theme Classification for Scripts**
+
+| Location         | Theme     | Word          | Count |
+|------------------|-----------|---------------|-------|
+| Brazil           | Love      | together      | 1     |
+| Brazil           | War       | fight         | 1     |
+| Brazil           | Fantasy   | spell         | 1     |
+
+---
+
+### **Dataset 7B: Theme Classification for Summaries**
+
+| Location         | Theme     | Word          | Count |
+|------------------|-----------|---------------|-------|
+| Brazil           | Love      | together      | 1     |
+| Brazil           | War       | fight         | 1     |
+| Brazil           | Fantasy   | spell         | 1     |
+
+---
+
+## **7. Intensity (Frequency of Mentions)**
+
+### **Dataset 7A: Intensity for Scripts**
+
+| Location            | Frequency of Mentions | Top Associated Words                          |
+|---------------------|-----------------------|-----------------------------------------------|
+| United States       | 0                     |                                               |
+| Brazil              | 1177                  | jake, kate, carson                           |
+| Canada              | 857                   | sparky, victor, victors                       |
+
+---
+
+### **Dataset 7B: Intensity for Summaries**
+
+| Location            | Frequency of Mentions | Top Associated Words                          |
+|---------------------|-----------------------|-----------------------------------------------|
+| United States       | 0                     |                                               |
+| Brazil              | 1177                  | jake, kate, carson                           |
+| Canada              | 857                   | sparky, victor, victors                       |
+
+---
+
+## **8. Bias Detection (Enhanced Sentiment Analysis)**
+
+### **Dataset 8A: Bias Detection (Scripts)**
+
+| Location            | Average Sentiment Score | Top Positive Words         | Top Negative Words         |
+|---------------------|-------------------------|----------------------------|----------------------------|
+| United States       | 0.00000                 | hope, peace, joy            | conflict, struggle          |
+| Brazil              | 0.00000                 | love, freedom, excitement    | oppression, defeat          |
+| Rzhev               | -0.38180                | courage, strength            | battles, war                |
+
+---
+
+### **Dataset 8B: Bias Detection (Summaries)**
+
+| Location            | Average Sentiment Score | Top Positive Words         | Top Negative Words         |
+|---------------------|-------------------------|----------------------------|----------------------------|
+| United States       | 0.00000                 | hope, peace, joy            | conflict, struggle          |
+| Brazil              | 0.00000                 | love, freedom, excitement    | oppression, defeat          |
+| Rzhev               | -0.38180                | courage, strength            | battles, war                |
+
+---
+
+## **9. Film Metadata with Date Extraction**
+
+### **Dataset 9: Film Metadata with Date Extraction**
+
+| Index | film_id   | city       | release_year | Theme                | decade | theme  | date       |
+|-------------|-----------|------------|--------------|----------------------|--------|--------|------------|
+| 0           | tt1218038 | boston     | 2009         | Politics             | 2000   | Politics | 2009-01-01 |
+| 1           | tt1226229 | new york   | 2010         | Family, Love         | 2010   | Family | 2010-01-01 |
+| 2           | tt1231290 | new york   | 2008         | Family, Love         | 2000   | Family | 2008-01-01 |
+
+---
 
